@@ -2,6 +2,7 @@ baseURL = "https://Alexis-Ribat.github.io/mon-portfolio-bi/"
 languageCode = "fr-fr"
 title = "Ribat | Ingénieur BI & Data"
 theme = "PaperMod"
+publishDir = "docs"
 
 # Paramètres généraux
 [pagination]
