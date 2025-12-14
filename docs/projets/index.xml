@@ -6,7 +6,7 @@
     <description>Recent content in Projets on Ribat | Ingénieur BI &amp; Data</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>fr-fr</language>
-    <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://Alexis-Ribat.github.io/mon-portfolio-bi/projets/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Analyse d&#39;Impact d&#39;une Campagne Marketing (SQL et Power BI)</title>
@@ -18,6 +18,23 @@
 &lt;h2 id=&#34;2-mon-rôle--du-nettoyage-à-la-modélisation&#34;&gt;2. Mon Rôle : Du nettoyage à la modélisation&lt;/h2&gt;
 &lt;h3 id=&#34;a-phase-data-engineering-nettoyage-et-transformation&#34;&gt;A. Phase Data Engineering (Nettoyage et Transformation)&lt;/h3&gt;
 &lt;p&gt;J&amp;rsquo;ai utilisé un script Python (ou un outil d&amp;rsquo;ETL) pour harmoniser les identifiants clients et standardiser les horodatages des différentes sources (CRM, logs web, base de données transactionnelle).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Outil d&#39;Analyse Value Investing (Python)</title>
+      <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/projets/value-investing/</link>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://Alexis-Ribat.github.io/mon-portfolio-bi/projets/value-investing/</guid>
+      <description>&lt;h2 id=&#34;-contexte&#34;&gt;📅 Contexte&lt;/h2&gt;
+&lt;p&gt;Passionné par la bourse, je voulais automatiser la recherche d&amp;rsquo;entreprises sous-évaluées selon les principes de Benjamin Graham et Warren Buffett.&lt;/p&gt;
+&lt;h2 id=&#34;-la-solution-technique&#34;&gt;🛠 La Solution Technique&lt;/h2&gt;
+&lt;p&gt;J&amp;rsquo;ai développé un script &lt;strong&gt;Python&lt;/strong&gt; qui :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Se connecte à une API financière (ex: Yahoo Finance / Alpha Vantage).&lt;/li&gt;
+&lt;li&gt;Récupère les bilans comptables de 500+ entreprises.&lt;/li&gt;
+&lt;li&gt;Calcule les ratios clés (PER, PEG, Dette/EBITDA).&lt;/li&gt;
+&lt;li&gt;Génère un score de &amp;ldquo;qualité&amp;rdquo; pour chaque action.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;(Si le code est privé, expliquez pourquoi ou montrez un extrait ici)&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

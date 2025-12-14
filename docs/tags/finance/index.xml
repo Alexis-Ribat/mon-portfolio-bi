@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Ribat | Ingénieur BI &amp; Data</title>
-    <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/</link>
-    <description>Recent content on Ribat | Ingénieur BI &amp; Data</description>
+    <title>Finance on Ribat | Ingénieur BI &amp; Data</title>
+    <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/finance/</link>
+    <description>Recent content in Finance on Ribat | Ingénieur BI &amp; Data</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://Alexis-Ribat.github.io/mon-portfolio-bi/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Analyse d&#39;Impact d&#39;une Campagne Marketing (SQL et Power BI)</title>
-      <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/projets/analyse-marketing-sql/</link>
-      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Alexis-Ribat.github.io/mon-portfolio-bi/projets/analyse-marketing-sql/</guid>
-      <description>&lt;h2 id=&#34;1-la-problématique-et-lobjectif&#34;&gt;1. La Problématique et l&amp;rsquo;Objectif&lt;/h2&gt;
-&lt;p&gt;L&amp;rsquo;équipe Marketing souhaitait évaluer avec précision le retour sur investissement (ROI) de sa dernière campagne multi-canal, en se focalisant sur les données de conversion non centralisées.&lt;/p&gt;
-&lt;h2 id=&#34;2-mon-rôle--du-nettoyage-à-la-modélisation&#34;&gt;2. Mon Rôle : Du nettoyage à la modélisation&lt;/h2&gt;
-&lt;h3 id=&#34;a-phase-data-engineering-nettoyage-et-transformation&#34;&gt;A. Phase Data Engineering (Nettoyage et Transformation)&lt;/h3&gt;
-&lt;p&gt;J&amp;rsquo;ai utilisé un script Python (ou un outil d&amp;rsquo;ETL) pour harmoniser les identifiants clients et standardiser les horodatages des différentes sources (CRM, logs web, base de données transactionnelle).&lt;/p&gt;</description>
-    </item>
+    <atom:link href="https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/finance/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Outil d&#39;Analyse Value Investing (Python)</title>
       <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/projets/value-investing/</link>
