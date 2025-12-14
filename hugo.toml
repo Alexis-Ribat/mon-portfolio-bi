@@ -1,0 +1,45 @@
+baseURL = "https://Alexis-Ribat.github.io/"  # Mettez votre future URL GitHub Pages ici
+languageCode = "fr-fr"
+title = "Ribat | Ingénieur BI & Data"
+theme = "PaperMod"
+
+# Paramètres généraux
+[pagination]
+    pagerSize = 5
+enableRobotsTXT = true # Pour le SEO
+buildDrafts = false 
+buildFuture = false
+buildExpired = false
+disableFingerprinting = true
+
+[params]
+    env = "production"
+    description = "Mon portfolio de projets Business Intelligence, Data Engineering et projets personnels."
+    keywords = ["BI", "Data", "Power BI", "SQL", "Tableau", "Recette", "Réparation"]
+    Author = "Votre Nom"
+    ShowToc = true
+    ShowReadingTime = true
+    # Autres paramètres PaperMod...
+
+# Configuration des menus
+[menu]
+    [[menu.main]]
+        identifier = "home"
+        name = "Accueil"
+        url = "/"
+        weight = 10
+    [[menu.main]]
+        identifier = "projets"
+        name = "Projets BI & Data"
+        url = "/projets/" # Ceci pointera vers les articles dans content/projets
+        weight = 20
+    [[menu.main]]
+        identifier = "labo"
+        name = "Labo Perso"
+        url = "/labo/" # Ceci pointera vers les articles dans content/labo
+        weight = 30
+    [[menu.main]]
+        identifier = "contact"
+        name = "CV & Contact"
+        url = "/contact/"
+        weight = 40

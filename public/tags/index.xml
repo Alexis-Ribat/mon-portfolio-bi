@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Ribat | Ingénieur BI &amp; Data</title>
+    <link>https://Alexis-Ribat.github.io/tags/</link>
+    <description>Recent content in Tags on Ribat | Ingénieur BI &amp; Data</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sat, 14 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://Alexis-Ribat.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ETL</title>
+      <link>https://Alexis-Ribat.github.io/tags/etl/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://Alexis-Ribat.github.io/tags/etl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Marketing</title>
+      <link>https://Alexis-Ribat.github.io/tags/marketing/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://Alexis-Ribat.github.io/tags/marketing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Modélisation</title>
+      <link>https://Alexis-Ribat.github.io/tags/mod%C3%A9lisation/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://Alexis-Ribat.github.io/tags/mod%C3%A9lisation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PowerBI</title>
+      <link>https://Alexis-Ribat.github.io/tags/powerbi/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://Alexis-Ribat.github.io/tags/powerbi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>https://Alexis-Ribat.github.io/tags/sql/</link>
+      <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://Alexis-Ribat.github.io/tags/sql/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
