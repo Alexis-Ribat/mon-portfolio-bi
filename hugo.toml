@@ -11,6 +11,7 @@ enableRobotsTXT = true # Pour le SEO
 buildDrafts = false 
 buildFuture = false
 buildExpired = false
+canonifyURLs = true
 disableFingerprinting = true
 
 [params]
