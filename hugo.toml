@@ -1,4 +1,4 @@
-baseURL = "https://Alexis-Ribat.github.io/"  # Mettez votre future URL GitHub Pages ici
+baseURL = "https://Alexis-Ribat.github.io/mon-portfolio-bi/"
 languageCode = "fr-fr"
 title = "Ribat | Ingénieur BI & Data"
 theme = "PaperMod"
