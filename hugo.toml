@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 baseURL = "https://alexis-ribat.github.io/mon-portfolio-bi/" # VOTRE lien GitHub Pages
-languageCode = "fr-fr"
+languageCode = "en-us"
 title = "Ribat | BI"
 theme = "port-hugo"
 publishDir = "docs"      # INDISPENSABLE pour GitHub Pages
@@ -38,7 +38,7 @@ link = "plugins/hugrid/hugrid.min.js"
 # main menu
 [[menu.main]]
 name = "Home"
-URL = "#home"
+URL = "#home" # Pointe vers le haut de page
 weight = 1
 
 [[menu.main]]
@@ -47,45 +47,55 @@ URL = "#about"
 weight = 2
 
 [[menu.main]]
+name = "Experience" # Ajout de l'expérience
+URL = "#experience"
+weight = 3
+
+[[menu.main]]
+name = "Skills" # Ajout des compétences
+URL = "#skill"
+weight = 4
+
+[[menu.main]]
 name = "Portfolio"
 URL = "#portfolio"
-weight = 3
+weight = 5
+
+[[menu.main]]
+name = "Contact" # Ajout du contact
+URL = "#contact"
+weight = 6
 
 
 #################### default parameters ################################
 [params]
-copyright = "Copyright Burton Guster &copy;"
+copyright = "Copyright Alexis Ribat &copy;"
 # Meta data
-description = "Personal Portfolio"
-author = "Burton Guster"
+description = "BI Engineer Portfolio"
+author = "Alexis Ribat"
 favicon = "images/favicon.png"
-google_analytics = "G-ABCDEFG123"
-logo_light = "images/logo.svg"
-logo_dark = "images/logo-dark.svg"
+google_analytics = "" # Laissez vide pour l'instant
 
-# Preloader
+# IMPORTANT : J'ai mis des # devant les logos pour les désactiver.
+# Comme ça, le site affichera juste votre titre "Ribat | BI" proprement.
+# logo_light = "images/logo.svg"
+# logo_dark = "images/logo-dark.svg"
+
+# Preloader (L'animation de chargement)
 [params.preloader]
 enable = true
-preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
+preloader = "images/preloader.gif"
 
 ############################# social site ########################
 
 [[params.social]]
-icon = "fab fa-github"
-link = "https://github.com/tylersayshi"
-
-[[params.social]]
 icon = "fab fa-linkedin"
-link = "https://www.linkedin.com/"
+link = "https://www.linkedin.com/in/votre-profil" # Mettez votre vrai lien !
 
 [[params.social]]
 icon = "fas fa-envelope"
-link = "mailto:guster@burton.com"
+link = "mailto:votre-email@gmail.com" # Mettez votre email
 
 [[params.social]]
-icon = "fab fa-medium"
-link = "https://medium.com/@gusburton"
-
-contentDir = "content/english"
-weight = 1
-home = "Home"
+icon = "fab fa-github"
+link = "https://github.com/Alexis-Ribat" # Votre GitHub
