@@ -1,47 +1,91 @@
-baseURL = "https://Alexis-Ribat.github.io/mon-portfolio-bi/"
+######################## default configuration ####################
+baseURL = "https://alexis-ribat.github.io/mon-portfolio-bi/" # VOTRE lien GitHub Pages
 languageCode = "fr-fr"
 title = "Ribat | Ingénieur BI & Data"
-theme = "PaperMod"
-publishDir = "docs"
-
-# Paramètres généraux
-[pagination]
-    pagerSize = 5
-enableRobotsTXT = true # Pour le SEO
-buildDrafts = false 
-buildFuture = false
-buildExpired = false
+theme = "port-hugo"
+publishDir = "docs"      # INDISPENSABLE pour GitHub Pages
 canonifyURLs = true
-disableFingerprinting = true
 
+############################# Plugins ##############################
+
+# CSS Plugins
+[[params.plugins.css]]
+link = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+[[params.plugins.css]]
+link = "https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+[[params.plugins.css]]
+link = "https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.0/css/hover-min.css"
+[[params.plugins.css]]
+link = "https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&display=swap"
+[[params.plugins.css]]
+link = "plugins/text-animation/text-animation.css"
+[[params.plugins.css]]
+link = "plugins/hugrid/hugrid.css"
+
+# JS Plugins
+[[params.plugins.js]]
+link = "https://code.jquery.com/jquery-3.5.1.min.js"
+[[params.plugins.js]]
+link = "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
+[[params.plugins.js]]
+link = "plugins/text-animation/text-animation.js"
+[[params.plugins.js]]
+link = "plugins/hugrid/hugrid.min.js"
+
+
+############################## navigation ###############################
+
+# main menu
+[[menu.main]]
+name = "Home"
+URL = "#home"
+weight = 1
+
+[[menu.main]]
+name = "About me"
+URL = "#about"
+weight = 2
+
+[[menu.main]]
+name = "Portfolio"
+URL = "#portfolio"
+weight = 3
+
+
+#################### default parameters ################################
 [params]
-    env = "production"
-    description = "Mon portfolio de projets Business Intelligence, Data Engineering et projets personnels."
-    keywords = ["BI", "Data", "Power BI", "SQL", "Tableau", "Recette", "Réparation"]
-    Author = "Votre Nom"
-    ShowToc = true
-    ShowReadingTime = true
-    # Autres paramètres PaperMod...
+copyright = "Copyright Burton Guster &copy;"
+# Meta data
+description = "Personal Portfolio"
+author = "Burton Guster"
+favicon = "images/favicon.png"
+google_analytics = "G-ABCDEFG123"
+logo_light = "images/logo.svg"
+logo_dark = "images/logo-dark.svg"
 
-# Configuration des menus
-[menu]
-    [[menu.main]]
-        identifier = "home"
-        name = "Accueil"
-        url = "/"
-        weight = 10
-    [[menu.main]]
-        identifier = "projets"
-        name = "Projets BI & Data"
-        url = "/projets/" # Ceci pointera vers les articles dans content/projets
-        weight = 20
-    [[menu.main]]
-        identifier = "labo"
-        name = "Labo Perso"
-        url = "/labo/" # Ceci pointera vers les articles dans content/labo
-        weight = 30
-    [[menu.main]]
-        identifier = "contact"
-        name = "CV & Contact"
-        url = "/contact/"
-        weight = 40
+# Preloader
+[params.preloader]
+enable = true
+preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
+
+############################# social site ########################
+
+[[params.social]]
+icon = "fab fa-github"
+link = "https://github.com/tylersayshi"
+
+[[params.social]]
+icon = "fab fa-linkedin"
+link = "https://www.linkedin.com/"
+
+[[params.social]]
+icon = "fas fa-envelope"
+link = "mailto:guster@burton.com"
+
+[[params.social]]
+icon = "fab fa-medium"
+link = "https://medium.com/@gusburton"
+
+contentDir = "content/english"
+weight = 1
+home = "Home"

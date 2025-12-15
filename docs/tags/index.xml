@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Ribat | Ingénieur BI &amp; Data</title>
-    <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/</link>
+    <link>https://alexis-ribat.github.io/mon-portfolio-bi/tags/</link>
     <description>Recent content in Tags on Ribat | Ingénieur BI &amp; Data</description>
-    <generator>Hugo -- 0.152.2</generator>
+    <generator>Hugo</generator>
     <language>fr-fr</language>
     <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://alexis-ribat.github.io/mon-portfolio-bi/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>API</title>
-      <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/api/</link>
+      <link>https://alexis-ribat.github.io/mon-portfolio-bi/tags/api/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/api/</guid>
+      <guid>https://alexis-ribat.github.io/mon-portfolio-bi/tags/api/</guid>
       <description></description>
     </item>
     <item>
       <title>Data Analysis</title>
-      <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/data-analysis/</link>
+      <link>https://alexis-ribat.github.io/mon-portfolio-bi/tags/data-analysis/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/data-analysis/</guid>
+      <guid>https://alexis-ribat.github.io/mon-portfolio-bi/tags/data-analysis/</guid>
       <description></description>
     </item>
     <item>
       <title>Finance</title>
-      <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/finance/</link>
+      <link>https://alexis-ribat.github.io/mon-portfolio-bi/tags/finance/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/finance/</guid>
+      <guid>https://alexis-ribat.github.io/mon-portfolio-bi/tags/finance/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/python/</link>
+      <link>https://alexis-ribat.github.io/mon-portfolio-bi/tags/python/</link>
       <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/python/</guid>
+      <guid>https://alexis-ribat.github.io/mon-portfolio-bi/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>ETL</title>
-      <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/etl/</link>
+      <link>https://alexis-ribat.github.io/mon-portfolio-bi/tags/etl/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/etl/</guid>
+      <guid>https://alexis-ribat.github.io/mon-portfolio-bi/tags/etl/</guid>
       <description></description>
     </item>
     <item>
       <title>Marketing</title>
-      <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/marketing/</link>
+      <link>https://alexis-ribat.github.io/mon-portfolio-bi/tags/marketing/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/marketing/</guid>
+      <guid>https://alexis-ribat.github.io/mon-portfolio-bi/tags/marketing/</guid>
       <description></description>
     </item>
     <item>
       <title>Modélisation</title>
-      <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/mod%C3%A9lisation/</link>
+      <link>https://alexis-ribat.github.io/mon-portfolio-bi/tags/mod%C3%A9lisation/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/mod%C3%A9lisation/</guid>
+      <guid>https://alexis-ribat.github.io/mon-portfolio-bi/tags/mod%C3%A9lisation/</guid>
       <description></description>
     </item>
     <item>
       <title>PowerBI</title>
-      <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/powerbi/</link>
+      <link>https://alexis-ribat.github.io/mon-portfolio-bi/tags/powerbi/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/powerbi/</guid>
+      <guid>https://alexis-ribat.github.io/mon-portfolio-bi/tags/powerbi/</guid>
       <description></description>
     </item>
     <item>
       <title>SQL</title>
-      <link>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/sql/</link>
+      <link>https://alexis-ribat.github.io/mon-portfolio-bi/tags/sql/</link>
       <pubDate>Sat, 14 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://Alexis-Ribat.github.io/mon-portfolio-bi/tags/sql/</guid>
+      <guid>https://alexis-ribat.github.io/mon-portfolio-bi/tags/sql/</guid>
       <description></description>
     </item>
   </channel>
