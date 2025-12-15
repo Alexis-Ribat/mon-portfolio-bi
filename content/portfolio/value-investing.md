@@ -62,6 +62,8 @@ def check_financial_health(row):
         
     return "Strong Buy" if score == 3 else "Watchlist"
 	
+```
+
 📊 Results & Impact
 Performance: Analyzes the full S&P 500 in under 45 seconds.
 
@@ -77,6 +79,7 @@ INTC,$45.2,$58.40,+22%,BUY
 AAPL,$180,$110.20,-38%,HOLD
 KO,$58,$45.00,-22%,SELL
 
+![Python Code Screenshot](/images/search example.png)
 
 
 🛠️ Stack & Tools Used
