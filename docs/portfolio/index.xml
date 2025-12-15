@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolios on Ribat | BI</title>
+    <link>https://alexis-ribat.github.io/mon-portfolio-bi/portfolio/</link>
+    <description>Recent content in Portfolios on Ribat | BI</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Sun, 15 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://alexis-ribat.github.io/mon-portfolio-bi/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Outil d&#39;Analyse Value Investing</title>
+      <link>https://alexis-ribat.github.io/mon-portfolio-bi/portfolio/value-investing/</link>
+      <pubDate>Sun, 15 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://alexis-ribat.github.io/mon-portfolio-bi/portfolio/value-investing/</guid>
+      <description>&lt;h2 id=&#34;-le-problème&#34;&gt;🎯 Le Problème&lt;/h2&gt;&#xA;&lt;p&gt;Je voulais automatiser l&amp;rsquo;analyse fondamentale des entreprises cotées en bourse, un processus qui prend habituellement des heures sur Excel.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-la-solution-technique&#34;&gt;🛠 La Solution Technique&lt;/h2&gt;&#xA;&lt;p&gt;J&amp;rsquo;ai développé un script &lt;strong&gt;Python&lt;/strong&gt; autonome qui utilise :&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;API Yahoo Finance&lt;/strong&gt; pour récupérer les bilans comptables.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pandas&lt;/strong&gt; pour le nettoyage et la structuration des données.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Excel Writer&lt;/strong&gt; pour générer un rapport lisible chaque matin.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-extrait-de-code-logique-du-tri&#34;&gt;💻 Extrait de Code (Logique du tri)&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;calculate_graham_number&lt;/span&gt;(eps, book_value):&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (&lt;span style=&#34;color:#ae81ff&#34;&gt;22.5&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; eps &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; book_value) &lt;span style=&#34;color:#f92672&#34;&gt;**&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0.5&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,5 +1,5 @@
 hero:
-  title: "Hi, i'm Alexis Ribat" #
+  title: "Hi, I'm Alexis Ribat" #
   
   # Texte qui change (machine à écrire)
   occupations:
@@ -95,3 +95,9 @@ portfolio:
       image: 'images/dashboard-bi.png'
       url: "#"
       description: "Tableau de bord Power BI pour le suivi des KPI marketing et calcul du ROI des campagnes."
+      
+    - name: "Analyse Value Investing"
+      image: 'images/test.png'
+      # C'est ici que la magie opère : lien vers le fichier créé à l'étape 1
+      url: "/portfolio/value-investing/" 
+      description: "Un outil Python automatisé pour détecter les opportunités boursières..."
