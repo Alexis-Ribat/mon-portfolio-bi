@@ -30,7 +30,7 @@ link = "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.
 [[params.plugins.js]]
 link = "plugins/text-animation/text-animation.js"
 [[params.plugins.js]]
-link = "plugins/hugrid/hugrid.min.js"
+link = "plugins/hugrid/hugrid.js"
 
 
 ############################## navigation ###############################
