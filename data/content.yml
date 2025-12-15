@@ -1,11 +1,11 @@
 hero:
-  title: "Bonjour, je suis Alexis Ribat" #
+  title: "Hi, i'm Alexis Ribat" #
   
   # Texte qui change (machine à écrire)
   occupations:
-    - 'Ingénieur BI'
+    - 'BI'
     - 'Expert Data'
-    - 'Développeur SQL & Python' #
+    - 'Power BI' #
 
   # L'image de fond (Mettez votre image dans static/images/background.jpg)
   bg_image: 'images/background.jpg'
@@ -20,7 +20,7 @@ about:
   content: "Passionné par la Business Intelligence, je transforme les données brutes en décisions stratégiques. Expert sur la suite Microsoft (Power BI, SSIS) et Python."
   button:
     enable: true
-    label: 'TÉLÉCHARGER MON CV'
+    label: 'DOWNLOAD MY CV'
     link: 'files/mon-cv.pdf' # Mettez votre PDF dans static/files/
     icon: 'fa-download'
 
@@ -29,19 +29,19 @@ experience:
   enable: true
   title: 'EXPERIENCE'
   experience_list:
-    - name: Web Developer
-      company: Freelance
-      duration: '2020-Current'
+    - name: BI analyst
+      company: Dior
+      duration: '2023-Current'
       content: I make websites.
 
-    - name: Private Detective
-      company: Psych
-      duration: '2019-2020'
+    - name: Data Analyst
+      company: Banque de France
+      duration: '2022-2023'
       content: Okay. This is hard to explain but I’m going to give it a shot. You and I are opening our own private detective agency.
 
-    - name: Pharmaceutical Salesman
-      company: South Coast Pharmaceuticals
-      duration: '2012-2018'
+    - name: Data Analyst
+      company: EDF
+      duration: '2020-2022'
       content: We are not bounty hunters, Shawn. I am a pharmaceutical salesman. And Lassiter made it very clear! He said in no uncertain terms. These are certain terms, Shawn! Certain terms!
 
 ############################### Skill #################################
