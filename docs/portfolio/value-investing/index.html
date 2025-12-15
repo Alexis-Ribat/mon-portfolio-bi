@@ -169,73 +169,25 @@
     <img src="images/test.png" alt="Automated Value Investing Tool" />
     <div class="body">
       <h2 id="-project-overview">🚀 Project Overview</h2>
-<p>Fundamental analysis requires processing vast amounts of financial data (Balance Sheets, Income Statements, Cash Flows) to find undervalued companies. Doing this manually for hundreds of companies is impossible.</p>
-<p><strong>The Goal:</strong> Build a fully automated pipeline to screen 500+ stocks daily, calculate intrinsic value using <strong>Benjamin Graham&rsquo;s formulas</strong>, and generate a decision-support dashboard.</p>
+<p>Fundamental analysis requires processing vast amounts of financial data to find undervalued companies. Doing this manually for hundreds of companies is impossible.</p>
+<p><strong>The Goal:</strong> Build a fully automated pipeline to screen 500+ stocks daily.</p>
 <hr>
 <h2 id="-technical-architecture">🏗️ Technical Architecture</h2>
 <p>I designed a modular ETL (Extract, Transform, Load) architecture:</p>
 <ol>
-<li><strong>Extract:</strong> Python scripts request data via the <strong>Yahoo Finance API</strong> (Ticker, EPS, Book Value, P/E).</li>
-<li><strong>Transform:</strong>
-<ul>
-<li>Data cleaning with <strong>Pandas</strong>.</li>
-<li>Calculation of complex ratios (Graham Number, Debt/Equity, ROE).</li>
-<li>Filtering logic to remove &ldquo;Value Traps&rdquo;.</li>
-</ul>
-</li>
-<li><strong>Load:</strong> Export results to <strong>Excel</strong> (for analysts) and <strong>JSON</strong> (for the Web Dashboard).</li>
+<li><strong>Extract:</strong> Python scripts request data via the <strong>Yahoo Finance API</strong> &amp; <strong>SEC Data</strong>.</li>
+<li><strong>Transform:</strong> Data cleaning with <strong>Pandas</strong>.</li>
+<li><strong>Load:</strong> Export results to <strong>Excel</strong> and <strong>JSON</strong> for the web dashboard.</li>
 </ol>
 <hr>
 <h2 id="-core-features--code">💻 Core Features &amp; Code</h2>
-<h3 id="1-the-graham-number-logic">1. The Graham Number Logic</h3>
-<p>The core feature is the implementation of the &ldquo;Fair Value&rdquo; calculation. I vectorized the operation using Pandas for performance optimization on large datasets.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_graham_metrics</span>(df):
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Calculates the Intrinsic Value based on Graham&#39;s formula:
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    V = Sqrt(22.5 * Earnings Per Share * Book Value Per Share)
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+<h3 id="the-graham-number-logic">The Graham Number Logic</h3>
+<p>I vectorized the operation using Pandas for performance optimization.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_graham_metrics</span>(df):
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Vectorized calculation for speed</span>
 </span></span><span style="display:flex;"><span>    df[<span style="color:#e6db74">&#39;Graham_Number&#39;</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sqrt(<span style="color:#ae81ff">22.5</span> <span style="color:#f92672">*</span> df[<span style="color:#e6db74">&#39;eps&#39;</span>] <span style="color:#f92672">*</span> df[<span style="color:#e6db74">&#39;book_value&#39;</span>])
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Calculate the Margin of Safety</span>
-</span></span><span style="display:flex;"><span>    df[<span style="color:#e6db74">&#39;Safety_Margin&#39;</span>] <span style="color:#f92672">=</span> (df[<span style="color:#e6db74">&#39;Graham_Number&#39;</span>] <span style="color:#f92672">-</span> df[<span style="color:#e6db74">&#39;current_price&#39;</span>]) <span style="color:#f92672">/</span> df[<span style="color:#e6db74">&#39;Graham_Number&#39;</span>]
-</span></span><span style="display:flex;"><span>    
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> df
-</span></span><span style="display:flex;"><span>	
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">check_financial_health</span>(row):
-</span></span><span style="display:flex;"><span>    score <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Condition 1: Low Debt</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> row[<span style="color:#e6db74">&#39;debt_to_equity&#39;</span>] <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0.5</span>:
-</span></span><span style="display:flex;"><span>        score <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Condition 2: Strong Current Ratio</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> row[<span style="color:#e6db74">&#39;current_ratio&#39;</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1.5</span>:
-</span></span><span style="display:flex;"><span>        score <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Condition 3: Positive Dividend Growth</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> row[<span style="color:#e6db74">&#39;dividend_yield&#39;</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0.02</span>:
-</span></span><span style="display:flex;"><span>        score <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Strong Buy&#34;</span> <span style="color:#66d9ef">if</span> score <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;Watchlist&#34;</span>
-</span></span><span style="display:flex;"><span>	
-</span></span></code></pre></div><p>📊 Results &amp; Impact
-Performance: Analyzes the full S&amp;P 500 in under 45 seconds.</p>
-<p>Automation: Saves approximately 10 hours of manual work per week.</p>
-<p>Data Reliability: Eliminates human error in ratio calculations.</p>
-<p>Preview of the Output
-The script generates a clean dataset ready for BI visualization:</p>
-<p>Ticker,Price,Graham Number,Margin of Safety,Recommendation
-INTC,$45.2,$58.40,+22%,BUY
-AAPL,$180,$110.20,-38%,HOLD
-KO,$58,$45.00,-22%,SELL</p>
-<p><img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/search-example.png" alt="Python Code Screenshot"></p>
-<p>🛠️ Stack &amp; Tools Used
-Language: Python 3.10</p>
-<p>Libraries: Pandas, NumPy, Yfinance, OpenPyXL</p>
-<p>Visualization: Matplotlib / Power BI</p>
-<p>Version Control: Git &amp; GitHub</p>
-
+</span></span></code></pre></div>
     </div>
   </div>
 
