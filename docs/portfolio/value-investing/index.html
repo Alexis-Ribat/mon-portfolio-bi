@@ -168,13 +168,21 @@
   <div class="under-menu col-lg-8 col-md-10 col-12 mx-auto post-container">
     <h1>Automated Value Investing Tool</h1>
     <span class="date">Posted on: 12/15/2025</span>
-    <img src="" alt="Automated Value Investing Tool" />
+    <img src="images/System-Architecture.png" alt="Automated Value Investing Tool" />
     <div class="body">
       <h2 id="project-overview">Project Overview</h2>
-<p>Value Investing Dashboard is a self-hosted financial analysis platform designed to automate fundamental stock research.
-Built on a hybrid Python/Rust architecture and containerized with Docker, it orchestrates data ingestion from Yahoo Finance and SEC EDGAR.
-The system features a Streamlit interface for interactive valuation (DCF, Piotroski F-Score) and integrates Google Gemini AI to generate comprehensive, Buffett-style investment theses and sentiment analysis.</p>
-<p><strong>The Goal:</strong> Build a fully automated pipeline to screen 500+ stocks daily.</p>
+<h3 id="the-context--challenge">The Context &amp; Challenge</h3>
+<p>While there is no shortage of commercial stock screeners, I found them lacking in transparency and flexibility. I needed a tailored solution that would allow me to:</p>
+<ul>
+<li><strong>Customize dashboards</strong> based on my specific Value Investing criteria.</li>
+<li><strong>Audit the calculations</strong> of key performance indicators (ROE, ROCE, Free Cash Flow) to ensure they match my valuation models.</li>
+<li><strong>Automate qualitative analysis</strong> using my own predefined AI prompts to mimic a specific investor persona.</li>
+</ul>
+<h3 id="the-solution">The Solution</h3>
+<p>To address this, I built the <strong>Value Investing Dashboard</strong>, a self-hosted financial analysis platform designed to automate fundamental stock research.</p>
+<p>The system aggregates real-time market data from <strong>Yahoo Finance</strong> and mines deep historical financial statements directly from the <strong>SEC (EDGAR)</strong> database.</p>
+<p>Built on a hybrid <strong>Python/Rust</strong> architecture and containerized with <strong>Docker</strong>, the application features a <strong>Streamlit</strong> interface for interactive valuation (DCF, Piotroski F-Score) and integrates <strong>Google Gemini AI</strong> to generate comprehensive, Buffett-style investment theses.</p>
+<p><strong>The Goal:</strong> Build a fully automated pipeline to screen 500+ stocks daily with full transparency on data and logic.</p>
 <hr>
 <h2 id="technical-architecture">Technical Architecture</h2>
 <p>I designed a modular ETL (Extract, Transform, Load) architecture:</p>
