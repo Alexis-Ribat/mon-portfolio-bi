@@ -81,7 +81,7 @@ copyright = "Copyright Alexis Ribat &copy;"
 # Meta data
 description = "BI Engineer Portfolio"
 author = "Alexis Ribat"
-favicon = "images/favicon.png"
+favicon = "images/profile.jpg"
 google_analytics = "" # Laissez vide pour l'instant
 
 # IMPORTANT : J'ai mis des # devant les logos pour les désactiver.

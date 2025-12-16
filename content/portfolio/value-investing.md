@@ -9,7 +9,7 @@ description: "A Python engine that automates fundamental analysis of S&P 500 sto
 * Git of the project : https://github.com/Alexis-Ribat/value_investing.git
 
 ---
-## Project Overview AAAAAAAAAAAAAAAAAAAAAAAAAASS
+## Project Overview
 
 ### Context & Problem Statement
 While there is no shortage of commercial stock screeners, I found them lacking in transparency and flexibility. I needed a tailored solution that would allow me to:
