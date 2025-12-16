@@ -8,13 +8,13 @@ description: "A Python engine that automates fundamental analysis of S&P 500 sto
 
 ## Project Overview
 
-### The Context & Challenge
+### Context & Problem Statement
 While there is no shortage of commercial stock screeners, I found them lacking in transparency and flexibility. I needed a tailored solution that would allow me to:
 * **Customize dashboards** based on my specific Value Investing criteria.
 * **Audit the calculations** of key performance indicators (ROE, ROCE, Free Cash Flow) to ensure they match my valuation models.
 * **Automate qualitative analysis** using my own predefined AI prompts to mimic a specific investor persona.
 
-### The Solution
+### Proposed Solution
 To address this, I built the **Value Investing Dashboard**, a self-hosted financial analysis platform designed to automate fundamental stock research.
 
 The system aggregates real-time market data from **Yahoo Finance** and mines deep historical financial statements directly from the **SEC (EDGAR)** database.
@@ -25,20 +25,31 @@ Built on a hybrid **Python/Rust** architecture and containerized with **Docker**
 
 ---
 
-### Data Strategy: Why Yahoo Finance?
+## Data & AI Strategy
+
+### Data Source Selection: Yahoo Finance
 I deliberately chose **Yahoo Finance** as the primary data source for three strategic reasons:
 
 * **Cost-Efficiency:** It offers a robust, free access to financial data, allowing the project to scale without incurring high API subscription costs.
 * **Scalability:** It covers a massive universe of global companies, not just the US market, allowing for broad screenings.
 * **Stability & Low Maintenance:** The API structure is highly stable compared to web scraping. This ensures the pipeline remains reliable over time with minimal maintenance required on the codebase.
 
-### AI Power: Gemini Pro & API Optimization
+### AI Integration: Google Gemini
 To go beyond simple numbers, I integrated **Google Gemini Pro** to perform automated qualitative analysis (sentiment analysis, risk assessment, and earnings call summarization).
+
+
+#### Constraint: API Rate Limits
 
 * **The Challenge:** The API imposes strict daily rate limits (approx. 20 requests/day), which created a bottleneck for processing 500+ stocks.
 * **The Engineering Solution (Key Rotation):** I implemented a **Smart Failover System**. The Python script manages a pool of multiple API keys. When a key reaches its token limit (Error 429), the algorithm automatically catches the exception and switches to the next available key instantly.
 
-**Code Highlight: The Python Key Rotation**
+#### Engineering Solution: Smart API Key Rotation
+
+The system manages a pool of API keys and automatically rotates them when a key reaches its quota.
+
+
+
+#### Code Highlight – Gemini Key Rotation
 
 ```python
 def ask_gemini(prompt, api_keys):
@@ -53,7 +64,10 @@ def ask_gemini(prompt, api_keys):
     raise Exception("All API keys exhausted.")
 ```
 
-### Infrastructure & Deployment (NAS)
+## Infrastructure & Deployment
+
+### Hosting Environment: Synology NAS
+
 To ensure industrial-grade reliability, the entire pipeline is hosted on a **Synology NAS** (Network Attached Storage).
 
 * **24/7 Automation:** The script is containerized and triggered automatically every morning via **Cron jobs**, running independently of my personal workstation.
@@ -62,86 +76,115 @@ To ensure industrial-grade reliability, the entire pipeline is hosted on a **Syn
 
 ## Technical Architecture
 
+### ETL Pipeline Overview
+
+
 I designed a modular ETL (Extract, Transform, Load) architecture:
 
 1.  **Extract:** Python scripts request data via the **Yahoo Finance API** & **SEC Data**.
 2.  **Transform:** Data cleaning with **Pandas**.
 3.  **Load:** Export results to **Excel** and **JSON** for the web dashboard.
 
-**System Architecture:**
+### System Architecture Diagram
 
 ![System Architecture](/images/System-Architecture.png)
 
+---
 
-
-## The Tech Stack: A Hybrid Architecture
+## Technology Stack
 
 Building a financial analysis tool requires a balance between rapid prototyping and raw performance. I designed a hybrid architecture leveraging Python for logic/UI and Rust for heavy computation.
 
-| Component | Technology | Role |
-| :--- | :--- | :--- |
-| **Application Layer** | Python 3.11 | Core Logic & ETL Orchestration |
-| **Performance Engine** | Rust | SEC EDGAR Parsing (CPU Intensive) |
-| **Frontend** | Streamlit | Interactive Web Interface |
-| **Data Processing** | Pandas / NumPy | Vectorized Financial Metrics |
-| **AI Integration** | Google Gemini 1.5 | Qualitative Analysis & Persona prompting |
-| **Database** | PostgreSQL | Historical Data Persistence |
-| **Infrastructure** | Docker / Synology | Containerization & Hosting |
+### Stack Overview
+
+| Component          | Technology        | Role                         |
+| ------------------ | ----------------- | ---------------------------- |
+| Application Layer  | Python 3.11       | Core logic & orchestration   |
+| Performance Engine | Rust              | High-performance SEC parsing |
+| Frontend           | Streamlit         | Interactive dashboards       |
+| Data Processing    | Pandas / NumPy    | Financial computations       |
+| AI                 | Google Gemini 1.5 | Qualitative analysis         |
+| Database           | PostgreSQL        | Historical persistence       |
+| Infrastructure     | Docker / Synology | Deployment & hosting         |
+
+
+### Application Layer: Python & Streamlit
+
+Python serves as the backbone of the application.
+
+* **Streamlit** for rapid UI development
+* **Pandas / NumPy** for financial modeling
+* **Plotly** for interactive visualizations
+* **yfinance** for market data ingestion
+
+
+### Performance Engine: Rust
+
+Parsing SEC filings is CPU-intensive and latency-sensitive.
+
+* Standalone CLI tool: `edgar_fetcher`
+* Async networking with `reqwest` and `tokio`
+* Strong typing and fast serialization with `serde`
+
+#### Code Highlight – Python/Rust Bridge
+
+```python
+import subprocess
+import json
+
+def get_sec_data_rust(ticker):
+    binary_path = "/usr/local/bin/edgar_fetcher"
+    result = subprocess.run([binary_path, ticker], capture_output=True)
+    return json.loads(result.stdout)
+```
+
 ---
-# The Tech Stack: A Hybrid Python-Rust Architecture
-Building a financial analysis tool requires a balance between rapid prototyping for data science and raw performance for data ingestion. To achieve this, I designed a hybrid architecture that leverages the strengths of Python for logic and UI, and Rust for heavy computational tasks.
 
-Here is a deep dive into the technologies powering the Value Investing Dashboard.
+## Functional Overview
 
-1. Application Layer: Python & Streamlit
-The core of the application is built on Python 3.11, the lingua franca of financial data analysis.
+<!-- COMMENTAIRE : Regroupement de toutes les fonctionnalités utilisateur -->
 
-Frontend Framework: I chose Streamlit for its ability to turn data scripts into shareable web apps in minutes. It allows me to focus on financial modeling rather than CSS or JavaScript.
+### 1. Smart Search & Entity Resolution
 
-Data Processing: Pandas and NumPy handle the vectorization of financial metrics (ROCE, CAGR, DCF modeling).
+* Ticker or company name input
+* Fuzzy matching
+* AI-based fallback for unresolved entities
 
-Visualization: Plotly provides interactive charts (gauges, time-series) that allow users to zoom into specific financial periods.
+![Search Example](/images/search-example.png)
 
-Data Sources: yfinance is used for real-time market data (prices, basic financials), acting as the first layer of the ETL pipeline.
+### 2. Financial Health Dashboard
 
-2. The Performance Engine: Rust 
-Fetching and parsing gigabytes of institutional filings (10-K, 10-Q) from the SEC EDGAR database is CPU-intensive. Python struggled with latency here, so I offloaded this specific workload to Rust.
+* Key ratios: P/E, ROCE, Debt/EBIT
+* Piotroski F-Score (0–9)
+* AI-generated company profile and moat analysis
 
-Custom Binary (edgar_fetcher): A standalone CLI tool written in Rust.
+### 3. Interactive Valuation (DCF)
 
-Concurrency: Leverages reqwest (async HTTP client) and tokio to handle network requests significantly faster than Python’s requests.
+* Scenario testing via sliders
+* Real-time intrinsic value gauge
+* Reverse DCF for implied growth rate
 
-Type Safety: Uses serde for lightning-fast JSON serialization/deserialization, ensuring data integrity before it even reaches the Python layer.
+### 4. Deep Financial Analysis (SEC)
 
-Integration: The Python backend orchestrates the Rust binary via subprocess calls, creating a seamless bridge between the two languages.
+* Raw SEC financials
+* SBC-adjusted Free Cash Flow
+* Long-term trend visualizations
 
-3. Artificial Intelligence: Google Gemini 
-To automate the qualitative analysis (the "Warren Buffett" perspective), the system integrates Large Language Models (LLM).
+![Revenue Trends](/images/Visual-trends-1.png)
+![FCF Trends](/images/Visual-trends-2.png)
 
-Model: Google Gemini 1.5 Flash. Chosen for its large context window (essential for reading long financial transcripts) and low latency.
+### 5. AI Analyst & Sentiment Scoring
 
-Prompt Engineering: I implemented a rigorous "Persona-based" prompting strategy. The system injects raw financial tables (computed in Python) into the prompt context, forcing the AI to ground its analysis in hard data rather than hallucinations.
+* News and transcript sentiment analysis
+* Automated investment thesis generation
+* Persona-based prompt structure
 
-Sentiment Analysis: The system scrapes news via BeautifulSoup and feeds headlines to the LLM to gauge market sentiment (Bullish/Bearish).
+### 6. Archiving & Knowledge Base
 
-4. Persistence: PostgreSQL & SQLAlchemy 
-Financial data requires strict structure and integrity.
+* Auto-saved AI reports
+* Historical comparison over time
 
-Database: PostgreSQL 15. It stores historical financial data, caching it to avoid hitting API rate limits. It also serves as the archive for every AI-generated report.
-
-ORM: SQLAlchemy. It abstracts the SQL complexity, allowing me to manipulate database records using Python classes and objects.
-
-Management: Adminer. A lightweight database management tool running in a sidecar container, allowing for quick manual inspection and SQL queries via a web interface.
-
-5. Infrastructure: Docker & Synology NAS 
-The entire stack is designed to be "Write Once, Run Anywhere" (specifically, on a home server).
-
-Containerization: A multi-stage Dockerfile handles the complexity of the hybrid build. It first compiles the Rust binary (using a Rust image), then copies the executable into a slim Python image. This results in a single, lightweight image containing both the Python app and the Rust engine.
-
-Orchestration: Docker Compose defines the services (dashboard, db, adminer), networks, and persistent volumes.
-
-Hardware: The stack runs 24/7 on a Synology NAS, providing a private, self-hosted environment without cloud subscription costs.
-
+---
 
 **Code Highlight: The Python-Rust Bridge**
 

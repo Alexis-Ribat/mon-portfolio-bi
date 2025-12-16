@@ -173,14 +173,14 @@
     <img src="images/System-Architecture.png" alt="Automated Value Investing Tool" />
     <div class="body">
       <h2 id="project-overview">Project Overview</h2>
-<h3 id="the-context--challenge">The Context &amp; Challenge</h3>
+<h3 id="context--problem-statement">Context &amp; Problem Statement</h3>
 <p>While there is no shortage of commercial stock screeners, I found them lacking in transparency and flexibility. I needed a tailored solution that would allow me to:</p>
 <ul>
 <li><strong>Customize dashboards</strong> based on my specific Value Investing criteria.</li>
 <li><strong>Audit the calculations</strong> of key performance indicators (ROE, ROCE, Free Cash Flow) to ensure they match my valuation models.</li>
 <li><strong>Automate qualitative analysis</strong> using my own predefined AI prompts to mimic a specific investor persona.</li>
 </ul>
-<h3 id="the-solution">The Solution</h3>
+<h3 id="proposed-solution">Proposed Solution</h3>
 <p>To address this, I built the <strong>Value Investing Dashboard</strong>, a self-hosted financial analysis platform designed to automate fundamental stock research.</p>
 <p>The system aggregates real-time market data from <strong>Yahoo Finance</strong> and mines deep historical financial statements directly from the <strong>SEC (EDGAR)</strong> database.</p>
 <p>Built on a hybrid <strong>Python/Rust</strong> architecture and containerized with <strong>Docker</strong>, the application features a <strong>Streamlit</strong> interface for interactive valuation (DCF, Piotroski F-Score) and integrates <strong>Google Gemini AI</strong> to generate comprehensive, Buffett-style investment theses.</p>
@@ -188,20 +188,24 @@
 <p><strong>The Goal:</strong> Build a fully automated pipeline to screen 500+ stocks daily with full transparency on data and logic.</p>
 </blockquote>
 <hr>
-<h3 id="data-strategy-why-yahoo-finance">Data Strategy: Why Yahoo Finance?</h3>
+<h2 id="data--ai-strategy">Data &amp; AI Strategy</h2>
+<h3 id="data-source-selection-yahoo-finance">Data Source Selection: Yahoo Finance</h3>
 <p>I deliberately chose <strong>Yahoo Finance</strong> as the primary data source for three strategic reasons:</p>
 <ul>
 <li><strong>Cost-Efficiency:</strong> It offers a robust, free access to financial data, allowing the project to scale without incurring high API subscription costs.</li>
 <li><strong>Scalability:</strong> It covers a massive universe of global companies, not just the US market, allowing for broad screenings.</li>
 <li><strong>Stability &amp; Low Maintenance:</strong> The API structure is highly stable compared to web scraping. This ensures the pipeline remains reliable over time with minimal maintenance required on the codebase.</li>
 </ul>
-<h3 id="ai-power-gemini-pro--api-optimization">AI Power: Gemini Pro &amp; API Optimization</h3>
+<h3 id="ai-integration-google-gemini">AI Integration: Google Gemini</h3>
 <p>To go beyond simple numbers, I integrated <strong>Google Gemini Pro</strong> to perform automated qualitative analysis (sentiment analysis, risk assessment, and earnings call summarization).</p>
+<h4 id="constraint-api-rate-limits">Constraint: API Rate Limits</h4>
 <ul>
 <li><strong>The Challenge:</strong> The API imposes strict daily rate limits (approx. 20 requests/day), which created a bottleneck for processing 500+ stocks.</li>
 <li><strong>The Engineering Solution (Key Rotation):</strong> I implemented a <strong>Smart Failover System</strong>. The Python script manages a pool of multiple API keys. When a key reaches its token limit (Error 429), the algorithm automatically catches the exception and switches to the next available key instantly.</li>
 </ul>
-<p><strong>Code Highlight: The Python Key Rotation</strong></p>
+<h4 id="engineering-solution-smart-api-key-rotation">Engineering Solution: Smart API Key Rotation</h4>
+<p>The system manages a pool of API keys and automatically rotates them when a key reaches its quota.</p>
+<h4 id="code-highlight--gemini-key-rotation">Code Highlight – Gemini Key Rotation</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">ask_gemini</span>(prompt, api_keys):
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> key <span style="color:#f92672">in</span> api_keys:
 </span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
@@ -212,7 +216,8 @@
 </span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Key </span><span style="color:#e6db74">{</span>key[:<span style="color:#ae81ff">5</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">... exhausted. Switching to next key.&#34;</span>)
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#34;All API keys exhausted.&#34;</span>)
-</span></span></code></pre></div><h3 id="infrastructure--deployment-nas">Infrastructure &amp; Deployment (NAS)</h3>
+</span></span></code></pre></div><h2 id="infrastructure--deployment">Infrastructure &amp; Deployment</h2>
+<h3 id="hosting-environment-synology-nas">Hosting Environment: Synology NAS</h3>
 <p>To ensure industrial-grade reliability, the entire pipeline is hosted on a <strong>Synology NAS</strong> (Network Attached Storage).</p>
 <ul>
 <li><strong>24/7 Automation:</strong> The script is containerized and triggered automatically every morning via <strong>Cron jobs</strong>, running independently of my personal workstation.</li>
@@ -220,103 +225,129 @@
 </ul>
 <hr>
 <h2 id="technical-architecture">Technical Architecture</h2>
+<h3 id="etl-pipeline-overview">ETL Pipeline Overview</h3>
 <p>I designed a modular ETL (Extract, Transform, Load) architecture:</p>
 <ol>
 <li><strong>Extract:</strong> Python scripts request data via the <strong>Yahoo Finance API</strong> &amp; <strong>SEC Data</strong>.</li>
 <li><strong>Transform:</strong> Data cleaning with <strong>Pandas</strong>.</li>
 <li><strong>Load:</strong> Export results to <strong>Excel</strong> and <strong>JSON</strong> for the web dashboard.</li>
 </ol>
-<p><strong>System Architecture:</strong></p>
+<h3 id="system-architecture-diagram">System Architecture Diagram</h3>
 <p><img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/System-Architecture.png" alt="System Architecture"></p>
-<h2 id="the-tech-stack-a-hybrid-architecture">The Tech Stack: A Hybrid Architecture</h2>
+<hr>
+<h2 id="technology-stack">Technology Stack</h2>
 <p>Building a financial analysis tool requires a balance between rapid prototyping and raw performance. I designed a hybrid architecture leveraging Python for logic/UI and Rust for heavy computation.</p>
+<h3 id="stack-overview">Stack Overview</h3>
 <table>
   <thead>
       <tr>
-          <th style="text-align: left">Component</th>
-          <th style="text-align: left">Technology</th>
-          <th style="text-align: left">Role</th>
+          <th>Component</th>
+          <th>Technology</th>
+          <th>Role</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><strong>Application Layer</strong></td>
-          <td style="text-align: left">Python 3.11</td>
-          <td style="text-align: left">Core Logic &amp; ETL Orchestration</td>
+          <td>Application Layer</td>
+          <td>Python 3.11</td>
+          <td>Core logic &amp; orchestration</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Performance Engine</strong></td>
-          <td style="text-align: left">Rust</td>
-          <td style="text-align: left">SEC EDGAR Parsing (CPU Intensive)</td>
+          <td>Performance Engine</td>
+          <td>Rust</td>
+          <td>High-performance SEC parsing</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Frontend</strong></td>
-          <td style="text-align: left">Streamlit</td>
-          <td style="text-align: left">Interactive Web Interface</td>
+          <td>Frontend</td>
+          <td>Streamlit</td>
+          <td>Interactive dashboards</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Data Processing</strong></td>
-          <td style="text-align: left">Pandas / NumPy</td>
-          <td style="text-align: left">Vectorized Financial Metrics</td>
+          <td>Data Processing</td>
+          <td>Pandas / NumPy</td>
+          <td>Financial computations</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>AI Integration</strong></td>
-          <td style="text-align: left">Google Gemini 1.5</td>
-          <td style="text-align: left">Qualitative Analysis &amp; Persona prompting</td>
+          <td>AI</td>
+          <td>Google Gemini 1.5</td>
+          <td>Qualitative analysis</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Database</strong></td>
-          <td style="text-align: left">PostgreSQL</td>
-          <td style="text-align: left">Historical Data Persistence</td>
+          <td>Database</td>
+          <td>PostgreSQL</td>
+          <td>Historical persistence</td>
       </tr>
       <tr>
-          <td style="text-align: left"><strong>Infrastructure</strong></td>
-          <td style="text-align: left">Docker / Synology</td>
-          <td style="text-align: left">Containerization &amp; Hosting</td>
+          <td>Infrastructure</td>
+          <td>Docker / Synology</td>
+          <td>Deployment &amp; hosting</td>
       </tr>
   </tbody>
 </table>
+<h3 id="application-layer-python--streamlit">Application Layer: Python &amp; Streamlit</h3>
+<p>Python serves as the backbone of the application.</p>
+<ul>
+<li><strong>Streamlit</strong> for rapid UI development</li>
+<li><strong>Pandas / NumPy</strong> for financial modeling</li>
+<li><strong>Plotly</strong> for interactive visualizations</li>
+<li><strong>yfinance</strong> for market data ingestion</li>
+</ul>
+<h3 id="performance-engine-rust">Performance Engine: Rust</h3>
+<p>Parsing SEC filings is CPU-intensive and latency-sensitive.</p>
+<ul>
+<li>Standalone CLI tool: <code>edgar_fetcher</code></li>
+<li>Async networking with <code>reqwest</code> and <code>tokio</code></li>
+<li>Strong typing and fast serialization with <code>serde</code></li>
+</ul>
+<h4 id="code-highlight--pythonrust-bridge">Code Highlight – Python/Rust Bridge</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> subprocess
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_sec_data_rust</span>(ticker):
+</span></span><span style="display:flex;"><span>    binary_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/usr/local/bin/edgar_fetcher&#34;</span>
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>run([binary_path, ticker], capture_output<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> json<span style="color:#f92672">.</span>loads(result<span style="color:#f92672">.</span>stdout)
+</span></span></code></pre></div><hr>
+<h2 id="functional-overview">Functional Overview</h2>
+<h3 id="1-smart-search--entity-resolution">1. Smart Search &amp; Entity Resolution</h3>
+<ul>
+<li>Ticker or company name input</li>
+<li>Fuzzy matching</li>
+<li>AI-based fallback for unresolved entities</li>
+</ul>
+<p><img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/search-example.png" alt="Search Example"></p>
+<h3 id="2-financial-health-dashboard">2. Financial Health Dashboard</h3>
+<ul>
+<li>Key ratios: P/E, ROCE, Debt/EBIT</li>
+<li>Piotroski F-Score (0–9)</li>
+<li>AI-generated company profile and moat analysis</li>
+</ul>
+<h3 id="3-interactive-valuation-dcf">3. Interactive Valuation (DCF)</h3>
+<ul>
+<li>Scenario testing via sliders</li>
+<li>Real-time intrinsic value gauge</li>
+<li>Reverse DCF for implied growth rate</li>
+</ul>
+<h3 id="4-deep-financial-analysis-sec">4. Deep Financial Analysis (SEC)</h3>
+<ul>
+<li>Raw SEC financials</li>
+<li>SBC-adjusted Free Cash Flow</li>
+<li>Long-term trend visualizations</li>
+</ul>
+<p><img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Visual-trends-1.png" alt="Revenue Trends">
+<img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Visual-trends-2.png" alt="FCF Trends"></p>
+<h3 id="5-ai-analyst--sentiment-scoring">5. AI Analyst &amp; Sentiment Scoring</h3>
+<ul>
+<li>News and transcript sentiment analysis</li>
+<li>Automated investment thesis generation</li>
+<li>Persona-based prompt structure</li>
+</ul>
+<h3 id="6-archiving--knowledge-base">6. Archiving &amp; Knowledge Base</h3>
+<ul>
+<li>Auto-saved AI reports</li>
+<li>Historical comparison over time</li>
+</ul>
 <hr>
-<h1 id="the-tech-stack-a-hybrid-python-rust-architecture">The Tech Stack: A Hybrid Python-Rust Architecture</h1>
-<p>Building a financial analysis tool requires a balance between rapid prototyping for data science and raw performance for data ingestion. To achieve this, I designed a hybrid architecture that leverages the strengths of Python for logic and UI, and Rust for heavy computational tasks.</p>
-<p>Here is a deep dive into the technologies powering the Value Investing Dashboard.</p>
-<ol>
-<li>Application Layer: Python &amp; Streamlit
-The core of the application is built on Python 3.11, the lingua franca of financial data analysis.</li>
-</ol>
-<p>Frontend Framework: I chose Streamlit for its ability to turn data scripts into shareable web apps in minutes. It allows me to focus on financial modeling rather than CSS or JavaScript.</p>
-<p>Data Processing: Pandas and NumPy handle the vectorization of financial metrics (ROCE, CAGR, DCF modeling).</p>
-<p>Visualization: Plotly provides interactive charts (gauges, time-series) that allow users to zoom into specific financial periods.</p>
-<p>Data Sources: yfinance is used for real-time market data (prices, basic financials), acting as the first layer of the ETL pipeline.</p>
-<ol start="2">
-<li>The Performance Engine: Rust
-Fetching and parsing gigabytes of institutional filings (10-K, 10-Q) from the SEC EDGAR database is CPU-intensive. Python struggled with latency here, so I offloaded this specific workload to Rust.</li>
-</ol>
-<p>Custom Binary (edgar_fetcher): A standalone CLI tool written in Rust.</p>
-<p>Concurrency: Leverages reqwest (async HTTP client) and tokio to handle network requests significantly faster than Python’s requests.</p>
-<p>Type Safety: Uses serde for lightning-fast JSON serialization/deserialization, ensuring data integrity before it even reaches the Python layer.</p>
-<p>Integration: The Python backend orchestrates the Rust binary via subprocess calls, creating a seamless bridge between the two languages.</p>
-<ol start="3">
-<li>Artificial Intelligence: Google Gemini
-To automate the qualitative analysis (the &ldquo;Warren Buffett&rdquo; perspective), the system integrates Large Language Models (LLM).</li>
-</ol>
-<p>Model: Google Gemini 1.5 Flash. Chosen for its large context window (essential for reading long financial transcripts) and low latency.</p>
-<p>Prompt Engineering: I implemented a rigorous &ldquo;Persona-based&rdquo; prompting strategy. The system injects raw financial tables (computed in Python) into the prompt context, forcing the AI to ground its analysis in hard data rather than hallucinations.</p>
-<p>Sentiment Analysis: The system scrapes news via BeautifulSoup and feeds headlines to the LLM to gauge market sentiment (Bullish/Bearish).</p>
-<ol start="4">
-<li>Persistence: PostgreSQL &amp; SQLAlchemy
-Financial data requires strict structure and integrity.</li>
-</ol>
-<p>Database: PostgreSQL 15. It stores historical financial data, caching it to avoid hitting API rate limits. It also serves as the archive for every AI-generated report.</p>
-<p>ORM: SQLAlchemy. It abstracts the SQL complexity, allowing me to manipulate database records using Python classes and objects.</p>
-<p>Management: Adminer. A lightweight database management tool running in a sidecar container, allowing for quick manual inspection and SQL queries via a web interface.</p>
-<ol start="5">
-<li>Infrastructure: Docker &amp; Synology NAS
-The entire stack is designed to be &ldquo;Write Once, Run Anywhere&rdquo; (specifically, on a home server).</li>
-</ol>
-<p>Containerization: A multi-stage Dockerfile handles the complexity of the hybrid build. It first compiles the Rust binary (using a Rust image), then copies the executable into a slim Python image. This results in a single, lightweight image containing both the Python app and the Rust engine.</p>
-<p>Orchestration: Docker Compose defines the services (dashboard, db, adminer), networks, and persistent volumes.</p>
-<p>Hardware: The stack runs 24/7 on a Synology NAS, providing a private, self-hosted environment without cloud subscription costs.</p>
 <p><strong>Code Highlight: The Python-Rust Bridge</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># src/sec_provider.py</span>
 </span></span><span style="display:flex;"><span>
