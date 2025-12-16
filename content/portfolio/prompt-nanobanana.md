@@ -371,7 +371,7 @@ function copyPrompt() {
 ---
 
 
-## IV - Pop Culture Planetary Projects
+## IV - Found Shape
 
 ### The Concept
 
@@ -381,8 +381,8 @@ function copyPrompt() {
 ---
 
 **Pop Culture Planetary Projects:**
-<a href="/images/Pop-Culture.png" data-fancybox="gallery" data-caption="Pop-Culture">
-    <img src="/images/Pop-Culture.png" alt="Pop-Culture" width="20%" style="display: block; margin: 10px auto;">
+<a href="/images/Found-Shape.png" data-fancybox="gallery" data-caption="Found-Shape">
+    <img src="/images/Found-Shape.png" alt="Found-Shape" width="20%" style="display: block; margin: 10px auto;">
 </a>
 
 Below is the structured JSON prompt used to generate this image. It uses strict parameters for lighting, camera composition, and surreal elements.
