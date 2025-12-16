@@ -8,7 +8,7 @@ category: "Hobbies"
 weight: 1
 ---
 
-## The Ultimate Comfort Food
+## I Tartiflette
 
 The Tartiflette is a traditional dish from the Savoy region in the French Alps. It is made with potatoes, Reblochon cheese, lardons, and onions. Perfect for a cold winter day!
 ---
