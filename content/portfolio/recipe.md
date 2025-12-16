@@ -1,9 +1,9 @@
 ---
-title: "Tartiflette Recipe"
+title: "Recipes"
 date: 2024-01-01
 draft: false
 # image: "images/System-Architecture.png" <--- J'ai commenté cette ligne car elle fait planter le site
-description: "A classic French comfort food from the Alps."
+description: "Recipes"
 category: "Hobbies"
 weight: 1
 ---
@@ -72,6 +72,7 @@ A surprisingly delicious sweet and savory dish. The soda creates a perfect caram
     <img src="/images/chicken-coca.png" alt="Coca-Cola Chicken" width="60%" style="display: block; margin: 10px auto;">
 </a>
 
+Youtube recipe : https://www.hervecuisine.com/recette/recette-du-poulet-au-coca/ 
 ### 🛒 Ingredients
 
 * **Meat:** 2 Chicken breasts
