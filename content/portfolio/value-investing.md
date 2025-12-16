@@ -158,6 +158,7 @@ def get_sec_data_rust(ticker):
 * Fuzzy matching
 * AI-based fallback for unresolved entities
 
+**Search Example:**
 ![Search Example](/images/search-example.png)
 
 ---
@@ -186,12 +187,14 @@ def get_sec_data_rust(ticker):
 * SBC-adjusted Free Cash Flow
 * Long-term trend visualizations
 
+**Visual Examples:**
+
 <div style="display: flex; justify-content: center; gap: 20px; align-items: center; margin-top: 20px;">
-<a href="/images/Visual-trends-1.png" data-fancybox="gallery" data-caption="Revenue Trends" style="width: 48%;">
-<img src="/images/Visual-trends-1.png" alt="Revenue Trends" style="width: 100%; display: block; border-radius: 5px;">
+<a href="/images/Visual-trends-1.png" data-fancybox="gallery" data-caption="Visual-trends-1" style="width: 48%;">
+<img src="/images/Visual-trends-1.png" alt="Visual-trends-1" style="width: 100%; display: block; border-radius: 5px;">
 </a>
-<a href="/images/Visual-trends-2.png" data-fancybox="gallery" data-caption="FCF Trends" style="width: 48%;">
-<img src="/images/Visual-trends-2.png" alt="FCF Trends" style="width: 100%; display: block; border-radius: 5px;">
+<a href="/images/Visual-trends-2.png" data-fancybox="gallery" data-caption="Visual-trends-2" style="width: 48%;">
+<img src="/images/Visual-trends-2.png" alt="Visual-trends-2" style="width: 100%; display: block; border-radius: 5px;">
 </a>
 </div>
 
@@ -203,13 +206,13 @@ def get_sec_data_rust(ticker):
 * Automated investment thesis generation
 * Persona-based prompt structure
 
-
+**AI Analyses:**
 <div style="display: flex; justify-content: center; gap: 20px; align-items: center; margin-top: 20px;">
-<a href="/images/AI Analyst 1.png" data-fancybox="gallery" data-caption="Revenue Trends" style="width: 48%;">
-<img src="/images/AI Analyst 1.png" alt="Revenue Trends" style="width: 100%; display: block; border-radius: 5px;">
+<a href="/images/AI Analyst 1.png" data-fancybox="gallery" data-caption="AI Analyst 1" style="width: 48%;">
+<img src="/images/AI Analyst 1.png" alt="AI Analyst 1" style="width: 100%; display: block; border-radius: 5px;">
 </a>
-<a href="/images/AI Analyst 2.png" data-fancybox="gallery" data-caption="FCF Trends" style="width: 48%;">
-<img src="/images/AI Analyst 2.png" alt="FCF Trends" style="width: 100%; display: block; border-radius: 5px;">
+<a href="/images/AI Analyst 2.png" data-fancybox="gallery" data-caption="AI Analyst 2" style="width: 48%;">
+<img src="/images/AI Analyst 2.png" alt="AI Analyst 2" style="width: 100%; display: block; border-radius: 5px;">
 </a>
 </div>
 
