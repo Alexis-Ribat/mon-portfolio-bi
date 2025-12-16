@@ -197,13 +197,16 @@ def get_sec_data_rust(ticker):
 * Automated investment thesis generation
 * Persona-based prompt structure
 
-<a href="/images/AI Analyst 1.png" data-fancybox="gallery" data-caption="Revenue Trends">
-    <img src="/images/AI Analyst 1.png" alt="Revenue Trends" width="85%" style="display: block; margin: 10px auto;">
-</a>
 
-<a href="/images/AI Analyst 2.png" data-fancybox="gallery" data-caption="Revenue Trends">
-    <img src="/images/AI Analyst 2.png" alt="Revenue Trends" width="85%" style="display: block; margin: 10px auto;">
+<div style="display: flex; justify-content: center; gap: 20px; align-items: center; margin-top: 20px;">
+<a href="/images/AI Analyst 1.png" data-fancybox="gallery" data-caption="Revenue Trends" style="width: 48%;">
+<img src="/images/AI Analyst 1.png" alt="Revenue Trends" style="width: 100%; display: block; border-radius: 5px;">
 </a>
+<a href="/images/AI Analyst 2.png" data-fancybox="gallery" data-caption="FCF Trends" style="width: 48%;">
+<img src="/images/AI Analyst 2.png" alt="FCF Trends" style="width: 100%; display: block; border-radius: 5px;">
+</a>
+</div>
+
 
 ### 6. Archiving & Knowledge Base
 
