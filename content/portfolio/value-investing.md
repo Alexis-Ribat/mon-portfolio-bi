@@ -172,6 +172,9 @@ def get_sec_data_rust(ticker):
 * Real-time intrinsic value gauge
 * Reverse DCF for implied growth rate
 
+**DCF:**
+![DCF](/images/DCF.png)
+
 ### 4. Deep Financial Analysis (SEC)
 
 * Raw SEC financials
