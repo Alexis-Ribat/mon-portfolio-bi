@@ -164,13 +164,13 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
     </button>
 
     <pre style="margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;">
-<code id="jsonPrompt" style="color: #f8f8f2; font-family: monospace;">{Create image of Magazine feature article [travel] guide page, cute, information dense photo book style magazine feature article page. Add all necessary sections, tips, recommendations, information. add photos for any sections and recommendations if you like. Place the attached person at the precise location of [Plateau of Gorgoroth in Mordor]. Seamlessly blend the attached person as if they are sightseeing. Approach this task with the understanding that this is a critical, information rich page that will significantly influence visitor numbers, text accuracy is important. Fully use the entire [9:16] page. NEGATIVE PROMPT: coordinate texts
+<code id="jsonPrompt2" style="color: #f8f8f2; font-family: monospace;">{Create image of Magazine feature article [travel] guide page, cute, information dense photo book style magazine feature article page. Add all necessary sections, tips, recommendations, information. add photos for any sections and recommendations if you like. Place the attached person at the precise location of [Plateau of Gorgoroth in Mordor]. Seamlessly blend the attached person as if they are sightseeing. Approach this task with the understanding that this is a critical, information rich page that will significantly influence visitor numbers, text accuracy is important. Fully use the entire [9:16] page. NEGATIVE PROMPT: coordinate texts
 }</code></pre>
 </div>
 
 <script>
 function copyPrompt() {
-    const text = document.getElementById("jsonPrompt").innerText;
+    const text = document.getElementById("jsonPrompt2").innerText;
     navigator.clipboard.writeText(text).then(function() {
         const btn = document.getElementById("copyBtn2");
         const originalText = btn.innerText;
