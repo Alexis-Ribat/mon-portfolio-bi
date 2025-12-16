@@ -60,4 +60,56 @@ Bake for approximately **20 minutes** until the cheese is melted and golden brow
 
 ---
 
+
+---
+
+## II - Coca-Cola Chicken
+
+A surprisingly delicious sweet and savory dish. The soda creates a perfect caramelized glaze that coats the chicken. Don't knock it until you try it!
+
+**Coca-Cola Chicken:**
+<a href="/images/chicken-coca.png" data-fancybox="gallery" data-caption="Coca-Cola Chicken">
+    <img src="/images/chicken-coca.png" alt="Coca-Cola Chicken" width="60%" style="display: block; margin: 10px auto;">
+</a>
+
+### 🛒 Ingredients
+
+* **Meat:** 2 Chicken breasts
+* **The Sauce:** 33cl (1 can) of Coca-Cola (Original with sugar, not Zero!)
+* **Vegetables:**
+    * 1 Onion
+    * 1 Clove of garlic
+    * Fresh coriander (cilantro) for garnish
+* **Dry Ingredients:**
+    * Cornstarch (Maïzena)
+* **Spices:**
+    * Paprika
+    * Cinnamon
+    * Chili powder
+    * Salt & Pepper
+
+---
+
+### 👨‍🍳 Preparation
+
+#### 1. Prep the chicken
+Cut the chicken breasts into strips (approx. **1 cm thick**).
+Place them in a bowl and mix with the spices (paprika, cinnamon, chili), the minced garlic (or powder), salt, pepper, and a coating of cornstarch.
+
+#### 2. Sear the meat
+Heat some oil in a frying pan over medium-high heat. Add the chicken and cook until slightly browned.
+Add the chopped onion and cook for another **2 minutes**.
+
+#### 3. The Glaze (Part 1)
+Pour about **one-third** of the can of cola into the pan.
+Let it simmer and reduce. Once reduced, pour in another third of the cola and let it reduce again.
+
+#### 4. Thicken the sauce
+In a small separate bowl, mix **1 tablespoon of cornstarch** with the remaining third of the cola.
+Pour this mixture into the pan. The sauce will thicken instantly and coat the chicken beautifully.
+
+---
+
+> **Note:** Serve hot, sprinkled with fresh chopped coriander and white rice.
+
 > **Note:** Serve with a fresh green salad and a glass of white wine from Savoy!
