@@ -162,6 +162,8 @@ Fuzzy Matching: Users can input a ticker symbol (AAPL) or a company name (Louis 
 
 AI Fallback: If the exact ticker isn't found in the standard database, the system queries the AI engine to resolve the correct symbol automatically, preventing "Ticker not found" errors.
 
+**Smart Search using IA:**
+![search-example](/images/search-example.png)
 
 Favorites: A sidebar offers quick access to a curated list of high-quality companies (Apple, LVMH, Novo Nordisk) for instant analysis.
 
