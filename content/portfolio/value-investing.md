@@ -6,7 +6,8 @@ image: "images/System-Architecture.png"
 description: "A Python engine that automates fundamental analysis of S&P 500 stocks using Benjamin Graham's principles."
 ---
 
-Git of the project : https://github.com/Alexis-Ribat/value_investing/tree/6d7489f7c6c3b625f168d156296dbcf12308abda 
+* Git of the project : https://github.com/Alexis-Ribat/value_investing.git
+
 ---
 ## Project Overview
 
