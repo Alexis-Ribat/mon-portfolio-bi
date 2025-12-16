@@ -89,3 +89,11 @@ portfolio:
       # C'est ici que la magie opère : lien vers le fichier créé à l'étape 1
       url: "/portfolio/value-investing/" 
       description: "Un outil Python automatisé pour détecter les opportunités boursières..."
+      
+      
+      
+    - name: "Recipes"
+      image: 'images/test.png'
+      # C'est ici que la magie opère : lien vers le fichier créé à l'étape 1
+      url: "/portfolio/Recipes/" 
+      description: "Recipes"
