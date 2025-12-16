@@ -17,8 +17,8 @@ Welcome to my recipe collection! Here are some of my favorite dishes to cook at 
 The ultimate comfort food from the French Alps. Potatoes, melted Reblochon cheese, smoky lardons, and onions.
 
 **Tartiflette:**
-<a href="/images/tartiflette.jpg" data-fancybox="gallery" data-caption="Tartiflette Savoyarde">
-    <img src="/images/tartiflette.jpg" alt="Tartiflette Savoyarde" width="40%" style="display: block; margin: 10px auto;">
+<a href="/images/tartiflette.png" data-fancybox="gallery" data-caption="Tartiflette Savoyarde">
+    <img src="/images/tartiflette.png" alt="Tartiflette Savoyarde" width="20%" style="display: block; margin: 10px auto;">
 </a>
 
 ### 🛒 Ingredients
@@ -74,7 +74,7 @@ A surprisingly delicious sweet and savory dish. The soda creates a perfect caram
 
 **Coca-Cola Chicken:**
 <a href="/images/chicken-coca.png" data-fancybox="gallery" data-caption="Coca-Cola Chicken">
-    <img src="/images/chicken-coca.png" alt="Coca-Cola Chicken" width="40%" style="display: block; margin: 10px auto;">
+    <img src="/images/chicken-coca.png" alt="Coca-Cola Chicken" width="20%" style="display: block; margin: 10px auto;">
 </a>
 
 ### 🛒 Ingredients
@@ -125,7 +125,7 @@ The quintessential French bistro snack. The **Croque Monsieur** is a hot ham and
 
 **Croque Madame:**
 <a href="/images/croque-madame.png" data-fancybox="gallery" data-caption="Croque Madame">
-    <img src="/images/croque-madame.png" alt="Croque Madame" width="40%" style="display: block; margin: 10px auto;">
+    <img src="/images/croque-madame.png" alt="Croque Madame" width="20%" style="display: block; margin: 10px auto;">
 </a>
 
 ### 🛒 Ingredients
