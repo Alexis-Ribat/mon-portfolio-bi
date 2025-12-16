@@ -1,0 +1,4 @@
+/* Ajoute de l'espace en haut du corps de la page */
+body {
+    padding-top: 100px; /* Ajustez ce chiffre selon la hauteur de votre menu */
+}

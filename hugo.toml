@@ -21,6 +21,8 @@ link = "https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900&displa
 link = "plugins/text-animation/text-animation.css"
 [[params.plugins.css]]
 link = "plugins/hugrid/hugrid.css"
+[[params.plugins.css]]
+link = "css/custom.css"
 
 # JS Plugins
 [[params.plugins.js]]
