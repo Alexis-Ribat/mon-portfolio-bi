@@ -11,12 +11,12 @@ weight: 1
 ## I Tartiflette
 
 The Tartiflette is a traditional dish from the Savoy region in the French Alps. It is made with potatoes, Reblochon cheese, lardons, and onions. Perfect for a cold winter day!
----
+
 **Tartiflette:**
 <a href="/images/tartiflette.png" data-fancybox="gallery" data-caption="Tartiflette">
     <img src="/images/tartiflette.png" alt="Tartiflette" width="60%" style="display: block; margin: 10px auto;">
 </a>
----
+
 ### 🛒 Ingredients
 
 * **Potatoes:** At least 8 medium-sized
