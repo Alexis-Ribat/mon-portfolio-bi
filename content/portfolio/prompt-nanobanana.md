@@ -190,7 +190,7 @@ function copyPrompt() {
 ---
 
 
-## III - Mordor
+## III - Pop Culture Planetary Projects
 
 ### The Concept
 
@@ -200,9 +200,9 @@ function copyPrompt() {
 ---
 This project explores the idea of "Personal Gravity". The subject stands calm and centered, while the chaotic elements of his daily life—coffee, work, memories—orbit around him in perfect balance.
 
-**Gravitational Focus:**
-<a href="/images/Mordor.png" data-fancybox="gallery" data-caption="Mordor">
-    <img src="/images/Mordor.png" alt="Mordor" width="20%" style="display: block; margin: 10px auto;">
+**Pop Culture Planetary Projects:**
+<a href="/images/Pop-Culture.png" data-fancybox="gallery" data-caption="Pop-Culture">
+    <img src="/images/Pop-Culture.png" alt="Pop-Culture" width="20%" style="display: block; margin: 10px auto;">
 </a>
 
 Below is the structured JSON prompt used to generate this image. It uses strict parameters for lighting, camera composition, and surreal elements.
