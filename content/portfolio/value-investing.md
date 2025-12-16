@@ -185,7 +185,12 @@ def get_sec_data_rust(ticker):
     <img src="/images/Visual-trends-1.png" alt="Revenue Trends" width="85%" style="display: block; margin: 10px auto;">
 </a>
 
-![FCF Trends](/images/Visual-trends-2.png)
+
+
+<a href="/images/Visual-trends-2.png" data-fancybox="gallery" data-caption="Revenue Trends">
+    <img src="/images/Visual-trends-1.png" alt="Revenue Trends" width="85%" style="display: block; margin: 10px auto;">
+</a>
+
 
 ### 5. AI Analyst & Sentiment Scoring
 
