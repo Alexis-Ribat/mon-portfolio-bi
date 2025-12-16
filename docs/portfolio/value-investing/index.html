@@ -182,32 +182,92 @@ The system features a Streamlit interface for interactive valuation (DCF, Piotro
 <li><strong>Load:</strong> Export results to <strong>Excel</strong> and <strong>JSON</strong> for the web dashboard.</li>
 </ol>
 <hr>
-<h2 id="-core-features--code">💻 Core Features &amp; Code</h2>
-<h3 id="the-graham-number-logic">The Graham Number Logic</h3>
-<p>I vectorized the operation using Pandas for performance optimization.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_graham_metrics</span>(df):
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Vectorized calculation for speed</span>
-</span></span><span style="display:flex;"><span>    df[<span style="color:#e6db74">&#39;Graham_Number&#39;</span>] <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>sqrt(<span style="color:#ae81ff">22.5</span> <span style="color:#f92672">*</span> df[<span style="color:#e6db74">&#39;eps&#39;</span>] <span style="color:#f92672">*</span> df[<span style="color:#e6db74">&#39;book_value&#39;</span>])
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> df
-</span></span></code></pre></div><hr>
-<h2 id="-results--impact">📊 Results &amp; Impact</h2>
-<p>The script generates a clean dataset allowing me to filter opportunities instantly.</p>
-<p><img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/search-example.png" alt="Search Interface">
-<em>(Quick search feature to filter stocks by ticker or criteria)</em></p>
-<ul>
-<li><strong>Performance:</strong> Analyzes the full S&amp;P 500 in under <strong>45 seconds</strong>.</li>
-<li><strong>Automation:</strong> Saves approximately <strong>10 hours of manual work</strong> per week.</li>
-<li><strong>Accuracy:</strong> Removes human error from ratio calculations.</li>
-</ul>
-<hr>
-<h2 id="-project-gallery">📸 Project Gallery</h2>
-<p>Here is a detailed look at the dashboard and data analysis capabilities.</p>
-<h3 id="1-strategic-dashboard">1. Strategic Dashboard</h3>
-<p>A complete overview of valuation and business models.</p>
-<p><img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/stock-presentation.png" alt="Main Dashboard">
-<img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/signets.png" alt="Navigation Tabs"></p>
-<h3 id="2-visual-trends-growth-analysis">2. Visual Trends (Growth Analysis)</h3>
-<p>Automated charts to visualize revenue and income over the last decade.</p>
+<p>🛠️ The Tech Stack: A Hybrid Python-Rust Architecture
+Building a financial analysis tool requires a balance between rapid prototyping for data science and raw performance for data ingestion. To achieve this, I designed a hybrid architecture that leverages the strengths of Python for logic and UI, and Rust for heavy computational tasks.</p>
+<p>Here is a deep dive into the technologies powering the Value Investing Dashboard.</p>
+<ol>
+<li>Application Layer: Python &amp; Streamlit 🐍
+The core of the application is built on Python 3.11, the lingua franca of financial data analysis.</li>
+</ol>
+<p>Frontend Framework: I chose Streamlit for its ability to turn data scripts into shareable web apps in minutes. It allows me to focus on financial modeling rather than CSS or JavaScript.</p>
+<p>Data Processing: Pandas and NumPy handle the vectorization of financial metrics (ROCE, CAGR, DCF modeling).</p>
+<p>Visualization: Plotly provides interactive charts (gauges, time-series) that allow users to zoom into specific financial periods.</p>
+<p>Data Sources: yfinance is used for real-time market data (prices, basic financials), acting as the first layer of the ETL pipeline.</p>
+<ol start="2">
+<li>The Performance Engine: Rust 🦀
+Fetching and parsing gigabytes of institutional filings (10-K, 10-Q) from the SEC EDGAR database is CPU-intensive. Python struggled with latency here, so I offloaded this specific workload to Rust.</li>
+</ol>
+<p>Custom Binary (edgar_fetcher): A standalone CLI tool written in Rust.</p>
+<p>Concurrency: Leverages reqwest (async HTTP client) and tokio to handle network requests significantly faster than Python’s requests.</p>
+<p>Type Safety: Uses serde for lightning-fast JSON serialization/deserialization, ensuring data integrity before it even reaches the Python layer.</p>
+<p>Integration: The Python backend orchestrates the Rust binary via subprocess calls, creating a seamless bridge between the two languages.</p>
+<ol start="3">
+<li>Artificial Intelligence: Google Gemini 🧠
+To automate the qualitative analysis (the &ldquo;Warren Buffett&rdquo; perspective), the system integrates Large Language Models (LLM).</li>
+</ol>
+<p>Model: Google Gemini 1.5 Flash. Chosen for its large context window (essential for reading long financial transcripts) and low latency.</p>
+<p>Prompt Engineering: I implemented a rigorous &ldquo;Persona-based&rdquo; prompting strategy. The system injects raw financial tables (computed in Python) into the prompt context, forcing the AI to ground its analysis in hard data rather than hallucinations.</p>
+<p>Sentiment Analysis: The system scrapes news via BeautifulSoup and feeds headlines to the LLM to gauge market sentiment (Bullish/Bearish).</p>
+<ol start="4">
+<li>Persistence: PostgreSQL &amp; SQLAlchemy 🐘
+Financial data requires strict structure and integrity.</li>
+</ol>
+<p>Database: PostgreSQL 15. It stores historical financial data, caching it to avoid hitting API rate limits. It also serves as the archive for every AI-generated report.</p>
+<p>ORM: SQLAlchemy. It abstracts the SQL complexity, allowing me to manipulate database records using Python classes and objects.</p>
+<p>Management: Adminer. A lightweight database management tool running in a sidecar container, allowing for quick manual inspection and SQL queries via a web interface.</p>
+<ol start="5">
+<li>Infrastructure: Docker &amp; Synology NAS 🐳
+The entire stack is designed to be &ldquo;Write Once, Run Anywhere&rdquo; (specifically, on a home server).</li>
+</ol>
+<p>Containerization: A multi-stage Dockerfile handles the complexity of the hybrid build. It first compiles the Rust binary (using a Rust image), then copies the executable into a slim Python image. This results in a single, lightweight image containing both the Python app and the Rust engine.</p>
+<p>Orchestration: Docker Compose defines the services (dashboard, db, adminer), networks, and persistent volumes.</p>
+<p>Hardware: The stack runs 24/7 on a Synology NAS, providing a private, self-hosted environment without cloud subscription costs.</p>
+<p>🚀 Functional Overview: From Ticker to Investment Thesis
+The Value Investing Dashboard is designed to replicate the workflow of a professional equity analyst, automating the tedious data gathering process to focus on decision-making.</p>
+<p>Here is a breakdown of the application&rsquo;s core capabilities.</p>
+<ol>
+<li>Smart Search &amp; Entity Resolution
+The journey begins with a universal search bar.</li>
+</ol>
+<p>Fuzzy Matching: Users can input a ticker symbol (AAPL) or a company name (Louis Vuitton).</p>
+<p>AI Fallback: If the exact ticker isn&rsquo;t found in the standard database, the system queries the AI engine to resolve the correct symbol automatically, preventing &ldquo;Ticker not found&rdquo; errors.</p>
+<p>Favorites: A sidebar offers quick access to a curated list of high-quality companies (Apple, LVMH, Novo Nordisk) for instant analysis.</p>
+<ol start="2">
+<li>The &ldquo;Health Check&rdquo; Dashboard
+Upon selection, the application instantly computes a financial health scorecard based on Value Investing principles:</li>
+</ol>
+<p>Key Metrics: Real-time display of P/E Ratio, ROCE (Return on Capital Employed), and Debt/EBIT leverage ratios.</p>
+<p>Piotroski F-Score: An automated 0-9 scoring system that analyzes profitability, leverage, and operating efficiency trends to detect improving or deteriorating business fundamentals.</p>
+<p>Company Profile: A strategic summary of the business, its sector, and its &ldquo;Moat&rdquo; (competitive advantage), translated and synthesized by AI.</p>
+<ol start="3">
+<li>Interactive Valuation Sandbox (DCF)
+Unlike static financial websites, the dashboard features a dynamic Discounted Cash Flow (DCF) calculator.</li>
+</ol>
+<p>Scenario Testing: Users can adjust key assumptions—Growth Rate, WACC (Discount Rate), and Terminal Growth—using interactive sliders.</p>
+<p>Fair Value Gauge: A visual gauge updates in real-time, showing the intrinsic value vs. the current stock price.</p>
+<p>Reverse DCF: The system calculates the &ldquo;Implied Growth Rate,&rdquo; answering the critical question: &ldquo;What growth is the market currently pricing in?&rdquo;.</p>
+<ol start="4">
+<li>Deep Dive Financials (Powered by Rust)
+For granular analysis, the application provides raw, unaltered financial data sourced directly from SEC filings via the high-performance Rust engine.</li>
+</ol>
+<p>SBC Adjustment: It calculates &ldquo;True Free Cash Flow&rdquo; by adjusting for Stock-Based Compensation (SBC), a crucial metric often hidden in standard reports.</p>
+<p>Visual Trends: Interactive Plotly charts visualize the correlation between Revenue, Net Income, and Free Cash Flow over the last 5-10 years.</p>
+<ol start="5">
+<li>AI Analyst &amp; Sentiment Scoring
+The application integrates Google Gemini to act as a virtual research assistant.</li>
+</ol>
+<p>Sentiment Analysis: The system scrapes recent news (via Google News) or processes earnings call transcripts to determine the current market sentiment (Bullish/Bearish).</p>
+<p>Investment Thesis Generation: By clicking &ldquo;Generate Report,&rdquo; the AI consumes all financial data and writes a comprehensive Markdown report. It follows a strict &ldquo;Value Investor&rdquo; persona structure defined in prompt.txt:</p>
+<p>Business Model: How does it make money?</p>
+<p>Moat Analysis: Is the competitive advantage durable?</p>
+<p>Capital Allocation: Is management shareholder-friendly?</p>
+<p>Risks: What could kill the business?</p>
+<ol start="6">
+<li>Archiving &amp; Knowledge Base
+Analysis is never lost.</li>
+</ol>
+<p>Auto-Save: Every generated AI report is automatically time-stamped and saved into the PostgreSQL database.</p>
+<p>History: Users can revisit previous analyses to track how their thesis (and the company&rsquo;s fundamentals) has evolved over time.</p>
 <p><img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Visual-trends-1.png" alt="Revenue Trends">
 <img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Visual-trends-2.png" alt="FCF Trends"></p>
 <h3 id="3-detailed-financial-data-sec--yahoo">3. Detailed Financial Data (SEC &amp; Yahoo)</h3>
