@@ -1,12 +1,11 @@
 ---
-title: "Recipe"
+title: "Recipes"
 date: 2025-12-15
 draft: false
-image: "images/System-Architecture.png"  # Assurez-vous que cette image existe dans static/images/
-description: "My recipes project."
-category: "Data Engineering"  # Important : Ajoutez une catégorie (ex: Data, BI, ou Other)
-weight: 10 # Optionnel : pour changer l'ordre d'affichage
+image: "images/System-Architecture.png"
+description: "Recipes"
 ---
+
 ## Recipes
 
 ### 1. Tartiflette
