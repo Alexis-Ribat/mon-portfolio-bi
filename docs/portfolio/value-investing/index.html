@@ -321,12 +321,14 @@
 <li>AI-based fallback for unresolved entities</li>
 </ul>
 <p><img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/search-example.png" alt="Search Example"></p>
+<hr>
 <h3 id="2-financial-health-dashboard">2. Financial Health Dashboard</h3>
 <ul>
 <li>Key ratios: P/E, ROCE, Debt/EBIT</li>
 <li>Piotroski F-Score (0–9)</li>
 <li>AI-generated company profile and moat analysis</li>
 </ul>
+<hr>
 <h3 id="3-interactive-valuation-dcf">3. Interactive Valuation (DCF)</h3>
 <ul>
 <li>Scenario testing via sliders</li>
@@ -337,6 +339,7 @@
 <a href="https://alexis-ribat.github.io/mon-portfolio-bi/images/DCF.png" data-fancybox="gallery" data-caption="DCF">
 <img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/DCF.png" alt="DCF" width="60%" style="display: block; margin: 10px auto;">
 </a></p>
+<hr>
 <h3 id="4-deep-financial-analysis-sec">4. Deep Financial Analysis (SEC)</h3>
 <ul>
 <li>Raw SEC financials</li>
@@ -351,6 +354,7 @@
 <img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Visual-trends-2.png" alt="FCF Trends" style="width: 100%; display: block; border-radius: 5px;">
 </a>
 </div>
+<hr>
 <h3 id="5-ai-analyst--sentiment-scoring">5. AI Analyst &amp; Sentiment Scoring</h3>
 <ul>
 <li>News and transcript sentiment analysis</li>
@@ -374,25 +378,7 @@
     <img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/BDD.png" alt="Revenue Trends" width="85%" style="display: block; margin: 10px auto;">
 </a>
 <hr>
-<p><strong>Code Highlight: The Python-Rust Bridge</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># src/sec_provider.py</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> subprocess
-</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_sec_data_rust</span>(ticker):
-</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    Orchestrates the high-performance Rust binary from Python.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    It calls the compiled binary directly for max speed.
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    binary_path <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/usr/local/bin/edgar_fetcher&#34;</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Execute the Rust binary as a subprocess</span>
-</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> subprocess<span style="color:#f92672">.</span>run([binary_path, ticker], capture_output<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Parse the JSON output from Rust</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> json<span style="color:#f92672">.</span>loads(result<span style="color:#f92672">.</span>stdout)
-</span></span></code></pre></div>
+
     </div>
   </div>
 

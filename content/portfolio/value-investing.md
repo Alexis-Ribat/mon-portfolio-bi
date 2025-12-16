@@ -160,12 +160,14 @@ def get_sec_data_rust(ticker):
 
 ![Search Example](/images/search-example.png)
 
+---
 ### 2. Financial Health Dashboard
 
 * Key ratios: P/E, ROCE, Debt/EBIT
 * Piotroski F-Score (0–9)
 * AI-generated company profile and moat analysis
 
+---
 ### 3. Interactive Valuation (DCF)
 
 * Scenario testing via sliders
@@ -177,6 +179,7 @@ def get_sec_data_rust(ticker):
     <img src="/images/DCF.png" alt="DCF" width="60%" style="display: block; margin: 10px auto;">
 </a>
 
+---
 ### 4. Deep Financial Analysis (SEC)
 
 * Raw SEC financials
@@ -193,7 +196,7 @@ def get_sec_data_rust(ticker):
 </div>
 
 
-
+---
 ### 5. AI Analyst & Sentiment Scoring
 
 * News and transcript sentiment analysis
@@ -223,27 +226,7 @@ def get_sec_data_rust(ticker):
 
 ---
 
-**Code Highlight: The Python-Rust Bridge**
 
-```python
-# src/sec_provider.py
-
-import subprocess
-import json
-
-def get_sec_data_rust(ticker):
-    """
-    Orchestrates the high-performance Rust binary from Python.
-    It calls the compiled binary directly for max speed.
-    """
-    binary_path = "/usr/local/bin/edgar_fetcher"
-    
-    # Execute the Rust binary as a subprocess
-    result = subprocess.run([binary_path, ticker], capture_output=True)
-    
-    # Parse the JSON output from Rust
-    return json.loads(result.stdout)
-```
 
 
 
