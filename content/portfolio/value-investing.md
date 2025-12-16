@@ -21,8 +21,9 @@ The system aggregates real-time market data from **Yahoo Finance** and mines dee
 
 Built on a hybrid **Python/Rust** architecture and containerized with **Docker**, the application features a **Streamlit** interface for interactive valuation (DCF, Piotroski F-Score) and integrates **Google Gemini AI** to generate comprehensive, Buffett-style investment theses.
 
-**The Goal:** Build a fully automated pipeline to screen 500+ stocks daily with full transparency on data and logic.
+> **The Goal:** Build a fully automated pipeline to screen 500+ stocks daily with full transparency on data and logic.
 
+---
 
 ### Data Strategy: Why Yahoo Finance?
 I deliberately chose **Yahoo Finance** as the primary data source for three strategic reasons:
