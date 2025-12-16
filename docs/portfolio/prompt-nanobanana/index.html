@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en"><head>
   <meta charset="utf-8" />
-  <title>Prompts Nano Banana</title>
+  <title>Orbit of the Mind</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Prompts Nano Banana"
+    content="A hyper-realistic exploration of personal gravity using generative AI."
   />
   
     <meta name="author" content="Alexis Ribat" />
@@ -168,42 +168,25 @@
 
 
   <div class="under-menu col-lg-8 col-md-10 col-12 mx-auto post-container">
-    <h1>Prompts Nano Banana</h1>
+    <h1>Orbit of the Mind</h1>
     <span class="date">Posted on: 1/1/2024</span>
-    <img src="" alt="Prompts Nano Banana" />
+    <img src="images/nanobanana.png" alt="Orbit of the Mind" />
     <div class="body">
-      <h2 id="i---gravitational-focus">I - Gravitational Focus</h2>
-<h3 id="the-concept">The Concept</h3>
-<p><strong>The Result:</strong></p>
-<hr>
+      <h2 id="the-concept">The Concept</h2>
 <p>This project explores the idea of &ldquo;Personal Gravity&rdquo;. The subject stands calm and centered, while the chaotic elements of his daily life—coffee, work, memories—orbit around him in perfect balance.</p>
-<p><strong>Gravitational Focus:</strong>
+<p><strong>The Result:</strong></p>
 <a href="https://alexis-ribat.github.io/mon-portfolio-bi/images/Gravitational-Focus.png" data-fancybox="gallery" data-caption="Gravitational-Focus">
-<img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Gravitational-Focus.png" alt="Gravitational-Focus" width="20%" style="display: block; margin: 10px auto;">
-</a></p>
-<p>Below is the structured JSON prompt used to generate this image. It uses strict parameters for lighting, camera composition, and surreal elements.</p>
-<details>
-<summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold;">🔻 Click to view the full JSON Prompt</summary>
-<hr>
-<h2 id="weight-2">title: &ldquo;Orbit of the Mind&rdquo;
-date: 2024-01-02
-draft: false
-image: &ldquo;images/nanobanana.png&rdquo;
-description: &ldquo;A hyper-realistic exploration of personal gravity using generative AI.&rdquo;
-category: &ldquo;AI Art&rdquo;
-weight: 2</h2>
-<h2 id="the-concept-1">The Concept</h2>
-<p>This project explores the idea of &ldquo;Personal Gravity&rdquo;. The subject stands calm and centered, while the chaotic elements of his daily life orbit around him in perfect balance.</p>
+    <img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Gravitational-Focus.png" alt="Gravitational-Focus" width="40%" style="display: block; margin: 10px auto;">
+</a>
 <hr>
 <h3 id="-the-prompt-engineering">🤖 The Prompt Engineering</h3>
 <p>Below is the structured JSON prompt used to generate this image.</p>
-<pre tabindex="0"><code>&lt;details&gt;
-&lt;summary style=&#34;cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold; margin-bottom: 10px;&#34;&gt;
-    🔻 Click to view &amp; copy the Prompt
-&lt;/summary&gt;
-
-&lt;div style=&#34;position: relative; background: #272822; border-radius: 5px; padding: 10px;&#34;&gt;
-    &lt;button id=&#34;copyBtn&#34; onclick=&#34;copyPrompt()&#34; style=&#34;
+<details>
+<summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold; margin-bottom: 10px;">
+    🔻 Click to view & copy the Prompt
+</summary>
+<div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
+    <button id="copyBtn" onclick="copyPrompt()" style="
         position: absolute; 
         top: 10px; 
         right: 10px; 
@@ -215,102 +198,77 @@ weight: 2</h2>
         cursor: pointer; 
         font-family: sans-serif;
         font-size: 12px;
-        z-index: 10;&#34;&gt;
+        z-index: 10;">
         📋 Copier
-    &lt;/button&gt;
-
-    &lt;pre style=&#34;margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;&#34;&gt;
-&lt;code id=&#34;jsonPrompt&#34; style=&#34;color: #f8f8f2; font-family: monospace;&#34;&gt;{
-  &#34;type&#34;: &#34;image_generation_prompt&#34;,
-  &#34;style&#34;: &#34;hyper-realistic, cinematic, magical surrealism, studio editorial&#34;,
-  &#34;composition&#34;: {
-    &#34;aspect_ratio&#34;: &#34;4:5&#34;,
-    &#34;framing&#34;: &#34;full-body to three-quarter portrait, centered&#34;,
-    &#34;camera_position&#34;: &#34;eye-level, straight-on&#34;,
-    &#34;resolution&#34;: &#34;ultra-HD&#34;
-  },
-  &#34;identity_preservation&#34;: {
-    &#34;use_reference_image&#34;: true,
-    &#34;alter_face&#34;: false,
-    &#34;notes&#34;: &#34;Preserve the man&#39;s facial features...&#34;
-  },
-  &#34;subject&#34;: {
-    &#34;gender&#34;: &#34;man&#34;,
-    &#34;age_range&#34;: &#34;mid-twenties&#34;,
-    &#34;pose&#34;: {
-      &#34;stance&#34;: &#34;standing perfectly still at the center of the frame&#34;,
-      &#34;arms&#34;: &#34;crossed confidently&#34;,
-      &#34;expression&#34;: &#34;calm, confident, slightly amused&#34;
-    },
-    &#34;appearance&#34;: {
-      &#34;facial_features&#34;: &#34;sharp, well-defined facial structure&#34;,
-      &#34;hair&#34;: {
-        &#34;color&#34;: &#34;dark brown&#34;,
-        &#34;details&#34;: &#34;subtle golden highlights&#34;,
-        &#34;style&#34;: &#34;tousled, natural movement&#34;
-      },
-      &#34;eyes&#34;: &#34;intense hazel eyes&#34;,
-      &#34;skin_texture&#34;: &#34;natural, ultra-detailed realism&#34;
-    }
-  },
-  &#34;surreal_elements&#34;: {
-    &#34;concept&#34;: &#34;objects floating in perfect orbital patterns&#34;,
-    &#34;objects&#34;: [
-      &#34;vintage cameras&#34;,
-      &#34;leather-bound books&#34;,
-      &#34;steaming coffee cups&#34;,
-      &#34;floating black ink droplets&#34;
-    ]
-  },
-  &#34;lighting&#34;: {
-    &#34;key_light&#34;: &#34;high and left, deep sculptural shadows&#34;,
-    &#34;shadow_effects&#34;: &#34;intricate overlapping shadows&#34;
-  },
-  &#34;quality&#34;: {
-    &#34;realism&#34;: &#34;ultra-realistic&#34;,
-    &#34;rendering&#34;: &#34;cinematic realism&#34;
-  },
-  &#34;output_goal&#34;: &#34;Create a hyper-realistic cinematic studio portrait.&#34;
-}&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
+    </button>
+<pre><code>&lt;pre style=&quot;margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;&quot;&gt;
+</code></pre>
+<p><code id="jsonPrompt" style="color: #f8f8f2; font-family: monospace;">{
+&ldquo;type&rdquo;: &ldquo;image_generation_prompt&rdquo;,
+&ldquo;style&rdquo;: &ldquo;hyper-realistic, cinematic, magical surrealism, studio editorial&rdquo;,
+&ldquo;composition&rdquo;: {
+&ldquo;aspect_ratio&rdquo;: &ldquo;4:5&rdquo;,
+&ldquo;framing&rdquo;: &ldquo;full-body to three-quarter portrait, centered&rdquo;,
+&ldquo;camera_position&rdquo;: &ldquo;eye-level, straight-on&rdquo;,
+&ldquo;resolution&rdquo;: &ldquo;ultra-HD&rdquo;
+},
+&ldquo;identity_preservation&rdquo;: {
+&ldquo;use_reference_image&rdquo;: true,
+&ldquo;alter_face&rdquo;: false,
+&ldquo;notes&rdquo;: &ldquo;Preserve the man&rsquo;s facial features&hellip;&rdquo;
+},
+&ldquo;subject&rdquo;: {
+&ldquo;gender&rdquo;: &ldquo;man&rdquo;,
+&ldquo;age_range&rdquo;: &ldquo;mid-twenties&rdquo;,
+&ldquo;pose&rdquo;: {
+&ldquo;stance&rdquo;: &ldquo;standing perfectly still at the center of the frame&rdquo;,
+&ldquo;arms&rdquo;: &ldquo;crossed confidently&rdquo;,
+&ldquo;expression&rdquo;: &ldquo;calm, confident, slightly amused&rdquo;
+},
+&ldquo;appearance&rdquo;: {
+&ldquo;facial_features&rdquo;: &ldquo;sharp, well-defined facial structure&rdquo;,
+&ldquo;hair&rdquo;: {
+&ldquo;color&rdquo;: &ldquo;dark brown&rdquo;,
+&ldquo;details&rdquo;: &ldquo;subtle golden highlights&rdquo;,
+&ldquo;style&rdquo;: &ldquo;tousled, natural movement&rdquo;
+},
+&ldquo;eyes&rdquo;: &ldquo;intense hazel eyes&rdquo;,
+&ldquo;skin_texture&rdquo;: &ldquo;natural, ultra-detailed realism&rdquo;
+}
+},
+&ldquo;surreal_elements&rdquo;: {
+&ldquo;concept&rdquo;: &ldquo;objects floating in perfect orbital patterns&rdquo;,
+&ldquo;objects&rdquo;: [
+&ldquo;vintage cameras&rdquo;,
+&ldquo;leather-bound books&rdquo;,
+&ldquo;steaming coffee cups&rdquo;,
+&ldquo;floating black ink droplets&rdquo;
+]
+},
+&ldquo;lighting&rdquo;: {
+&ldquo;key_light&rdquo;: &ldquo;high and left, deep sculptural shadows&rdquo;,
+&ldquo;shadow_effects&rdquo;: &ldquo;intricate overlapping shadows&rdquo;
+},
+&ldquo;quality&rdquo;: {
+&ldquo;realism&rdquo;: &ldquo;ultra-realistic&rdquo;,
+&ldquo;rendering&rdquo;: &ldquo;cinematic realism&rdquo;
+},
+&ldquo;output_goal&rdquo;: &ldquo;Create a hyper-realistic cinematic studio portrait.&rdquo;
+}</code></pre></p>
+</div>
+<script>
 function copyPrompt() {
-    // 1. Récupère le texte
-    const text = document.getElementById(&#34;jsonPrompt&#34;).innerText;
-    
-    // 2. Copie dans le presse-papier
+    const text = document.getElementById("jsonPrompt").innerText;
     navigator.clipboard.writeText(text).then(function() {
-        
-        // 3. Feedback visuel (Change le bouton en &#34;Copié !&#34;)
-        const btn = document.getElementById(&#34;copyBtn&#34;);
+        const btn = document.getElementById("copyBtn");
         const originalText = btn.innerText;
-        
-        btn.innerText = &#34;✅ Copié !&#34;;
-        btn.style.backgroundColor = &#34;#2e7d32&#34;; // Vert plus foncé
-        
-        // 4. Remet le bouton normal après 2 secondes
+        btn.innerText = "✅ Copié !";
+        btn.style.backgroundColor = "#2e7d32";
         setTimeout(function() {
             btn.innerText = originalText;
-            btn.style.backgroundColor = &#34;#4CAF50&#34;;
+            btn.style.backgroundColor = "#4CAF50";
         }, 2000);
-        
-    }, function(err) {
-        console.error(&#39;Erreur lors de la copie : &#39;, err);
-    });
-}
-&lt;/script&gt;
-
-&lt;/details&gt;
-</code></pre><hr>
-<h3 id="-technical-details">🛠️ Technical Details</h3>
-<ul>
-<li><strong>Model:</strong> Midjourney v6 / DALL-E 3</li>
-<li><strong>Focus:</strong> Identity preservation &amp; Object consistency</li>
-<li><strong>Resolution:</strong> Ultra-HD</li>
-</ul>
-<hr>
-
+    }, function(err)
     </div>
   </div>
 

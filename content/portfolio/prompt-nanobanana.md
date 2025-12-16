@@ -1,39 +1,8 @@
 ---
-title: "Prompts Nano Banana"
+title: "Orbit of the Mind"
 date: 2024-01-01
 draft: false
-# image: "images/System-Architecture.png"
-description: "Prompts Nano Banana"
-category: "Hobbies"
-weight: 1
----
-
-
-## I - Gravitational Focus
-
-### The Concept
-
-
-**The Result:**
-
----
-This project explores the idea of "Personal Gravity". The subject stands calm and centered, while the chaotic elements of his daily life—coffee, work, memories—orbit around him in perfect balance.
-
-**Gravitational Focus:**
-<a href="/images/Gravitational-Focus.png" data-fancybox="gallery" data-caption="Gravitational-Focus">
-    <img src="/images/Gravitational-Focus.png" alt="Gravitational-Focus" width="20%" style="display: block; margin: 10px auto;">
-</a>
-
-Below is the structured JSON prompt used to generate this image. It uses strict parameters for lighting, camera composition, and surreal elements.
-
-<details>
-<summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold;">🔻 Click to view the full JSON Prompt</summary>
-
----
-title: "Orbit of the Mind"
-date: 2024-01-02
-draft: false
-image: "images/nanobanana.png"
+image: "images/nanobanana.png" 
 description: "A hyper-realistic exploration of personal gravity using generative AI."
 category: "AI Art"
 weight: 2
@@ -41,14 +10,20 @@ weight: 2
 
 ## The Concept
 
-This project explores the idea of "Personal Gravity". The subject stands calm and centered, while the chaotic elements of his daily life orbit around him in perfect balance.
+This project explores the idea of "Personal Gravity". The subject stands calm and centered, while the chaotic elements of his daily life—coffee, work, memories—orbit around him in perfect balance.
+
+**The Result:**
+
+<a href="/images/Gravitational-Focus.png" data-fancybox="gallery" data-caption="Gravitational-Focus">
+    <img src="/images/Gravitational-Focus.png" alt="Gravitational-Focus" width="40%" style="display: block; margin: 10px auto;">
+</a>
 
 ---
 
 ### 🤖 The Prompt Engineering
 
 Below is the structured JSON prompt used to generate this image.
-```
+
 <details>
 <summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold; margin-bottom: 10px;">
     🔻 Click to view & copy the Prompt
@@ -128,41 +103,14 @@ Below is the structured JSON prompt used to generate this image.
 
 <script>
 function copyPrompt() {
-    // 1. Récupère le texte
     const text = document.getElementById("jsonPrompt").innerText;
-    
-    // 2. Copie dans le presse-papier
     navigator.clipboard.writeText(text).then(function() {
-        
-        // 3. Feedback visuel (Change le bouton en "Copié !")
         const btn = document.getElementById("copyBtn");
         const originalText = btn.innerText;
-        
         btn.innerText = "✅ Copié !";
-        btn.style.backgroundColor = "#2e7d32"; // Vert plus foncé
-        
-        // 4. Remet le bouton normal après 2 secondes
+        btn.style.backgroundColor = "#2e7d32";
         setTimeout(function() {
             btn.innerText = originalText;
             btn.style.backgroundColor = "#4CAF50";
         }, 2000);
-        
-    }, function(err) {
-        console.error('Erreur lors de la copie : ', err);
-    });
-}
-</script>
-
-</details>
-```
-
----
-
-### 🛠️ Technical Details
-
-* **Model:** Midjourney v6 / DALL-E 3
-* **Focus:** Identity preservation & Object consistency
-* **Resolution:** Ultra-HD
-
-
----
+    }, function(err)
