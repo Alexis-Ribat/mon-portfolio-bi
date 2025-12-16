@@ -24,7 +24,7 @@ I designed a modular ETL (Extract, Transform, Load) architecture:
 3.  **Load:** Export results to **Excel** and **JSON** for the web dashboard.
 
 **System Architecture:**
-![Value-Investing-System-Architecture](images/Value-Investing-System-Architecture.png)
+![Value-Investing-System-Architecture](assets/images/Value-Investing-System-Architecture.png)
 
 ---
 🛠️ The Tech Stack: A Hybrid Python-Rust Architecture
