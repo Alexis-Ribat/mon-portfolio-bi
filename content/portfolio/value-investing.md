@@ -24,7 +24,7 @@ I designed a modular ETL (Extract, Transform, Load) architecture:
 3.  **Load:** Export results to **Excel** and **JSON** for the web dashboard.
 
 **System Architecture:**
-![FCF Trends](/images/Visual-trends-2.png)
+![FCF Trends](/images/value-investing-screen.png)
 
 ---
 🛠️ The Tech Stack: A Hybrid Python-Rust Architecture
