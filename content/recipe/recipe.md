@@ -1,21 +1,16 @@
 ---
-title: "Automated Value Investing Tool"
+title: "Recipe"
 date: 2025-12-15
 draft: false
 image: "images/System-Architecture.png"
-description: "A Python engine that automates fundamental analysis of S&P 500 stocks using Benjamin Graham's principles."
----
-
-* Git of the project : https://github.com/Alexis-Ribat/value_investing.git
+description: "My recipes."
 
 ---
-## Project Overview
+## Recipes
 
-### Context & Problem Statement
-While there is no shortage of commercial stock screeners, I found them lacking in transparency and flexibility. I needed a tailored solution that would allow me to:
-* **Customize dashboards** based on my specific Value Investing criteria.
-* **Audit the calculations** of key performance indicators (ROE, ROCE, Free Cash Flow) to ensure they match my valuation models.
-* **Automate qualitative analysis** using my own predefined AI prompts to mimic a specific investor persona.
+### 1. Tartiflette
+
+
 
 ### Proposed Solution
 To address this, I built the **Value Investing Dashboard**, a self-hosted financial analysis platform designed to automate fundamental stock research.
