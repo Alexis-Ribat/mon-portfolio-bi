@@ -25,6 +25,18 @@ Built on a hybrid **Python/Rust** architecture and containerized with **Docker**
 
 ---
 
+
+### The Solution
+To address this, I built the **Value Investing Dashboard**, a self-hosted financial analysis platform designed to automate fundamental stock research.
+
+The system aggregates real-time market data from **Yahoo Finance** and mines deep historical financial statements directly from the **SEC (EDGAR)** database.
+
+Built on a hybrid **Python/Rust** architecture and containerized with **Docker**, the application features a **Streamlit** interface for interactive valuation (DCF, Piotroski F-Score) and integrates **Google Gemini AI** to generate comprehensive, Buffett-style investment theses.
+
+**The Goal:** Build a fully automated pipeline to screen 500+ stocks daily with full transparency on data and logic.
+
+---
+
 ## Technical Architecture
 
 I designed a modular ETL (Extract, Transform, Load) architecture:
