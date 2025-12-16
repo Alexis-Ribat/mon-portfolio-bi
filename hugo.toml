@@ -92,7 +92,7 @@ google_analytics = "" # Laissez vide pour l'instant
 # Preloader (L'animation de chargement)
 [params.preloader]
 enable = true
-preloader = "images/profile.jpg"
+preloader = "images/preloader.gif"
 
 ############################# social site ########################
 
