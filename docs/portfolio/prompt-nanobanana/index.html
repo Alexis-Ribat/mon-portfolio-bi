@@ -497,6 +497,62 @@ function copyPrompt() {
 </script>
 </details>
 ---
+<h2 id="iv---pop-culture-planetary-projects">IV - Pop Culture Planetary Projects</h2>
+<h3 id="the-concept-3">The Concept</h3>
+<p><strong>The Result:</strong></p>
+<hr>
+<p><strong>Pop Culture Planetary Projects:</strong>
+<a href="https://alexis-ribat.github.io/mon-portfolio-bi/images/Pop-Culture.png" data-fancybox="gallery" data-caption="Pop-Culture">
+<img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Pop-Culture.png" alt="Pop-Culture" width="20%" style="display: block; margin: 10px auto;">
+</a></p>
+<p>Below is the structured JSON prompt used to generate this image. It uses strict parameters for lighting, camera composition, and surreal elements.</p>
+<details>
+<summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold; margin-bottom: 10px;">
+    🔻 Click to view & copy the full JSON Prompt
+</summary>
+<div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
+    <button id="copyBtn4" onclick="copyPrompt()" style="
+        position: absolute; 
+        top: 10px; 
+        right: 10px; 
+        background-color: #4CAF50; 
+        color: white; 
+        border: none; 
+        padding: 5px 12px; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-family: sans-serif;
+        font-size: 12px;
+        z-index: 10;">
+        📋 Copier
+    </button>
+<pre><code>&lt;pre style=&quot;margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;&quot;&gt;
+</code></pre>
+<p><code id="jsonPrompt4" style="color: #f8f8f2; font-family: monospace;">{</p>
+<p>A dramatic sky photo where swirling storm clouds naturally form the unmistakable shape of a [SUBJECT]. The illusion should be “found shape”: at first it’s just clouds;
+then the creature silhouette pops out. Realistic lighting: sun rays breaking through, volumetric beams, deep contrast.
+No fantasy glow, pure cloud structure forming the subject. High resolution, cinematic, awe-inspiring.</p>
+<p>}</code></pre></p>
+</div>
+<script>
+function copyPrompt() {
+    const text = document.getElementById("jsonPrompt4").innerText;
+    navigator.clipboard.writeText(text).then(function() {
+        const btn = document.getElementById("copyBtn4");
+        const originalText = btn.innerText;
+        btn.innerText = "✅ Copié !";
+        btn.style.backgroundColor = "#2e7d32";
+        setTimeout(function() {
+            btn.innerText = originalText;
+            btn.style.backgroundColor = "#4CAF50";
+        }, 2000);
+    }, function(err) {
+        console.error('Erreur lors de la copie : ', err);
+    });
+}
+</script>
+</details>
+---
     </div>
   </div>
 
