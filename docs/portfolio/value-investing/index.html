@@ -228,6 +228,54 @@
 </ol>
 <p><strong>System Architecture:</strong></p>
 <p><img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/System-Architecture.png" alt="System Architecture"></p>
+<h2 id="the-tech-stack-a-hybrid-architecture">The Tech Stack: A Hybrid Architecture</h2>
+<p>Building a financial analysis tool requires a balance between rapid prototyping and raw performance. I designed a hybrid architecture leveraging Python for logic/UI and Rust for heavy computation.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Component</th>
+          <th style="text-align: left">Technology</th>
+          <th style="text-align: left">Role</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Application Layer</strong></td>
+          <td style="text-align: left">Python 3.11</td>
+          <td style="text-align: left">Core Logic &amp; ETL Orchestration</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Performance Engine</strong></td>
+          <td style="text-align: left">Rust</td>
+          <td style="text-align: left">SEC EDGAR Parsing (CPU Intensive)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Frontend</strong></td>
+          <td style="text-align: left">Streamlit</td>
+          <td style="text-align: left">Interactive Web Interface</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Data Processing</strong></td>
+          <td style="text-align: left">Pandas / NumPy</td>
+          <td style="text-align: left">Vectorized Financial Metrics</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>AI Integration</strong></td>
+          <td style="text-align: left">Google Gemini 1.5</td>
+          <td style="text-align: left">Qualitative Analysis &amp; Persona prompting</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Database</strong></td>
+          <td style="text-align: left">PostgreSQL</td>
+          <td style="text-align: left">Historical Data Persistence</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Infrastructure</strong></td>
+          <td style="text-align: left">Docker / Synology</td>
+          <td style="text-align: left">Containerization &amp; Hosting</td>
+      </tr>
+  </tbody>
+</table>
 <hr>
 <h1 id="the-tech-stack-a-hybrid-python-rust-architecture">The Tech Stack: A Hybrid Python-Rust Architecture</h1>
 <p>Building a financial analysis tool requires a balance between rapid prototyping for data science and raw performance for data ingestion. To achieve this, I designed a hybrid architecture that leverages the strengths of Python for logic and UI, and Rust for heavy computational tasks.</p>

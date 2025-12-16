@@ -72,6 +72,21 @@ I designed a modular ETL (Extract, Transform, Load) architecture:
 
 ![System Architecture](/images/System-Architecture.png)
 
+
+
+## The Tech Stack: A Hybrid Architecture
+
+Building a financial analysis tool requires a balance between rapid prototyping and raw performance. I designed a hybrid architecture leveraging Python for logic/UI and Rust for heavy computation.
+
+| Component | Technology | Role |
+| :--- | :--- | :--- |
+| **Application Layer** | Python 3.11 | Core Logic & ETL Orchestration |
+| **Performance Engine** | Rust | SEC EDGAR Parsing (CPU Intensive) |
+| **Frontend** | Streamlit | Interactive Web Interface |
+| **Data Processing** | Pandas / NumPy | Vectorized Financial Metrics |
+| **AI Integration** | Google Gemini 1.5 | Qualitative Analysis & Persona prompting |
+| **Database** | PostgreSQL | Historical Data Persistence |
+| **Infrastructure** | Docker / Synology | Containerization & Hosting |
 ---
 # The Tech Stack: A Hybrid Python-Rust Architecture
 Building a financial analysis tool requires a balance between rapid prototyping for data science and raw performance for data ingestion. To achieve this, I designed a hybrid architecture that leverages the strengths of Python for logic and UI, and Rust for heavy computational tasks.
