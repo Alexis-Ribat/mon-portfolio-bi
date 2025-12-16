@@ -2,7 +2,6 @@
 title: "Automated Value Investing Tool"
 date: 2025-12-15
 draft: false
-image: "images/test.png" # L'image principale (vignette)
 description: "A Python engine that automates fundamental analysis of S&P 500 stocks using Benjamin Graham's principles."
 ---
 
@@ -24,7 +23,8 @@ I designed a modular ETL (Extract, Transform, Load) architecture:
 3.  **Load:** Export results to **Excel** and **JSON** for the web dashboard.
 
 **System Architecture:**
-![FCF Trends](/images/System-Architecture.png)
+
+![System Architecture](/images/System-Architecture.png)
 
 ---
 # The Tech Stack: A Hybrid Python-Rust Architecture
