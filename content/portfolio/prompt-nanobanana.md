@@ -132,7 +132,6 @@ function copyPrompt() {
 **The Result:**
 
 ---
-This project explores the idea of "Personal Gravity". The subject stands calm and centered, while the chaotic elements of his daily life—coffee, work, memories—orbit around him in perfect balance.
 
 **Gravitational Focus:**
 <a href="/images/Mordor.png" data-fancybox="gallery" data-caption="Mordor">
@@ -198,7 +197,6 @@ function copyPrompt() {
 **The Result:**
 
 ---
-This project explores the idea of "Personal Gravity". The subject stands calm and centered, while the chaotic elements of his daily life—coffee, work, memories—orbit around him in perfect balance.
 
 **Pop Culture Planetary Projects:**
 <a href="/images/Pop-Culture.png" data-fancybox="gallery" data-caption="Pop-Culture">
