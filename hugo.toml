@@ -46,7 +46,7 @@ link = "plugins/lightbox/lightbox.js"
 # main menu
 [[menu.main]]
 name = "Home"
-URL = "#home" # Pointe vers le haut de page
+URL = "https://alexis-ribat.github.io/mon-portfolio-bi/"
 weight = 1
 
 [[menu.main]]
