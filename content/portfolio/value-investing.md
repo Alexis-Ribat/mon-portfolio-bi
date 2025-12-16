@@ -3,13 +3,13 @@ title: "Automated Value Investing Tool"
 date: 2025-12-15
 draft: false
 image: "images/System-Architecture.png"
-description: "A Python engine that automates fundamental analysis of S&P 500 stocks using Benjamin Graham's principles. AAAAAAAAAAAAAAAAAAAAAAAAAAS"
+description: "A Python engine that automates fundamental analysis of S&P 500 stocks using Benjamin Graham's principles. "
 ---
 
 * Git of the project : https://github.com/Alexis-Ribat/value_investing.git
 
 ---
-## Project Overview
+## Project Overview AAAAAAAAAAAAAAAAAAAAAAAAAASS
 
 ### Context & Problem Statement
 While there is no shortage of commercial stock screeners, I found them lacking in transparency and flexibility. I needed a tailored solution that would allow me to:
