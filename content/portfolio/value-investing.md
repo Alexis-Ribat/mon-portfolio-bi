@@ -23,6 +23,12 @@ Built on a hybrid **Python/Rust** architecture and containerized with **Docker**
 
 **The Goal:** Build a fully automated pipeline to screen 500+ stocks daily with full transparency on data and logic.
 
+
+### Infrastructure & Deployment (NAS)
+To ensure industrial-grade reliability, the entire pipeline is hosted on a **Synology NAS** (Network Attached Storage).
+
+* **24/7 Automation:** The script is containerized and triggered automatically every morning via **Cron jobs**, running independently of my personal workstation.
+* **Data Persistence:** Historical financial data is stored locally with **RAID redundancy**, ensuring data safety and preventing data gaps.
 ---
 
 ## Technical Architecture

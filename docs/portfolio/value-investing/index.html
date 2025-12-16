@@ -183,6 +183,12 @@
 <p>The system aggregates real-time market data from <strong>Yahoo Finance</strong> and mines deep historical financial statements directly from the <strong>SEC (EDGAR)</strong> database.</p>
 <p>Built on a hybrid <strong>Python/Rust</strong> architecture and containerized with <strong>Docker</strong>, the application features a <strong>Streamlit</strong> interface for interactive valuation (DCF, Piotroski F-Score) and integrates <strong>Google Gemini AI</strong> to generate comprehensive, Buffett-style investment theses.</p>
 <p><strong>The Goal:</strong> Build a fully automated pipeline to screen 500+ stocks daily with full transparency on data and logic.</p>
+<h3 id="infrastructure--deployment-nas">Infrastructure &amp; Deployment (NAS)</h3>
+<p>To ensure industrial-grade reliability, the entire pipeline is hosted on a <strong>Synology NAS</strong> (Network Attached Storage).</p>
+<ul>
+<li><strong>24/7 Automation:</strong> The script is containerized and triggered automatically every morning via <strong>Cron jobs</strong>, running independently of my personal workstation.</li>
+<li><strong>Data Persistence:</strong> Historical financial data is stored locally with <strong>RAID redundancy</strong>, ensuring data safety and preventing data gaps.</li>
+</ul>
 <hr>
 <h2 id="technical-architecture">Technical Architecture</h2>
 <p>I designed a modular ETL (Extract, Transform, Load) architecture:</p>
