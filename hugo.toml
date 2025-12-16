@@ -98,11 +98,11 @@ preloader = "images/preloader.gif"
 
 [[params.social]]
 icon = "fab fa-linkedin"
-link = "https://www.linkedin.com/in/votre-profil" # Mettez votre vrai lien !
+link = "https://www.linkedin.com/in/alexis-r-049275179/" # Mettez votre vrai lien !
 
 [[params.social]]
 icon = "fas fa-envelope"
-link = "mailto:votre-email@gmail.com" # Mettez votre email
+link = "mailto:ribat.alexis@gmail.com" # Mettez votre email
 
 [[params.social]]
 icon = "fab fa-github"
