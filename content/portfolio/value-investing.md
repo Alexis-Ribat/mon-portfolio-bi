@@ -289,15 +289,9 @@ Auto-Save: Every generated AI report is automatically time-stamped and saved int
 
 History: Users can revisit previous analyses to track how their thesis (and the company's fundamentals) has evolved over time.
 
-![Revenue Trends](/images/Visual-trends-1.png)
-![FCF Trends](/images/Visual-trends-2.png)
 
 ### 3. Detailed Financial Data (SEC & Yahoo)
 Automatic extraction of key financial statements.
-
-**Official SEC Data:**
-![SEC Data Table](/images/SEC-data-1.png)
-![Efficiency Ratios](/images/value-investing-screen.png)
 
 **Yahoo Finance Data Source:**
 ![Yahoo Data](/images/yahoo-data.png)
