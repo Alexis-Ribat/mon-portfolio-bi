@@ -1,7 +1,7 @@
 ######################## default configuration ####################
 baseURL = "https://alexis-ribat.github.io/mon-portfolio-bi/" # VOTRE lien GitHub Pages
 languageCode = "en-us"
-title = "Ribat | BI"
+title = "Alexis Ribat | BI"
 theme = "port-hugo"
 publishDir = "docs"      # INDISPENSABLE pour GitHub Pages
 canonifyURLs = true
