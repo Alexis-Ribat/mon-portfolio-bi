@@ -69,19 +69,15 @@ preloader = "images/preloader.gif" # use jpg, png, svg or gif format.
 
 [[params.social]]
 icon = "fab fa-github"
-link = "https://github.com/tylersayshi"
+link = "https://github.com/Alexis-Ribat"
 
 [[params.social]]
 icon = "fab fa-linkedin"
-link = "https://www.linkedin.com/"
+link = "https://www.linkedin.com/in/alexis-r-049275179/"
 
 [[params.social]]
 icon = "fas fa-envelope"
-link = "mailto:guster@burton.com"
-
-[[params.social]]
-icon = "fab fa-medium"
-link = "https://medium.com/@gusburton"
+link = "mailto:ribat.alexis@gmail.com"
 
 contentDir = "content/english"
 weight = 1
