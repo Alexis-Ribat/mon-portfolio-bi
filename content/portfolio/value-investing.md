@@ -24,6 +24,13 @@ Built on a hybrid **Python/Rust** architecture and containerized with **Docker**
 **The Goal:** Build a fully automated pipeline to screen 500+ stocks daily with full transparency on data and logic.
 
 
+### Data Strategy: Why Yahoo Finance?
+I deliberately chose **Yahoo Finance** as the primary data source for three strategic reasons:
+
+* **Cost-Efficiency:** It offers a robust, free access to financial data, allowing the project to scale without incurring high API subscription costs.
+* **Scalability:** It covers a massive universe of global companies, not just the US market, allowing for broad screenings.
+* **Stability & Low Maintenance:** The API structure is highly stable compared to web scraping. This ensures the pipeline remains reliable over time with minimal maintenance required on the codebase.
+
 ### Infrastructure & Deployment (NAS)
 To ensure industrial-grade reliability, the entire pipeline is hosted on a **Synology NAS** (Network Attached Storage).
 
