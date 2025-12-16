@@ -23,6 +23,8 @@ link = "plugins/text-animation/text-animation.css"
 link = "plugins/hugrid/hugrid.css"
 [[params.plugins.css]]
 link = "css/custom.css"
+[[params.plugins.css]]
+link = "https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
 
 # JS Plugins
 [[params.plugins.js]]
@@ -33,6 +35,10 @@ link = "https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.
 link = "plugins/text-animation/text-animation.js"
 [[params.plugins.js]]
 link = "plugins/hugrid/.min.js"
+[[params.plugins.js]]
+link = "https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"
+[[params.plugins.js]]
+link = "plugins/lightbox/lightbox.js"
 
 
 ############################## navigation ###############################
