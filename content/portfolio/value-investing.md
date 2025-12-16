@@ -187,6 +187,3 @@ Automatic extraction of key financial statements.
 
 ### 4. Owner Earnings Calculation
 Implementing Warren Buffett's approach to real valuation.
-
-![True Owner Earnings](/images/SEC-data-2.png)
-![Calculation Test](/images/test.png)
