@@ -289,12 +289,3 @@ Auto-Save: Every generated AI report is automatically time-stamped and saved int
 
 History: Users can revisit previous analyses to track how their thesis (and the company's fundamentals) has evolved over time.
 
-
-### 3. Detailed Financial Data (SEC & Yahoo)
-Automatic extraction of key financial statements.
-
-**Yahoo Finance Data Source:**
-![Yahoo Data](/images/yahoo-data.png)
-
-### 4. Owner Earnings Calculation
-Implementing Warren Buffett's approach to real valuation.
