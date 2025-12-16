@@ -82,6 +82,14 @@ Orchestration: Docker Compose defines the services (dashboard, db, adminer), net
 Hardware: The stack runs 24/7 on a Synology NAS, providing a private, self-hosted environment without cloud subscription costs.
 
 
+# src/sec_provider.py
+def get_sec_data_rust(ticker):
+    """Orchestrates the high-performance Rust binary from Python"""
+    binary_path = "/usr/local/bin/edgar_fetcher"
+    result = subprocess.run([binary_path, ticker], capture_output=True)
+    return json.loads(result.stdout)
+
+
 🚀 Functional Overview: From Ticker to Investment Thesis
 The Value Investing Dashboard is designed to replicate the workflow of a professional equity analyst, automating the tedious data gathering process to focus on decision-making.
 

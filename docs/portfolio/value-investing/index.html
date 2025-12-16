@@ -224,6 +224,12 @@ The entire stack is designed to be &ldquo;Write Once, Run Anywhere&rdquo; (speci
 <p>Containerization: A multi-stage Dockerfile handles the complexity of the hybrid build. It first compiles the Rust binary (using a Rust image), then copies the executable into a slim Python image. This results in a single, lightweight image containing both the Python app and the Rust engine.</p>
 <p>Orchestration: Docker Compose defines the services (dashboard, db, adminer), networks, and persistent volumes.</p>
 <p>Hardware: The stack runs 24/7 on a Synology NAS, providing a private, self-hosted environment without cloud subscription costs.</p>
+<h1 id="srcsec_providerpy">src/sec_provider.py</h1>
+<p>def get_sec_data_rust(ticker):
+&ldquo;&ldquo;&ldquo;Orchestrates the high-performance Rust binary from Python&rdquo;&rdquo;&rdquo;
+binary_path = &ldquo;/usr/local/bin/edgar_fetcher&rdquo;
+result = subprocess.run([binary_path, ticker], capture_output=True)
+return json.loads(result.stdout)</p>
 <p>🚀 Functional Overview: From Ticker to Investment Thesis
 The Value Investing Dashboard is designed to replicate the workflow of a professional equity analyst, automating the tedious data gathering process to focus on decision-making.</p>
 <p>Here is a breakdown of the application&rsquo;s core capabilities.</p>
