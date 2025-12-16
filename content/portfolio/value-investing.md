@@ -64,6 +64,14 @@ def ask_gemini(prompt, api_keys):
     raise Exception("All API keys exhausted.")
 ```
 
+### Data Engineering Challenge: The Stock Split Distortion
+
+While the Rust engine efficiently fetches raw data, I encountered a critical data integrity issue involving stock splits. Raw SEC filings report earnings based on the share count at the time of filing.
+
+The Problem: For companies like Tesla or Apple, past stock splits (e.g., 4-for-1) caused historical EPS figures to appear artificially high compared to current prices. This skew heavily distorted multi-year ratio analysis and the Graham Number calculation.
+
+The Solution: I implemented a normalization layer in Python. The system cross-references raw SEC data with Yahoo Finance's split history to calculate a cumulative adjustment factor. This ensures that historical EPS and share counts are "split-adjusted" before being fed into the valuation algorithms.
+
 ## Infrastructure & Deployment
 
 ### Hosting Environment: Synology NAS
