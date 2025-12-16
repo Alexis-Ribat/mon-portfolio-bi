@@ -181,8 +181,10 @@ def get_sec_data_rust(ticker):
 * SBC-adjusted Free Cash Flow
 * Long-term trend visualizations
 
-<img src="/images/Visual-trends-1.png" alt="Revenue Trends" width="70%" style="display: block; margin: 0 auto;">
-<br>
+<a href="/images/Visual-trends-1.png" data-fancybox="gallery" data-caption="Revenue Trends">
+    <img src="/images/Visual-trends-1.png" alt="Revenue Trends" width="85%" style="display: block; margin: 10px auto;">
+</a>
+
 ![FCF Trends](/images/Visual-trends-2.png)
 
 ### 5. AI Analyst & Sentiment Scoring
