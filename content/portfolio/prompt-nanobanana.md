@@ -410,13 +410,9 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
     </button>
 
     <pre style="margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;">
-<code id="jsonPrompt4" style="color: #f8f8f2; font-family: monospace;">{
-
-A dramatic sky photo where swirling storm clouds naturally form the unmistakable shape of a [SUBJECT]. The illusion should be “found shape”: at first it’s just clouds; 
+<code id="jsonPrompt4" style="color: #f8f8f2; font-family: monospace;">{A dramatic sky photo where swirling storm clouds naturally form the unmistakable shape of a [SUBJECT]. The illusion should be “found shape”: at first it’s just clouds; 
 then the creature silhouette pops out. Realistic lighting: sun rays breaking through, volumetric beams, deep contrast. 
-No fantasy glow, pure cloud structure forming the subject. High resolution, cinematic, awe-inspiring.
-
-}</code></pre>
+No fantasy glow, pure cloud structure forming the subject. High resolution, cinematic, awe-inspiring.}</code></pre>
 </div>
 
 <script>
