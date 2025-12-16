@@ -188,3 +188,186 @@ function copyPrompt() {
 
 </details>
 ---
+
+
+## III - Mordor
+
+### The Concept
+
+
+**The Result:**
+
+---
+This project explores the idea of "Personal Gravity". The subject stands calm and centered, while the chaotic elements of his daily life—coffee, work, memories—orbit around him in perfect balance.
+
+**Gravitational Focus:**
+<a href="/images/Mordor.png" data-fancybox="gallery" data-caption="Mordor">
+    <img src="/images/Mordor.png" alt="Mordor" width="20%" style="display: block; margin: 10px auto;">
+</a>
+
+Below is the structured JSON prompt used to generate this image. It uses strict parameters for lighting, camera composition, and surreal elements.
+
+<details>
+<summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold; margin-bottom: 10px;">
+    🔻 Click to view & copy the full JSON Prompt
+</summary>
+
+<div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
+    <button id="copyBtn3" onclick="copyPrompt()" style="
+        position: absolute; 
+        top: 10px; 
+        right: 10px; 
+        background-color: #4CAF50; 
+        color: white; 
+        border: none; 
+        padding: 5px 12px; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-family: sans-serif;
+        font-size: 12px;
+        z-index: 10;">
+        📋 Copier
+    </button>
+
+    <pre style="margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;">
+<code id="jsonPrompt3" style="color: #f8f8f2; font-family: monospace;">{
+{
+  "batch_generation_requests": [
+    {
+      "brand_theme": "Starbucks",
+      "concept": "Frappuccino Terraforming Tower",
+      "subject": {
+        "main_element": "Giant Starbucks Frappuccino cup standing vertically",
+        "modifications": "Green straw converting into a space elevator/antenna; whipped cream resembling snowy mountain peaks",
+        "props": "Floating holographic Starbucks siren logo in green neon",
+        "details": "Condensation on the cup, rich texture of caramel drizzle"
+      },
+      "figures": {
+        "type": "Miniature scientists",
+        "attire": "Green and white hazmat suits",
+        "action": "Taking samples from the whipped cream 'mountains' and checking pipes connected to the straw"
+      },
+      "environment": {
+        "floor": "Coffee bean rocky terrain",
+        "background": "Green nebula and Milky Way",
+        "atmosphere": "Misty and aromatic"
+      },
+      "aesthetics": {
+        "color_grading": "Emerald green, white, and coffee brown",
+        "lens_effect": "Macro lens with soft bokeh",
+        "lighting": " glowing green ambient light"
+      },
+      "meta": {
+        "aspect_ratio": "9:16",
+        "reference_directive": "Make it like the same picture as the reference uploaded."
+      }
+    },
+    {
+      "brand_theme": "Nike",
+      "concept": "Air Jordan Hover-Ship Maintenance",
+      "subject": {
+        "main_element": "Iconic Air Jordan 1 sneaker floating",
+        "modifications": "Sole converted into glowing anti-gravity thrusters; laces acting as heavy cables",
+        "props": "Neon Nike Swoosh sign suspended by cranes",
+        "details": "Leather texture detailed with space dust, metallic eyelets"
+      },
+      "figures": {
+        "type": "Miniature mechanics",
+        "attire": "Orange flight suits",
+        "action": "Welding the rubber sole and fueling the 'Air' unit"
+      },
+      "environment": {
+        "terrain": "Futuristic metallic landing pad",
+        "background": "Deep space with a view of Earth",
+        "atmosphere": "High-tech hangar vibe"
+      },
+      "aesthetics": {
+        "style": "Cyberpunk meets sportswear",
+        "lighting": "Neon blue and red highlights",
+        "depth": "High depth of field"
+      },
+      "meta": {
+        "aspect_ratio": "9:16",
+        "reference_directive": "Make it like the same picture as the reference uploaded"
+      }
+    },
+    {
+      "brand_theme": "Red Bull",
+      "concept": "Energy Reactor Core Installation",
+      "subject": {
+        "main_element": "Silver and Blue Red Bull Can",
+        "modifications": "Can act as a massive fusion reactor; mechanical wings are attached to the sides",
+        "props": "Sparks flying, 'Gives You Wings' slogan projected in hologram",
+        "details": "Metallic condensation, polished aluminum texture"
+      },
+      "figures": {
+        "type": "Miniature engineers",
+        "attire": "Silver protective gear",
+        "action": "Connecting thick yellow power cables to the can tab."
+      },
+      "environment": {
+        "terrain": "Dark jagged asteroid surface",
+        "background": "Electric blue lightning storm in space"
+      },
+      "aesthetics": {
+        "lighting": "Dramatic, high contrast electric blue and silver",
+        "style": "Industrial sci-fi macro"
+      },
+      "meta": {
+        "aspect_ratio": "9:16",
+        "reference_directive": "Picture should be the same as the reference uploaded."
+      }
+    },
+    {
+      "brand_theme": "Pringles",
+      "concept": "Solar Array Deployment",
+      "subject": {
+        "main_element": "Pringles Can as a Habitat Silo",
+        "modifications": "Pringles chips (crisps) arranged as curved solar panels orbiting the can",
+        "props": "Pringles mascot (Julius Pringles) painted on the silo hull",
+        "details": "Texture of the potato chips contrasting with the metallic can"
+      },
+      "figures": {
+        "type": "Tiny astronauts",
+        "attire": "Red space suits",
+        "action": "Polishing the surface of a giant Pringles chip"
+      },
+      "environment": {
+        "terrain": "Red sandy surface (Mars-like)",
+        "background": "Starry cosmos with a distant sun flare"
+      },
+      "aesthetics": {
+        "lighting": "Warm sunlight hitting the chips (golden hour in space)",
+        "style": "Cinematic macro"
+      },
+      "meta": {
+        "aspect_ratio": "9:16",
+        "reference_directive": "Picture should be the same as the reference uploaded."
+      }
+    }
+  ]
+}
+
+}</code></pre>
+</div>
+
+<script>
+function copyPrompt() {
+    const text = document.getElementById("jsonPrompt3").innerText;
+    navigator.clipboard.writeText(text).then(function() {
+        const btn = document.getElementById("copyBtn3");
+        const originalText = btn.innerText;
+        btn.innerText = "✅ Copié !";
+        btn.style.backgroundColor = "#2e7d32";
+        setTimeout(function() {
+            btn.innerText = originalText;
+            btn.style.backgroundColor = "#4CAF50";
+        }, 2000);
+    }, function(err) {
+        console.error('Erreur lors de la copie : ', err);
+    });
+}
+</script>
+
+</details>
+---
