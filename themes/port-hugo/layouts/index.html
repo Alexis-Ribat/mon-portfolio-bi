@@ -1,32 +1,16 @@
-{{ define "main" }} {{- partial "menu.html" . -}} {{- partial "header.html" .
--}}
+{{ define "main" }} {{- partial "menu.html" . -}} {{- partial "header.html" . -}}
 
-<!-- =============================
-       Start About Me
-    =============================== -->
 <section class="about-me" id="about">
   <div class="container">
     {{ if .Site.Data.content.about.enable }} {{ with .Site.Data.content.about }}
     <div class="row about-me-holder">
-      <div
-        class="
-          col-lg-6 col-md-6 col-sm-6
-          about-me-text
-          d-flex
-          align-self-center
-        "
-      >
+      <div class="col-lg-6 col-md-6 col-sm-6 about-me-text d-flex align-self-center">
         <div class="text-holder">
           <h1>{{ .title | safeHTML }}</h1>
           <p>{{ .content | markdownify | emojify }}</p>
           {{ if .button.enable }} {{ with .button }}
-          <a
-            href="{{ .link | relURL }}"
-            rel="noreferrer"
-            class="button download-cv"
-          >
-            {{ .label }} <i class="fa fa-download"></i
-          ></a>
+          <a href="{{ .link | relURL }}" rel="noreferrer" class="button download-cv">
+            {{ .label }} <i class="fa fa-download"></i></a>
           {{ end }} {{ end }}
         </div>
       </div>
@@ -39,8 +23,7 @@
     {{ end }} {{ end }}
 
     <div class="row experience-skill">
-      {{ if .Site.Data.content.experience.enable }} {{ with
-      .Site.Data.content.experience }}
+      {{ if .Site.Data.content.experience.enable }} {{ with .Site.Data.content.experience }}
       <div class="col-lg-6 col-sm-6 col-11 experience">
         <h2>{{ .title }}</h2>
         <ul class="experience-chart">
@@ -62,8 +45,7 @@
           {{ end }}
         </ul>
       </div>
-      {{ end }} {{ end }} {{ if .Site.Data.content.skill.enable }} {{ with
-      .Site.Data.content.skill }}
+      {{ end }} {{ end }} {{ if .Site.Data.content.skill.enable }} {{ with .Site.Data.content.skill }}
       <div class="col-lg-6 col-sm-6 col-11 skill">
         <h2>{{ .title }}</h2>
         <div class="skill-progress-bar">
@@ -84,12 +66,7 @@
     </div>
   </div>
 </section>
-<!-- =============================
-      End About Me
-    =============================== -->
-
-{{ if .Site.Data.content.funfacts.enable }} {{ with .Site.Data.content.funfacts
-}}
+{{ if .Site.Data.content.funfacts.enable }} {{ with .Site.Data.content.funfacts }}
 <div class="fun-facts container pt-5">
   {{ range .funfacts_list }}
   <div class="fun-fact-holder">
@@ -101,11 +78,8 @@
 </div>
 {{ end }} {{ end }}
 
-<!-- =============================
-       Start Portfolio
-    =============================== -->
-{{ if .Site.Data.content.portfolio.enable }} {{ with
-.Site.Data.content.portfolio }}
+{{ if .Site.Data.content.portfolio.enable }} 
+{{ with .Site.Data.content.portfolio }}
 <section class="portfolio" id="portfolio">
   <div class="container-fluid text-center">
     <div class="row portfolio-holder text-left">
@@ -113,21 +87,33 @@
         <h2>{{ .title }}</h2>
       </div>
       <ul id="og-grid" class="og-grid">
-        {{ range .portfolio_list }} {{ $image := resources.Get .image }} {{
-        $big_image := $image.Fill "780x500 jpg" }} {{ $sm_image := $image.Fill
-        "395x250 jpg" }} {{ $parsed_name := replace .name "." "" }}
+        {{ range .portfolio_list }} 
+        
+        {{ $image := resources.Get .image }}
+        {{ $big_image_link := "" }}
+        {{ $sm_image_link := "" }}
+
+        {{ if $image }}
+            {{ $big_image_link = ($image.Fill "780x500 jpg").RelPermalink }}
+            {{ $sm_image_link = ($image.Fill "395x250 jpg").RelPermalink }}
+        {{ else }}
+            {{ warnf "⚠️ Image non trouvée dans assets pour '%s'. Utilisation du lien direct : %s" .name .image }}
+            {{ $big_image_link = .image | relURL }}
+            {{ $sm_image_link = .image | relURL }}
+        {{ end }}
+        {{ $parsed_name := replace .name "." "" }}
         <li>
           <p id="description-{{ $parsed_name | urlize }}" class="hidden">
             {{ .description | markdownify }}
           </p>
           <a
             href="{{ .url }}"
-            data-largesrc="{{ $big_image.RelPermalink }}"
+            data-largesrc="{{ $big_image_link }}"
             data-title="{{ .name }}"
             data-buttontext="SEE SITE"
           >
             <img
-              src="{{ $sm_image.RelPermalink }}"
+              src="{{ $sm_image_link }}"
               alt="{{ $parsed_name }} image"
             />
           </a>
@@ -138,8 +124,4 @@
   </div>
 </section>
 {{ end }} {{ end }}
-<!-- =============================
-       End Portfolio
-    =============================== -->
-
 {{- partial "footer.html" . -}} {{ end }}
