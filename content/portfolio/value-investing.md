@@ -31,6 +31,27 @@ I deliberately chose **Yahoo Finance** as the primary data source for three stra
 * **Scalability:** It covers a massive universe of global companies, not just the US market, allowing for broad screenings.
 * **Stability & Low Maintenance:** The API structure is highly stable compared to web scraping. This ensures the pipeline remains reliable over time with minimal maintenance required on the codebase.
 
+### AI Power: Gemini Pro & API Optimization
+To go beyond simple numbers, I integrated **Google Gemini Pro** to perform automated qualitative analysis (sentiment analysis, risk assessment, and earnings call summarization).
+
+* **The Challenge:** The API imposes strict daily rate limits (approx. 20 requests/day), which created a bottleneck for processing 500+ stocks.
+* **The Engineering Solution (Key Rotation):** I implemented a **Smart Failover System**. The Python script manages a pool of multiple API keys. When a key reaches its token limit (Error 429), the algorithm automatically catches the exception and switches to the next available key instantly.
+
+**Code Highlight: The Python Key Rotation**
+
+```python
+def ask_gemini(prompt, api_keys):
+    for key in api_keys:
+        try:
+            configure_genai(key)
+            response = model.generate_content(prompt)
+            return response.text
+        except ResourceExhausted:
+            print(f"Key {key[:5]}... exhausted. Switching to next key.")
+            continue
+    raise Exception("All API keys exhausted.")
+	```
+
 ### Infrastructure & Deployment (NAS)
 To ensure industrial-grade reliability, the entire pipeline is hosted on a **Synology NAS** (Network Attached Storage).
 
