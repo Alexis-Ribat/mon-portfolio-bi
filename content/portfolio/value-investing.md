@@ -32,7 +32,7 @@ Building a financial analysis tool requires a balance between rapid prototyping 
 
 Here is a deep dive into the technologies powering the Value Investing Dashboard.
 
-1. Application Layer: Python & Streamlit 🐍
+1. Application Layer: Python & Streamlit
 The core of the application is built on Python 3.11, the lingua franca of financial data analysis.
 
 Frontend Framework: I chose Streamlit for its ability to turn data scripts into shareable web apps in minutes. It allows me to focus on financial modeling rather than CSS or JavaScript.
@@ -82,12 +82,27 @@ Orchestration: Docker Compose defines the services (dashboard, db, adminer), net
 Hardware: The stack runs 24/7 on a Synology NAS, providing a private, self-hosted environment without cloud subscription costs.
 
 
+**Code Highlight: The Python-Rust Bridge**
+
+```python
 # src/sec_provider.py
+
+import subprocess
+import json
+
 def get_sec_data_rust(ticker):
-    """Orchestrates the high-performance Rust binary from Python"""
+    """
+    Orchestrates the high-performance Rust binary from Python.
+    It calls the compiled binary directly for max speed.
+    """
     binary_path = "/usr/local/bin/edgar_fetcher"
+    
+    # Execute the Rust binary as a subprocess
     result = subprocess.run([binary_path, ticker], capture_output=True)
+    
+    # Parse the JSON output from Rust
     return json.loads(result.stdout)
+```
 
 
 ## Functional Overview: From Ticker to Investment Thesis
