@@ -29,8 +29,50 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
 <details>
 <summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold;">🔻 Click to view the full JSON Prompt</summary>
 
-```json
-{
+---
+title: "Orbit of the Mind"
+date: 2024-01-02
+draft: false
+image: "images/nanobanana.png"
+description: "A hyper-realistic exploration of personal gravity using generative AI."
+category: "AI Art"
+weight: 2
+---
+
+## The Concept
+
+This project explores the idea of "Personal Gravity". The subject stands calm and centered, while the chaotic elements of his daily life orbit around him in perfect balance.
+
+---
+
+### 🤖 The Prompt Engineering
+
+Below is the structured JSON prompt used to generate this image.
+```
+<details>
+<summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold; margin-bottom: 10px;">
+    🔻 Click to view & copy the Prompt
+</summary>
+
+<div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
+    <button id="copyBtn" onclick="copyPrompt()" style="
+        position: absolute; 
+        top: 10px; 
+        right: 10px; 
+        background-color: #4CAF50; 
+        color: white; 
+        border: none; 
+        padding: 5px 12px; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-family: sans-serif;
+        font-size: 12px;
+        z-index: 10;">
+        📋 Copier
+    </button>
+
+    <pre style="margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;">
+<code id="jsonPrompt" style="color: #f8f8f2; font-family: monospace;">{
   "type": "image_generation_prompt",
   "style": "hyper-realistic, cinematic, magical surrealism, studio editorial",
   "composition": {
@@ -79,8 +121,48 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
   "quality": {
     "realism": "ultra-realistic",
     "rendering": "cinematic realism"
-  }
+  },
+  "output_goal": "Create a hyper-realistic cinematic studio portrait."
+}</code></pre>
+</div>
+
+<script>
+function copyPrompt() {
+    // 1. Récupère le texte
+    const text = document.getElementById("jsonPrompt").innerText;
+    
+    // 2. Copie dans le presse-papier
+    navigator.clipboard.writeText(text).then(function() {
+        
+        // 3. Feedback visuel (Change le bouton en "Copié !")
+        const btn = document.getElementById("copyBtn");
+        const originalText = btn.innerText;
+        
+        btn.innerText = "✅ Copié !";
+        btn.style.backgroundColor = "#2e7d32"; // Vert plus foncé
+        
+        // 4. Remet le bouton normal après 2 secondes
+        setTimeout(function() {
+            btn.innerText = originalText;
+            btn.style.backgroundColor = "#4CAF50";
+        }, 2000);
+        
+    }, function(err) {
+        console.error('Erreur lors de la copie : ', err);
+    });
 }
+</script>
+
+</details>
 ```
+
+---
+
+### 🛠️ Technical Details
+
+* **Model:** Midjourney v6 / DALL-E 3
+* **Focus:** Identity preservation & Object consistency
+* **Resolution:** Ultra-HD
+
 
 ---
