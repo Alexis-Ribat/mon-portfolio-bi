@@ -67,15 +67,15 @@ funfacts:
   enable: true
   funfacts_list:
     - name: 'CUPS PER DAY'
-      image: 'images/icons/coffee.png'
+      image: 'images/icons/profile.jpg'
       count: '2'
 
     - name: 'SITES BUILT'
-      image: 'images/icons/web-development.png'
+      image: 'images/icons/profile.jpg'
       count: '25'
 
     - name: 'USELESS ROW OF ICONS'
-      image: 'images/icons/happy.png'
+      image: 'images/icons/profile.jpg'
       count: '1'
 
 ############################# portfolio ################################
