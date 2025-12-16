@@ -2,7 +2,7 @@
 title: "Automated Value Investing Tool"
 date: 2025-12-15
 draft: false
-image: "images/System-Architecture.png"  <-- AJOUTEZ CETTE LIGNE
+image: "images/System-Architecture.png"
 description: "A Python engine that automates fundamental analysis of S&P 500 stocks using Benjamin Graham's principles."
 ---
 
