@@ -2,3 +2,10 @@
 body {
     padding-top: 100px; /* Ajustez ce chiffre selon la hauteur de votre menu */
 }
+
+/* Réduire la taille du preloader */
+#preloader img {
+    max-width: 100px;  /* Changez 100px par la taille voulue (ex: 60px ou 150px) */
+    width: 100%;
+    height: auto;
+}
