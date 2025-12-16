@@ -222,8 +222,9 @@ def get_sec_data_rust(ticker):
 * Auto-saved AI reports
 * Historical comparison over time
 
-<a href="/images/BDD.png" data-fancybox="gallery" data-caption="Revenue Trends">
-    <img src="/images/BDD.png" alt="Revenue Trends" width="85%" style="display: block; margin: 10px auto;">
+**BDD:**
+<a href="/images/BDD.png" data-fancybox="gallery" data-caption="BDD">
+    <img src="/images/BDD.png" alt="BDD" width="85%" style="display: block; margin: 10px auto;">
 </a>
 
 
