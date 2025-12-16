@@ -170,13 +170,13 @@
     <span class="date">Posted on: 12/15/2025</span>
     <img src="images/test.png" alt="Automated Value Investing Tool" />
     <div class="body">
-      <h2 id="-project-overview">🚀 Project Overview</h2>
+      <h2 id="project-overview">Project Overview</h2>
 <p>Value Investing Dashboard is a self-hosted financial analysis platform designed to automate fundamental stock research.
 Built on a hybrid Python/Rust architecture and containerized with Docker, it orchestrates data ingestion from Yahoo Finance and SEC EDGAR.
 The system features a Streamlit interface for interactive valuation (DCF, Piotroski F-Score) and integrates Google Gemini AI to generate comprehensive, Buffett-style investment theses and sentiment analysis.</p>
 <p><strong>The Goal:</strong> Build a fully automated pipeline to screen 500+ stocks daily.</p>
 <hr>
-<h2 id="-technical-architecture">🏗️ Technical Architecture</h2>
+<h2 id="technical-architecture">Technical Architecture</h2>
 <p>I designed a modular ETL (Extract, Transform, Load) architecture:</p>
 <ol>
 <li><strong>Extract:</strong> Python scripts request data via the <strong>Yahoo Finance API</strong> &amp; <strong>SEC Data</strong>.</li>
@@ -186,8 +186,8 @@ The system features a Streamlit interface for interactive valuation (DCF, Piotro
 <p><strong>System Architecture:</strong>
 <img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/System-Architecture.png" alt="FCF Trends"></p>
 <hr>
-<p>🛠️ The Tech Stack: A Hybrid Python-Rust Architecture
-Building a financial analysis tool requires a balance between rapid prototyping for data science and raw performance for data ingestion. To achieve this, I designed a hybrid architecture that leverages the strengths of Python for logic and UI, and Rust for heavy computational tasks.</p>
+<h1 id="the-tech-stack-a-hybrid-python-rust-architecture">The Tech Stack: A Hybrid Python-Rust Architecture</h1>
+<p>Building a financial analysis tool requires a balance between rapid prototyping for data science and raw performance for data ingestion. To achieve this, I designed a hybrid architecture that leverages the strengths of Python for logic and UI, and Rust for heavy computational tasks.</p>
 <p>Here is a deep dive into the technologies powering the Value Investing Dashboard.</p>
 <ol>
 <li>Application Layer: Python &amp; Streamlit 🐍
@@ -198,7 +198,7 @@ The core of the application is built on Python 3.11, the lingua franca of financ
 <p>Visualization: Plotly provides interactive charts (gauges, time-series) that allow users to zoom into specific financial periods.</p>
 <p>Data Sources: yfinance is used for real-time market data (prices, basic financials), acting as the first layer of the ETL pipeline.</p>
 <ol start="2">
-<li>The Performance Engine: Rust 🦀
+<li>The Performance Engine: Rust
 Fetching and parsing gigabytes of institutional filings (10-K, 10-Q) from the SEC EDGAR database is CPU-intensive. Python struggled with latency here, so I offloaded this specific workload to Rust.</li>
 </ol>
 <p>Custom Binary (edgar_fetcher): A standalone CLI tool written in Rust.</p>
@@ -206,21 +206,21 @@ Fetching and parsing gigabytes of institutional filings (10-K, 10-Q) from the SE
 <p>Type Safety: Uses serde for lightning-fast JSON serialization/deserialization, ensuring data integrity before it even reaches the Python layer.</p>
 <p>Integration: The Python backend orchestrates the Rust binary via subprocess calls, creating a seamless bridge between the two languages.</p>
 <ol start="3">
-<li>Artificial Intelligence: Google Gemini 🧠
+<li>Artificial Intelligence: Google Gemini
 To automate the qualitative analysis (the &ldquo;Warren Buffett&rdquo; perspective), the system integrates Large Language Models (LLM).</li>
 </ol>
 <p>Model: Google Gemini 1.5 Flash. Chosen for its large context window (essential for reading long financial transcripts) and low latency.</p>
 <p>Prompt Engineering: I implemented a rigorous &ldquo;Persona-based&rdquo; prompting strategy. The system injects raw financial tables (computed in Python) into the prompt context, forcing the AI to ground its analysis in hard data rather than hallucinations.</p>
 <p>Sentiment Analysis: The system scrapes news via BeautifulSoup and feeds headlines to the LLM to gauge market sentiment (Bullish/Bearish).</p>
 <ol start="4">
-<li>Persistence: PostgreSQL &amp; SQLAlchemy 🐘
+<li>Persistence: PostgreSQL &amp; SQLAlchemy
 Financial data requires strict structure and integrity.</li>
 </ol>
 <p>Database: PostgreSQL 15. It stores historical financial data, caching it to avoid hitting API rate limits. It also serves as the archive for every AI-generated report.</p>
 <p>ORM: SQLAlchemy. It abstracts the SQL complexity, allowing me to manipulate database records using Python classes and objects.</p>
 <p>Management: Adminer. A lightweight database management tool running in a sidecar container, allowing for quick manual inspection and SQL queries via a web interface.</p>
 <ol start="5">
-<li>Infrastructure: Docker &amp; Synology NAS 🐳
+<li>Infrastructure: Docker &amp; Synology NAS
 The entire stack is designed to be &ldquo;Write Once, Run Anywhere&rdquo; (specifically, on a home server).</li>
 </ol>
 <p>Containerization: A multi-stage Dockerfile handles the complexity of the hybrid build. It first compiles the Rust binary (using a Rust image), then copies the executable into a slim Python image. This results in a single, lightweight image containing both the Python app and the Rust engine.</p>
@@ -232,8 +232,8 @@ The entire stack is designed to be &ldquo;Write Once, Run Anywhere&rdquo; (speci
 binary_path = &ldquo;/usr/local/bin/edgar_fetcher&rdquo;
 result = subprocess.run([binary_path, ticker], capture_output=True)
 return json.loads(result.stdout)</p>
-<p>🚀 Functional Overview: From Ticker to Investment Thesis
-The Value Investing Dashboard is designed to replicate the workflow of a professional equity analyst, automating the tedious data gathering process to focus on decision-making.</p>
+<h2 id="functional-overview-from-ticker-to-investment-thesis">Functional Overview: From Ticker to Investment Thesis</h2>
+<p>The Value Investing Dashboard is designed to replicate the workflow of a professional equity analyst, automating the tedious data gathering process to focus on decision-making.</p>
 <p>Here is a breakdown of the application&rsquo;s core capabilities.</p>
 <ol>
 <li>Smart Search &amp; Entity Resolution
