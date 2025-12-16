@@ -173,7 +173,9 @@ def get_sec_data_rust(ticker):
 * Reverse DCF for implied growth rate
 
 **DCF:**
-![DCF](/images/DCF.png)
+<a href="/images/DCF.png" data-fancybox="gallery" data-caption="DCF">
+    <img src="/images/DCF.png" alt="DCF" width="60%" style="display: block; margin: 10px auto;">
+</a>
 
 ### 4. Deep Financial Analysis (SEC)
 
@@ -189,6 +191,7 @@ def get_sec_data_rust(ticker):
 <img src="/images/Visual-trends-2.png" alt="FCF Trends" style="width: 100%; display: block; border-radius: 5px;">
 </a>
 </div>
+
 
 
 ### 5. AI Analyst & Sentiment Scoring
