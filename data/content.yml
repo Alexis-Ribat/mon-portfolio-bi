@@ -93,8 +93,8 @@ portfolio:
       
       
     - name: "Recipes"
-<a href="/images/tartiflette.png" data-fancybox="gallery" data-caption="Tartiflette">
-    <img src="/images/tartiflette.png" alt="Tartiflette" width="20%" style="display: block; margin: 10px auto;">
-</a>      # C'est ici que la magie opère : lien vers le fichier créé à l'étape 1
+      <a href="/images/tartiflette.png" data-fancybox="gallery" data-caption="Tartiflette">
+        <img src="/images/tartiflette.png" alt="Tartiflette" width="20%" style="display: block; margin: 10px auto;">
+      </a>      # C'est ici que la magie opère : lien vers le fichier créé à l'étape 1
       url: "/portfolio/recipe/" 
       description: "Recipes"
