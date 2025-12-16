@@ -110,7 +110,51 @@ In a small separate bowl, mix **1 tablespoon of cornstarch** with the remaining 
 Pour this mixture into the pan. The sauce will thicken instantly and coat the chicken beautifully.
 
 ---
+---
 
-> **Note:** Serve hot, sprinkled with fresh chopped coriander and white rice.
+## III - Croque Monsieur & Madame
 
-> **Note:** Serve with a fresh green salad and a glass of white wine from Savoy!
+The quintessential French bistro snack. The **Croque Monsieur** is a hot ham and cheese sandwich. Add a sunny-side-up egg on top, and it becomes a **Croque Madame** (resembling a lady's hat).
+
+**Croque Madame:**
+<a href="/images/croque-madame.png" data-fancybox="gallery" data-caption="Croque Madame">
+    <img src="/images/croque-madame.png" alt="Croque Madame" width="60%" style="display: block; margin: 10px auto;">
+</a>
+
+### 🛒 Ingredients
+
+* **Bread:** Sliced sandwich bread ("Pain de mie")
+* **Meat:** Slices of ham
+* **Dairy:**
+    * Cheese slices (Emmental, Comté, or Gruyère)
+    * Grated cheese (for the topping)
+    * Butter (softened)
+* **Topping (for Madame):** Eggs
+* **Seasoning:** Salt & Pepper
+
+---
+
+### 👨‍🍳 Preparation
+
+#### 1. Buttering
+Lightly butter **one side** of each slice of bread.
+*Tip: The buttered side will be on the **outside** to get that golden crisp.*
+
+#### 2. Assembly
+On the **non-buttered side** of a slice, place a slice of cheese and a slice of ham.
+(Optional: Add a sprinkle of grated cheese inside too).
+Close the sandwich with another slice of bread, ensuring the **buttered side is facing out**.
+
+#### 3. Cooking the Sandwich
+Toast the sandwiches in a hot frying pan (or in the oven) for **2 to 3 minutes on each side**.
+They should be golden brown and the cheese inside should be fully melted.
+*Option:* You can sprinkle grated cheese on top and broil it in the oven for a minute.
+
+#### 4. The "Madame" Touch
+While the sandwiches are toasting, fry the eggs **sunny-side up** in a pan with a little butter. Season with salt and pepper.
+
+#### 5. Serving
+Place a fried egg gently on top of each toasted sandwich to transform your Croque Monsieur into a Croque Madame.
+
+---
+
