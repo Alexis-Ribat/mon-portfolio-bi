@@ -1,20 +1,24 @@
 ---
-title: "Recipes"
+title: "My recipes"
 date: 2024-01-01
 draft: false
-# image: "images/System-Architecture.png" <--- J'ai commenté cette ligne car elle fait planter le site
-description: "Recipes"
+# image: "images/System-Architecture.png"
+description: "A collection of my favorite French and international recipes."
 category: "Hobbies"
 weight: 1
 ---
 
-## I - Tartiflette
+Welcome to my recipe collection! Here are some of my favorite dishes to cook at home.
 
-The Tartiflette is a traditional dish from the Savoy region in the French Alps. It is made with potatoes, Reblochon cheese, lardons, and onions. Perfect for a cold winter day!
+---
+
+## I - Tartiflette Savoyarde
+
+The ultimate comfort food from the French Alps. Potatoes, melted Reblochon cheese, smoky lardons, and onions.
 
 **Tartiflette:**
-<a href="/images/tartiflette.png" data-fancybox="gallery" data-caption="Tartiflette">
-    <img src="/images/tartiflette.png" alt="Tartiflette" width="60%" style="display: block; margin: 10px auto;">
+<a href="/images/tartiflette.jpg" data-fancybox="gallery" data-caption="Tartiflette Savoyarde">
+    <img src="/images/tartiflette.jpg" alt="Tartiflette Savoyarde" width="40%" style="display: block; margin: 10px auto;">
 </a>
 
 ### 🛒 Ingredients
@@ -60,6 +64,7 @@ Bake for approximately **20 minutes** until the cheese is melted and golden brow
 
 ---
 
+> **Note:** Serve with a fresh green salad and a glass of white wine from Savoy!
 
 ---
 
@@ -69,10 +74,9 @@ A surprisingly delicious sweet and savory dish. The soda creates a perfect caram
 
 **Coca-Cola Chicken:**
 <a href="/images/chicken-coca.png" data-fancybox="gallery" data-caption="Coca-Cola Chicken">
-    <img src="/images/chicken-coca.png" alt="Coca-Cola Chicken" width="60%" style="display: block; margin: 10px auto;">
+    <img src="/images/chicken-coca.png" alt="Coca-Cola Chicken" width="40%" style="display: block; margin: 10px auto;">
 </a>
 
-Youtube recipe : https://www.hervecuisine.com/recette/recette-du-poulet-au-coca/ 
 ### 🛒 Ingredients
 
 * **Meat:** 2 Chicken breasts
@@ -110,6 +114,9 @@ In a small separate bowl, mix **1 tablespoon of cornstarch** with the remaining 
 Pour this mixture into the pan. The sauce will thicken instantly and coat the chicken beautifully.
 
 ---
+
+> **Note:** Serve hot, sprinkled with fresh chopped coriander and white rice.
+
 ---
 
 ## III - Croque Monsieur & Madame
@@ -118,7 +125,7 @@ The quintessential French bistro snack. The **Croque Monsieur** is a hot ham and
 
 **Croque Madame:**
 <a href="/images/croque-madame.png" data-fancybox="gallery" data-caption="Croque Madame">
-    <img src="/images/croque-madame.png" alt="Croque Madame" width="60%" style="display: block; margin: 10px auto;">
+    <img src="/images/croque-madame.png" alt="Croque Madame" width="40%" style="display: block; margin: 10px auto;">
 </a>
 
 ### 🛒 Ingredients
@@ -158,3 +165,4 @@ Place a fried egg gently on top of each toasted sandwich to transform your Croqu
 
 ---
 
+> **Note:** Best served hot with a side of French fries or a light vinegar salad.
