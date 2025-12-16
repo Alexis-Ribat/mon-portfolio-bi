@@ -7,11 +7,21 @@ description: "A Python engine that automates fundamental analysis of S&P 500 sto
 ---
 
 ## Project Overview
-Value Investing Dashboard is a self-hosted financial analysis platform designed to automate fundamental stock research. 
-Built on a hybrid Python/Rust architecture and containerized with Docker, it orchestrates data ingestion from Yahoo Finance and SEC EDGAR. 
-The system features a Streamlit interface for interactive valuation (DCF, Piotroski F-Score) and integrates Google Gemini AI to generate comprehensive, Buffett-style investment theses and sentiment analysis.
 
-**The Goal:** Build a fully automated pipeline to screen 500+ stocks daily.
+### The Context & Challenge
+While there is no shortage of commercial stock screeners, I found them lacking in transparency and flexibility. I needed a tailored solution that would allow me to:
+* **Customize dashboards** based on my specific Value Investing criteria.
+* **Audit the calculations** of key performance indicators (ROE, ROCE, Free Cash Flow) to ensure they match my valuation models.
+* **Automate qualitative analysis** using my own predefined AI prompts to mimic a specific investor persona.
+
+### The Solution
+To address this, I built the **Value Investing Dashboard**, a self-hosted financial analysis platform designed to automate fundamental stock research.
+
+The system aggregates real-time market data from **Yahoo Finance** and mines deep historical financial statements directly from the **SEC (EDGAR)** database.
+
+Built on a hybrid **Python/Rust** architecture and containerized with **Docker**, the application features a **Streamlit** interface for interactive valuation (DCF, Piotroski F-Score) and integrates **Google Gemini AI** to generate comprehensive, Buffett-style investment theses.
+
+**The Goal:** Build a fully automated pipeline to screen 500+ stocks daily with full transparency on data and logic.
 
 ---
 
