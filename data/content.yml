@@ -50,7 +50,7 @@ skill:
   title: 'SOME SKILLS'
   showpercent: false
   skill_list:
-    - name: 'React'
+    - name: 'Python'
       percentage: '85%'
 
     - name: 'Detecting'
