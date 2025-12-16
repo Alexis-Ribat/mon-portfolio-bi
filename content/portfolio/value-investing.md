@@ -23,6 +23,9 @@ I designed a modular ETL (Extract, Transform, Load) architecture:
 2.  **Transform:** Data cleaning with **Pandas**.
 3.  **Load:** Export results to **Excel** and **JSON** for the web dashboard.
 
+**System Architecture:**
+![System Architecture](/images/Value-Investing-System-Architecture.png)
+
 ---
 🛠️ The Tech Stack: A Hybrid Python-Rust Architecture
 Building a financial analysis tool requires a balance between rapid prototyping for data science and raw performance for data ingestion. To achieve this, I designed a hybrid architecture that leverages the strengths of Python for logic and UI, and Rust for heavy computational tasks.
