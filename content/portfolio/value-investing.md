@@ -197,6 +197,14 @@ def get_sec_data_rust(ticker):
 * Automated investment thesis generation
 * Persona-based prompt structure
 
+<a href="/images/AI Analyst 1.png" data-fancybox="gallery" data-caption="Revenue Trends">
+    <img src="/images/AI Analyst 1.png" alt="Revenue Trends" width="85%" style="display: block; margin: 10px auto;">
+</a>
+
+<a href="/images/AI Analyst 2.png" data-fancybox="gallery" data-caption="Revenue Trends">
+    <img src="/images/AI Analyst 2.png" alt="Revenue Trends" width="85%" style="display: block; margin: 10px auto;">
+</a>
+
 ### 6. Archiving & Knowledge Base
 
 * Auto-saved AI reports
