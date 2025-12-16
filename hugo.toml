@@ -107,3 +107,8 @@ link = "mailto:votre-email@gmail.com" # Mettez votre email
 [[params.social]]
 icon = "fab fa-github"
 link = "https://github.com/Alexis-Ribat" # Votre GitHub
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
