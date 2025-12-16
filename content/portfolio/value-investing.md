@@ -181,16 +181,13 @@ def get_sec_data_rust(ticker):
 * SBC-adjusted Free Cash Flow
 * Long-term trend visualizations
 
-<div style="display: flex; justify-content: center; gap: 20px; align-items: center;">
-    
-    <a href="/images/Visual-trends-1.png" data-fancybox="gallery" data-caption="Revenue Trends" style="width: 48%;">
-        <img src="/images/Visual-trends-1.png" alt="Revenue Trends" style="width: 100%; display: block; border-radius: 5px;">
-    </a>
-
-    <a href="/images/Visual-trends-2.png" data-fancybox="gallery" data-caption="FCF Trends" style="width: 48%;">
-        <img src="/images/Visual-trends-2.png" alt="FCF Trends" style="width: 100%; display: block; border-radius: 5px;">
-    </a>
-
+<div style="display: flex; justify-content: center; gap: 20px; align-items: center; margin-top: 20px;">
+<a href="/images/Visual-trends-1.png" data-fancybox="gallery" data-caption="Revenue Trends" style="width: 48%;">
+<img src="/images/Visual-trends-1.png" alt="Revenue Trends" style="width: 100%; display: block; border-radius: 5px;">
+</a>
+<a href="/images/Visual-trends-2.png" data-fancybox="gallery" data-caption="FCF Trends" style="width: 48%;">
+<img src="/images/Visual-trends-2.png" alt="FCF Trends" style="width: 100%; display: block; border-radius: 5px;">
+</a>
 </div>
 
 
