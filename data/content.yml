@@ -81,21 +81,9 @@ funfacts:
 ############################# portfolio ################################
 portfolio:
   enable: true
-  title: 'MES PROJETS'
+  title: 'PROJETS'
   portfolio_list:
-    - name: "Projet 1"
-      image: "images/mon-projet.png" # <--- Hugo va chercher assets/images/mon-projet.png
-      
-    - name: "Analyse Value Investing"
-      image: 'images/test.png' # Votre capture d'écran
-      url: "#" # Mettez le lien vers votre GitHub ou laissez # si privé
-      description: "Un outil Python automatisé pour détecter les opportunités boursières basées sur les ratios de Benjamin Graham. (API Finance, Pandas, Excel)."
-      
-    - name: "Dashboard Marketing"
-      image: 'images/dashboard-bi.png'
-      url: "#"
-      description: "Tableau de bord Power BI pour le suivi des KPI marketing et calcul du ROI des campagnes."
-      
+
     - name: "Analyse Value Investing"
       image: 'images/test.png'
       # C'est ici que la magie opère : lien vers le fichier créé à l'étape 1
