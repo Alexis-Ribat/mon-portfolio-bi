@@ -50,7 +50,7 @@ def ask_gemini(prompt, api_keys):
             print(f"Key {key[:5]}... exhausted. Switching to next key.")
             continue
     raise Exception("All API keys exhausted.")
-	```
+```
 
 ### Infrastructure & Deployment (NAS)
 To ensure industrial-grade reliability, the entire pipeline is hosted on a **Synology NAS** (Network Attached Storage).

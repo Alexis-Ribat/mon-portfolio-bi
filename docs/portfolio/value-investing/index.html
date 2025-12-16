@@ -207,87 +207,65 @@
 </span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Key </span><span style="color:#e6db74">{</span>key[:<span style="color:#ae81ff">5</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">... exhausted. Switching to next key.&#34;</span>)
 </span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">continue</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">Exception</span>(<span style="color:#e6db74">&#34;All API keys exhausted.&#34;</span>)
-</span></span><span style="display:flex;"><span>	<span style="color:#960050;background-color:#1e0010">```</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">### Infrastructure &amp; Deployment (NAS)</span>
-</span></span><span style="display:flex;"><span>To ensure industrial<span style="color:#f92672">-</span>grade reliability, the entire pipeline <span style="color:#f92672">is</span> hosted on a <span style="color:#f92672">**</span>Synology NAS<span style="color:#f92672">**</span> (Network Attached Storage)<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span> <span style="color:#f92672">**</span><span style="color:#ae81ff">24</span><span style="color:#f92672">/</span><span style="color:#ae81ff">7</span> Automation:<span style="color:#f92672">**</span> The script <span style="color:#f92672">is</span> containerized <span style="color:#f92672">and</span> triggered automatically every morning via <span style="color:#f92672">**</span>Cron jobs<span style="color:#f92672">**</span>, running independently of my personal workstation<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span> <span style="color:#f92672">**</span>Data Persistence:<span style="color:#f92672">**</span> Historical financial data <span style="color:#f92672">is</span> stored locally <span style="color:#66d9ef">with</span> <span style="color:#f92672">**</span>RAID redundancy<span style="color:#f92672">**</span>, ensuring data safety <span style="color:#f92672">and</span> preventing data gaps<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">---</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Technical Architecture</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>I designed a modular ETL (Extract, Transform, Load) architecture:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1.</span>  <span style="color:#f92672">**</span>Extract:<span style="color:#f92672">**</span> Python scripts request data via the <span style="color:#f92672">**</span>Yahoo Finance API<span style="color:#f92672">**</span> <span style="color:#f92672">&amp;</span> <span style="color:#f92672">**</span>SEC Data<span style="color:#f92672">**.</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span>  <span style="color:#f92672">**</span>Transform:<span style="color:#f92672">**</span> Data cleaning <span style="color:#66d9ef">with</span> <span style="color:#f92672">**</span>Pandas<span style="color:#f92672">**.</span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span>  <span style="color:#f92672">**</span>Load:<span style="color:#f92672">**</span> Export results to <span style="color:#f92672">**</span>Excel<span style="color:#f92672">**</span> <span style="color:#f92672">and</span> <span style="color:#f92672">**</span>JSON<span style="color:#f92672">**</span> <span style="color:#66d9ef">for</span> the web dashboard<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">**</span>System Architecture:<span style="color:#f92672">**</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">!</span>[System Architecture](<span style="color:#f92672">/</span>images<span style="color:#f92672">/</span>System<span style="color:#f92672">-</span>Architecture<span style="color:#f92672">.</span>png)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">---</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># The Tech Stack: A Hybrid Python-Rust Architecture</span>
-</span></span><span style="display:flex;"><span>Building a financial analysis tool requires a balance between rapid prototyping <span style="color:#66d9ef">for</span> data science <span style="color:#f92672">and</span> raw performance <span style="color:#66d9ef">for</span> data ingestion<span style="color:#f92672">.</span> To achieve this, I designed a hybrid architecture that leverages the strengths of Python <span style="color:#66d9ef">for</span> logic <span style="color:#f92672">and</span> UI, <span style="color:#f92672">and</span> Rust <span style="color:#66d9ef">for</span> heavy computational tasks<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Here <span style="color:#f92672">is</span> a deep dive into the technologies powering the Value Investing Dashboard<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1.</span> Application Layer: Python <span style="color:#f92672">&amp;</span> Streamlit
-</span></span><span style="display:flex;"><span>The core of the application <span style="color:#f92672">is</span> built on Python <span style="color:#ae81ff">3.11</span>, the lingua franca of financial data analysis<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Frontend Framework: I chose Streamlit <span style="color:#66d9ef">for</span> its ability to turn data scripts into shareable web apps <span style="color:#f92672">in</span> minutes<span style="color:#f92672">.</span> It allows me to focus on financial modeling rather than CSS <span style="color:#f92672">or</span> JavaScript<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Data Processing: Pandas <span style="color:#f92672">and</span> NumPy handle the vectorization of financial metrics (ROCE, CAGR, DCF modeling)<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Visualization: Plotly provides interactive charts (gauges, time<span style="color:#f92672">-</span>series) that allow users to zoom into specific financial periods<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Data Sources: yfinance <span style="color:#f92672">is</span> used <span style="color:#66d9ef">for</span> real<span style="color:#f92672">-</span>time market data (prices, basic financials), acting <span style="color:#66d9ef">as</span> the first layer of the ETL pipeline<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.</span> The Performance Engine: Rust 
-</span></span><span style="display:flex;"><span>Fetching <span style="color:#f92672">and</span> parsing gigabytes of institutional filings (<span style="color:#ae81ff">10</span><span style="color:#f92672">-</span>K, <span style="color:#ae81ff">10</span><span style="color:#f92672">-</span>Q) <span style="color:#f92672">from</span> the SEC EDGAR database <span style="color:#f92672">is</span> CPU<span style="color:#f92672">-</span>intensive<span style="color:#f92672">.</span> Python struggled <span style="color:#66d9ef">with</span> latency here, so I offloaded this specific workload to Rust<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Custom Binary (edgar_fetcher): A standalone CLI tool written <span style="color:#f92672">in</span> Rust<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Concurrency: Leverages reqwest (<span style="color:#66d9ef">async</span> HTTP client) <span style="color:#f92672">and</span> tokio to handle network requests significantly faster than Python<span style="color:#960050;background-color:#1e0010">’</span>s requests<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Type Safety: Uses serde <span style="color:#66d9ef">for</span> lightning<span style="color:#f92672">-</span>fast JSON serialization<span style="color:#f92672">/</span>deserialization, ensuring data integrity before it even reaches the Python layer<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Integration: The Python backend orchestrates the Rust binary via subprocess calls, creating a seamless bridge between the two languages<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3.</span> Artificial Intelligence: Google Gemini 
-</span></span><span style="display:flex;"><span>To automate the qualitative analysis (the <span style="color:#e6db74">&#34;Warren Buffett&#34;</span> perspective), the system integrates Large Language Models (LLM)<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Model: Google Gemini <span style="color:#ae81ff">1.5</span> Flash<span style="color:#f92672">.</span> Chosen <span style="color:#66d9ef">for</span> its large context window (essential <span style="color:#66d9ef">for</span> reading long financial transcripts) <span style="color:#f92672">and</span> low latency<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Prompt Engineering: I implemented a rigorous <span style="color:#e6db74">&#34;Persona-based&#34;</span> prompting strategy<span style="color:#f92672">.</span> The system injects raw financial tables (computed <span style="color:#f92672">in</span> Python) into the prompt context, forcing the AI to ground its analysis <span style="color:#f92672">in</span> hard data rather than hallucinations<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Sentiment Analysis: The system scrapes news via BeautifulSoup <span style="color:#f92672">and</span> feeds headlines to the LLM to gauge market sentiment (Bullish<span style="color:#f92672">/</span>Bearish)<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4.</span> Persistence: PostgreSQL <span style="color:#f92672">&amp;</span> SQLAlchemy 
-</span></span><span style="display:flex;"><span>Financial data requires strict structure <span style="color:#f92672">and</span> integrity<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Database: PostgreSQL <span style="color:#ae81ff">15.</span> It stores historical financial data, caching it to avoid hitting API rate limits<span style="color:#f92672">.</span> It also serves <span style="color:#66d9ef">as</span> the archive <span style="color:#66d9ef">for</span> every AI<span style="color:#f92672">-</span>generated report<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>ORM: SQLAlchemy<span style="color:#f92672">.</span> It abstracts the SQL complexity, allowing me to manipulate database records using Python classes <span style="color:#f92672">and</span> objects<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Management: Adminer<span style="color:#f92672">.</span> A lightweight database management tool running <span style="color:#f92672">in</span> a sidecar container, allowing <span style="color:#66d9ef">for</span> quick manual inspection <span style="color:#f92672">and</span> SQL queries via a web interface<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#ae81ff">5.</span> Infrastructure: Docker <span style="color:#f92672">&amp;</span> Synology NAS 
-</span></span><span style="display:flex;"><span>The entire stack <span style="color:#f92672">is</span> designed to be <span style="color:#e6db74">&#34;Write Once, Run Anywhere&#34;</span> (specifically, on a home server)<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Containerization: A multi<span style="color:#f92672">-</span>stage Dockerfile handles the complexity of the hybrid build<span style="color:#f92672">.</span> It first compiles the Rust binary (using a Rust image), then copies the executable into a slim Python image<span style="color:#f92672">.</span> This results <span style="color:#f92672">in</span> a single, lightweight image containing both the Python app <span style="color:#f92672">and</span> the Rust engine<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Orchestration: Docker Compose defines the services (dashboard, db, adminer), networks, <span style="color:#f92672">and</span> persistent volumes<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Hardware: The stack runs <span style="color:#ae81ff">24</span><span style="color:#f92672">/</span><span style="color:#ae81ff">7</span> on a Synology NAS, providing a private, self<span style="color:#f92672">-</span>hosted environment without cloud subscription costs<span style="color:#f92672">.</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">**</span>Code Highlight: The Python<span style="color:#f92672">-</span>Rust Bridge<span style="color:#f92672">**</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">```</span>python
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># src/sec_provider.py</span>
+</span></span></code></pre></div><h3 id="infrastructure--deployment-nas">Infrastructure &amp; Deployment (NAS)</h3>
+<p>To ensure industrial-grade reliability, the entire pipeline is hosted on a <strong>Synology NAS</strong> (Network Attached Storage).</p>
+<ul>
+<li><strong>24/7 Automation:</strong> The script is containerized and triggered automatically every morning via <strong>Cron jobs</strong>, running independently of my personal workstation.</li>
+<li><strong>Data Persistence:</strong> Historical financial data is stored locally with <strong>RAID redundancy</strong>, ensuring data safety and preventing data gaps.</li>
+</ul>
+<hr>
+<h2 id="technical-architecture">Technical Architecture</h2>
+<p>I designed a modular ETL (Extract, Transform, Load) architecture:</p>
+<ol>
+<li><strong>Extract:</strong> Python scripts request data via the <strong>Yahoo Finance API</strong> &amp; <strong>SEC Data</strong>.</li>
+<li><strong>Transform:</strong> Data cleaning with <strong>Pandas</strong>.</li>
+<li><strong>Load:</strong> Export results to <strong>Excel</strong> and <strong>JSON</strong> for the web dashboard.</li>
+</ol>
+<p><strong>System Architecture:</strong></p>
+<p><img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/System-Architecture.png" alt="System Architecture"></p>
+<hr>
+<h1 id="the-tech-stack-a-hybrid-python-rust-architecture">The Tech Stack: A Hybrid Python-Rust Architecture</h1>
+<p>Building a financial analysis tool requires a balance between rapid prototyping for data science and raw performance for data ingestion. To achieve this, I designed a hybrid architecture that leverages the strengths of Python for logic and UI, and Rust for heavy computational tasks.</p>
+<p>Here is a deep dive into the technologies powering the Value Investing Dashboard.</p>
+<ol>
+<li>Application Layer: Python &amp; Streamlit
+The core of the application is built on Python 3.11, the lingua franca of financial data analysis.</li>
+</ol>
+<p>Frontend Framework: I chose Streamlit for its ability to turn data scripts into shareable web apps in minutes. It allows me to focus on financial modeling rather than CSS or JavaScript.</p>
+<p>Data Processing: Pandas and NumPy handle the vectorization of financial metrics (ROCE, CAGR, DCF modeling).</p>
+<p>Visualization: Plotly provides interactive charts (gauges, time-series) that allow users to zoom into specific financial periods.</p>
+<p>Data Sources: yfinance is used for real-time market data (prices, basic financials), acting as the first layer of the ETL pipeline.</p>
+<ol start="2">
+<li>The Performance Engine: Rust
+Fetching and parsing gigabytes of institutional filings (10-K, 10-Q) from the SEC EDGAR database is CPU-intensive. Python struggled with latency here, so I offloaded this specific workload to Rust.</li>
+</ol>
+<p>Custom Binary (edgar_fetcher): A standalone CLI tool written in Rust.</p>
+<p>Concurrency: Leverages reqwest (async HTTP client) and tokio to handle network requests significantly faster than Python’s requests.</p>
+<p>Type Safety: Uses serde for lightning-fast JSON serialization/deserialization, ensuring data integrity before it even reaches the Python layer.</p>
+<p>Integration: The Python backend orchestrates the Rust binary via subprocess calls, creating a seamless bridge between the two languages.</p>
+<ol start="3">
+<li>Artificial Intelligence: Google Gemini
+To automate the qualitative analysis (the &ldquo;Warren Buffett&rdquo; perspective), the system integrates Large Language Models (LLM).</li>
+</ol>
+<p>Model: Google Gemini 1.5 Flash. Chosen for its large context window (essential for reading long financial transcripts) and low latency.</p>
+<p>Prompt Engineering: I implemented a rigorous &ldquo;Persona-based&rdquo; prompting strategy. The system injects raw financial tables (computed in Python) into the prompt context, forcing the AI to ground its analysis in hard data rather than hallucinations.</p>
+<p>Sentiment Analysis: The system scrapes news via BeautifulSoup and feeds headlines to the LLM to gauge market sentiment (Bullish/Bearish).</p>
+<ol start="4">
+<li>Persistence: PostgreSQL &amp; SQLAlchemy
+Financial data requires strict structure and integrity.</li>
+</ol>
+<p>Database: PostgreSQL 15. It stores historical financial data, caching it to avoid hitting API rate limits. It also serves as the archive for every AI-generated report.</p>
+<p>ORM: SQLAlchemy. It abstracts the SQL complexity, allowing me to manipulate database records using Python classes and objects.</p>
+<p>Management: Adminer. A lightweight database management tool running in a sidecar container, allowing for quick manual inspection and SQL queries via a web interface.</p>
+<ol start="5">
+<li>Infrastructure: Docker &amp; Synology NAS
+The entire stack is designed to be &ldquo;Write Once, Run Anywhere&rdquo; (specifically, on a home server).</li>
+</ol>
+<p>Containerization: A multi-stage Dockerfile handles the complexity of the hybrid build. It first compiles the Rust binary (using a Rust image), then copies the executable into a slim Python image. This results in a single, lightweight image containing both the Python app and the Rust engine.</p>
+<p>Orchestration: Docker Compose defines the services (dashboard, db, adminer), networks, and persistent volumes.</p>
+<p>Hardware: The stack runs 24/7 on a Synology NAS, providing a private, self-hosted environment without cloud subscription costs.</p>
+<p><strong>Code Highlight: The Python-Rust Bridge</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># src/sec_provider.py</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> subprocess
 </span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> json
