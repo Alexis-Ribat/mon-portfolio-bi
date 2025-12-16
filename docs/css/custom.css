@@ -3,9 +3,13 @@ body {
     padding-top: 100px; /* Ajustez ce chiffre selon la hauteur de votre menu */
 }
 
-/* Réduire la taille du preloader */
-#preloader img {
-    max-width: 20px;  /* Changez 100px par la taille voulue (ex: 60px ou 150px) */
-    width: 20%;
-    height: auto;
+/* Réduire la taille du preloader - CORRIGÉ */
+#preloader img, .preloader img {
+    width: 80px !important;      /* Largeur fixe forcée */
+    max-width: 80px !important;  /* Empêche de dépasser */
+    height: auto !important;     /* Garde les proportions */
+    
+    /* Pour s'assurer qu'il reste centré */
+    display: block;
+    margin: 0 auto; 
 }

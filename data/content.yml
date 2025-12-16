@@ -86,7 +86,6 @@ portfolio:
 
     - name: "Analyse Value Investing"
       image: 'images/mon-projet.jpg'
-      # C'est ici que la magie opère : lien vers le fichier créé à l'étape 1
       url: "/portfolio/value-investing/" 
       description: "Un outil Python automatisé pour détecter les opportunités boursières..."
       
@@ -94,6 +93,13 @@ portfolio:
       
     - name: "Recipes"
       image: 'images/tartiflette.png'
-      # C'est ici que la magie opère : lien vers le fichier créé à l'étape 1
       url: "/portfolio/recipe/" 
       description: "Recipes"
+      
+      
+    - name: "Nanobanana"
+      image: 'images/nanobanana.png'
+      url: "/portfolio/prompt-nanobanana/" 
+      description: "prompt-nanobanana" 
+      
+      
