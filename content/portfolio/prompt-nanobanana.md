@@ -147,7 +147,7 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
 </summary>
 
 <div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
-    <button id="copyBtn" onclick="copyPrompt()" style="
+    <button id="copyBtn2" onclick="copyPrompt()" style="
         position: absolute; 
         top: 10px; 
         right: 10px; 
@@ -172,7 +172,7 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
 function copyPrompt() {
     const text = document.getElementById("jsonPrompt").innerText;
     navigator.clipboard.writeText(text).then(function() {
-        const btn = document.getElementById("copyBtn");
+        const btn = document.getElementById("copyBtn2");
         const originalText = btn.innerText;
         btn.innerText = "✅ Copié !";
         btn.style.backgroundColor = "#2e7d32";
