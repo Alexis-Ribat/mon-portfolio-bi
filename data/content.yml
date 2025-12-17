@@ -74,17 +74,17 @@ skill:
 funfacts:
   enable: true
   funfacts_list:
-    - name: 'DASHBOARDS DELIVERED'
+    - name: 'DASHBOARDS DELIVERED (+)'
       image: 'images/dashboard.png'
-      description: '50+'
+      count: 50
 
-    - name: 'AUTOMATED WORKFLOWS'
+    - name: 'AUTOMATED WORKFLOWS (+)'
       image: 'images/automation.png'
-      description: '30+'
+      count: 30
 
-    - name: 'HOURS SAVED'
+    - name: 'HOURS SAVED (>)'
       image: 'images/time.png'
-      description: '1000+'
+      count: 1000
 
 ############################# portfolio ################################
 portfolio:
