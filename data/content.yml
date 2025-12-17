@@ -18,7 +18,7 @@ about:
   image: 'images/profile.jpg' # Mettez votre photo dans static/images/profile.jpg
   title: 'ABOUT ME'
   content: "Data professional with a strong track record at industry leaders like Dior and EDF. I bridge the gap between complex data engineering and strategic business decision-making. 
-  Specializing in the modern data stack (Python, SQL, Power BI, Cloud), I don't just build dashboards—I design automated ecosystems that save time, reduce risk, and empower stakeholders to act independently.
+  Specializing in the modern data stack (Python, SQL, Power BI, Cloud), I don't just build dashboards. I design automated ecosystems that save time, reduce risk, and empower stakeholders to act independently.
 "
   button:
     enable: true
