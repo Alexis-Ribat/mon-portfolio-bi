@@ -86,8 +86,8 @@ google_analytics = "" # Laissez vide pour l'instant
 
 # IMPORTANT : J'ai mis des # devant les logos pour les désactiver.
 # Comme ça, le site affichera juste votre titre "Ribat | BI" proprement.
-logo_light = "images/profile.jpg"
-logo_dark = "images/profile.jpg"
+logo_light = "/images/logo.png"
+logo_dark = "/images/logo.png"
 
 # Preloader (L'animation de chargement)
 [params.preloader]
