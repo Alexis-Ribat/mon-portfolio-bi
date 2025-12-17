@@ -76,15 +76,15 @@ funfacts:
   funfacts_list:
     - name: 'DASHBOARDS CREATED'
       image: 'images/dashboard.png'
-      count: '50+'
+      count: '50'
 
     - name: 'AUTOMATIONS'
       image: 'images/automation.png'
-      count: '30+'
+      count: '30'
 
     - name: 'TIME GAINED'
       image: 'images/time.png'
-      count: '500h+'
+      count: '500'
 
 ############################# portfolio ################################
 portfolio:
