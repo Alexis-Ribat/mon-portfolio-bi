@@ -61,30 +61,30 @@ skill:
     - name: 'Python'
       percentage: '85%'
 
-    - name: 'Detecting'
-      percentage: '93%'
+    - name: 'Leadership & Communication'
+      percentage: '80%'
 
-    - name: 'Selling'
-      percentage: '25%'
+    - name: 'Big Data Processing & Architecture'
+      percentage: '75%'
 
-    - name: 'Yelling'
-      percentage: '100%'
+    - name: 'Model Governance'
+      percentage: '80%'
 
 ######################### funfacts #############################3
 funfacts:
   enable: true
   funfacts_list:
-    - name: 'CUPS PER DAY'
+    - name: 'DASHBOARDS CREATED'
       image: 'images/icons/profile.jpg'
-      count: '2'
+      count: '50+'
 
-    - name: 'SITES BUILT'
+    - name: 'AUTOMATIONS'
       image: 'images/icons/profile.jpg'
-      count: '25'
+      count: '30+'
 
-    - name: 'USELESS ROW OF ICONS'
+    - name: 'TIME GAINED'
       image: 'images/icons/profile.jpg'
-      count: '1'
+      count: '500h+'
 
 ############################# portfolio ################################
 portfolio:
