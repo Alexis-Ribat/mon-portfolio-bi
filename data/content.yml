@@ -34,17 +34,23 @@ experience:
     - name: BI analyst
       company: Dior
       duration: '2023-Current'
-      content: I make websites.
+      content: 'Collaborated with stakeholders and data engineers to deliver Power BI and Qlik Sense solutions for over 2,000 international users, translating business needs into scalable data models. 
+      Designed automated reporting systems using SQL and Power Automate that ensured data consistency and reduced analysis production time by 40%. 
+      Drove tool adoption and team autonomy by facilitating best-practice workshops, conducting training, and authoring extensive technical documentation.'
 
     - name: Data Analyst
       company: Banque de France
       duration: '2022-2023'
-      content: Okay. This is hard to explain but I’m going to give it a shot. You and I are opening our own private detective agency.
+      content: 'Analyzed business needs to produce and verify critical Fraud and Card Payment reporting for the European Central Bank (ECB) using SAP BO 4.3. 
+      Implemented robust task automation workflows utilizing XL Deploy and Jenkins to streamline daily operations. 
+      Continuously monitored system performance to optimize program execution and reduce process response times.'
 
     - name: Data Analyst
       company: EDF
       duration: '2020-2022'
-      content: We are not bounty hunters, Shawn. I am a pharmaceutical salesman. And Lassiter made it very clear! He said in no uncertain terms. These are certain terms, Shawn! Certain terms!
+      content: 'Designed a production modernization solution for the commercial division while managing data loading and transformation workflows using Oracle Data Integrator (ODI). 
+      Strengthened regulatory compliance with CNIL recommendations by developing Kibana dashboards and implementing automated Watcher alerts for personal data tracking. 
+      Promoted knowledge sharing and technical autonomy by creating and distributing comprehensive Kibana and ElasticSearch tutorials via Confluence.'
 
 ############################### Skill #################################
 skill:
