@@ -3,9 +3,9 @@ hero:
   
   # Texte qui change (machine à écrire)
   occupations:
-    - 'Business Intelligence'
-    - 'Expert Data'
-    - 'Power BI' #
+    - 'Senior Data Analyst'
+    - 'Data Visualization Expert'
+    - 'Analytics Engineer'
 
   # L'image de fond (Mettez votre image dans static/images/background.jpg)
   bg_image: 'images/background.jpg'
@@ -17,8 +17,8 @@ about:
   enable: true
   image: 'images/profile.jpg' # Mettez votre photo dans static/images/profile.jpg
   title: 'ABOUT ME'
-  content: "Enthusiastic and versatile Data Analyst with a strong background in data science and hands-on experience, dedicated to delivering meaningful insights and data-driven solutions.
-Proficient in Power BI, Google Cloud Platform, and Azure solutions, I transform data into strategic information to drive decision-making. I am constantly seeking opportunities to optimize business processes through modern cloud solutions and dynamic dashboards.
+  content: "Data professional with a strong track record at industry leaders like Dior and EDF. I bridge the gap between complex data engineering and strategic business decision-making. 
+  Specializing in the modern data stack (Python, SQL, Power BI, Cloud), I don't just build dashboards—I design automated ecosystems that save time, reduce risk, and empower stakeholders to act independently.
 "
   button:
     enable: true
@@ -58,8 +58,8 @@ skill:
   title: 'SOME SKILLS'
   showpercent: false
   skill_list:
-    - name: 'Python'
-      percentage: '85%'
+    - name: 'Data Engineering & ETL (Python/SQL/ODI)'
+      percentage: '90%'
 
     - name: 'Leadership & Communication'
       percentage: '80%'
@@ -74,17 +74,17 @@ skill:
 funfacts:
   enable: true
   funfacts_list:
-    - name: 'DASHBOARDS CREATED'
+    - name: 'DASHBOARDS DELIVERED'
       image: 'images/dashboard.png'
       count: '50'
 
-    - name: 'AUTOMATIONS'
+    - name: 'AUTOMATED WORKFLOWS'
       image: 'images/automation.png'
-      count: '30'
+      count: '30+'
 
-    - name: 'TIME GAINED'
+    - name: 'HOURS SAVED'
       image: 'images/time.png'
-      count: '500'
+      count: '1000+'
 
 ############################# portfolio ################################
 portfolio:
@@ -92,23 +92,20 @@ portfolio:
   title: 'PROJETS'
   portfolio_list:
 
-    - name: "Analyse Value Investing"
+    - name: "Value Investing Tool"
       image: 'images/mon-projet.jpg'
       url: "/portfolio/value-investing/" 
-      description: "Un outil Python automatisé pour détecter les opportunités boursières..."
-      
-      
-      
+      description: "Automated Python pipeline for stock market analysis, detecting undervalued assets using fundamental financial ratios."
+     
     - name: "Recipes"
       image: 'images/tartiflette.png'
       url: "/portfolio/recipe/" 
       description: "Recipes"
       
-      
-    - name: "Nanobanana"
+    - name: "GenAI Prompting Experiment"
       image: 'images/nanobanana.png'
       url: "/portfolio/prompt-nanobanana/" 
-      description: "prompt-nanobanana" 
+      description: "Exploration of LLM capabilities for automated content generation and prompt engineering tests." 
       
       
 
