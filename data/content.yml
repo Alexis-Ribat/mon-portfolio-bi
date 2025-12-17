@@ -98,7 +98,7 @@ portfolio:
       description: "Automated Python pipeline for stock market analysis, detecting undervalued assets using fundamental financial ratios."
      
     - name: "Recipes"
-      image: 'images/tartiflette.png'
+      image: 'images/recettes.jpg'
       url: "/portfolio/recipe/" 
       description: "Recipes"
       
