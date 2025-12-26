@@ -3,65 +3,52 @@ body {
     padding-top: 100px; /* Ajustez ce chiffre selon la hauteur de votre menu */
 }
 
-/* Cache l'image résiduelle et le carré blanc du thème original */
+/* --- PRELOADER CUSTOM --- */
+
+/* 1. On cache toute balise image qui traînerait (le carré blanc) */
 #preloader img, .preloader img, .preloader-inner img {
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
 }
 
+/* 2. On configure le conteneur principal */
 #preloader {
-    background-color: #1a1a1a !important; /* Force le fond sombre */
-    opacity: 1 !important;
+    /* FORCE la suppression de l'ancien GIF s'il est en background */
+    background-image: none !important; 
+    
+    background-color: #1a1a1a !important; /* Fond sombre */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999999;
+    
+    /* Centre le contenu (notre flocon) */
     display: flex !important;
     align-items: center;
     justify-content: center;
 }
 
-/* Le flocon blanc qui devient bleu */
+/* 3. On stylise notre flocon SVG */
 .snow-loader {
     width: 150px;
     height: 150px;
-    stroke: white; /* Couleur initiale */
+    stroke: white;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
     animation: colorFill 3s infinite alternate ease-in-out, rotateSnow 10s linear infinite;
 }
 
+/* Animations */
 @keyframes colorFill {
     0% { stroke: #ffffff; }
-    100% { stroke: #00d4ff; } /* Transition vers le bleu */
+    100% { stroke: #00d4ff; }
 }
 
 @keyframes rotateSnow {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
-}
-
-/* --- Harmonisation de la grille Portfolio --- */
-
-/* Force une hauteur fixe pour toutes les images de la grille */
-.og-grid li a img {
-    height: 250px !important;  /* Vous pouvez ajuster ce chiffre (ex: 200px ou 300px) */
-    width: 100% !important;    /* Prend toute la largeur de la case */
-    object-fit: cover;         /* Coupe les bords qui dépassent pour ne pas déformer l'image */
-}
-
-/* Optionnel : S'assurer que les cases ont la même taille */
-.og-grid li {
-    height: 250px; /* Doit être égal ou supérieur à la hauteur de l'image */
-    overflow: hidden; /* Cache ce qui pourrait dépasser */
-}
-
-.snowflake {
-    position: fixed;
-    top: -10px;
-    color: #fff;
-    user-select: none;
-    z-index: 9999;
-    pointer-events: none;
-    animation: fall linear forwards;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(105vh);
-    }
 }
