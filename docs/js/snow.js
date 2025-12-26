@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isSnowing) {
                 startSnow();
                 isSnowing = true;
-                snowTrigger.innerHTML = "Stop snow ❄️"; // Optionnel : changer le texte
+                snowTrigger.innerHTML = "Stop snow ❄️";
             } else {
-                stopSnowGracefully();
+                stopSnowVerySlowly();
                 isSnowing = false;
                 snowTrigger.innerHTML = "Let it snow ❄️";
             }
@@ -19,24 +19,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function startSnow() {
-        // Crée un flocon toutes les 150ms pour un effet régulier
         snowInterval = setInterval(createFlake, 150);
     }
 
-    function stopSnowGracefully() {
-        // 1. On arrête de créer de nouveaux flocons
+    function stopSnowVerySlowly() {
+        // 1. On arrête immédiatement la création de nouveaux flocons
         clearInterval(snowInterval);
 
-        // 2. On fait disparaître les flocons existants en douceur (fade out)
+        // 2. On récupère tous les flocons présents
         const flakes = document.querySelectorAll('.snowflake');
-        flakes.forEach(flake => {
-            flake.style.transition = "opacity 2s ease-out"; // Transition de 2 secondes
-            flake.style.opacity = "0";
+        
+        flakes.forEach((flake, index) => {
+            // 3. On ajoute un délai aléatoire pour que chaque flocon ne disparaisse pas au même moment
+            const randomDelay = Math.random() * 2000; // Jusqu'à 2s de délai avant de commencer à s'effacer
             
-            // On les retire du DOM seulement après la fin du fondu
             setTimeout(() => {
-                flake.remove();
-            }, 2000);
+                // 4. On définit une transition d'opacité très longue (5 secondes)
+                flake.style.transition = "opacity 5s ease-in-out";
+                flake.style.opacity = "0";
+
+                // 5. On retire le flocon du DOM seulement après la fin de la transition de 5s
+                setTimeout(() => {
+                    if (flake.parentElement) flake.remove();
+                }, 5000);
+            }, randomDelay);
         });
     }
 
@@ -45,19 +51,16 @@ document.addEventListener('DOMContentLoaded', function() {
         flake.innerHTML = '❄';
         flake.classList.add('snowflake');
         
-        // Propriétés aléatoires pour le réalisme
         flake.style.left = Math.random() * 100 + 'vw';
-        flake.style.animationDuration = Math.random() * 3 + 3 + 's'; 
+        // Vitesse de chute légèrement ralentie pour une vibe plus calme
+        flake.style.animationDuration = Math.random() * 5 + 5 + 's'; 
         flake.style.opacity = Math.random() * 0.7 + 0.3;
         flake.style.fontSize = Math.random() * 10 + 10 + 'px';
         
         document.body.appendChild(flake);
 
-        // Nettoyage automatique si l'animation se termine
         setTimeout(() => {
-            if (flake.parentElement) {
-                flake.remove();
-            }
-        }, 6000);
+            if (flake.parentElement) flake.remove();
+        }, 10000); // Durée de vie plus longue pour accompagner la chute lente
     }
 });
