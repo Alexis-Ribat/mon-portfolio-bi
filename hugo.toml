@@ -104,7 +104,7 @@ logo_dark = "/images/logo.png"
 # Preloader (L'animation de chargement)
 [params.preloader]
 enable = true
-preloader = "images/preloader.gif"
+preloader = ""
 
 ############################# social site ########################
 

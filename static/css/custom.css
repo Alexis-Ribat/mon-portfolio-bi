@@ -3,15 +3,40 @@ body {
     padding-top: 100px; /* Ajustez ce chiffre selon la hauteur de votre menu */
 }
 
-/* Réduire la taille du preloader - CORRIGÉ */
-#preloader img, .preloader img {
-    width: 80px !important;      /* Largeur fixe forcée */
-    max-width: 80px !important;  /* Empêche de dépasser */
-    height: auto !important;     /* Garde les proportions */
-    
-    /* Pour s'assurer qu'il reste centré */
-    display: block;
-    margin: 0 auto; 
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1a1a1a; /* Fond sombre pour faire ressortir le blanc/bleu */
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snow-loader {
+  width: 150px; /* Taille du grand flocon */
+  height: 150px;
+  /* Effet de remplissage progressif */
+  stroke: white;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+  animation: colorFill 3s infinite alternate ease-in-out, rotateSnow 10s linear infinite;
+}
+
+@keyframes colorFill {
+  0% {
+    stroke: #ffffff; /* Blanc */
+  }
+  100% {
+    stroke: #00d4ff; /* Bleu neige/glace */
+  }
+}
+
+@keyframes rotateSnow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* --- Harmonisation de la grille Portfolio --- */
