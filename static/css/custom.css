@@ -5,21 +5,15 @@ body {
 
 /* --- PRELOADER CUSTOM --- */
 
-/* 1. On cache toute balise image qui traînerait (le carré blanc) */
+/* Cache l'image résiduelle et le carré blanc du thème original - ON GARDE CA */
 #preloader img, .preloader img, .preloader-inner img {
     display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    width: 0 !important;
-    height: 0 !important;
 }
 
-/* 2. On configure le conteneur principal */
+/* Configuration du conteneur - ON RETIRE LES "!important" bloquants */
 #preloader {
-    /* FORCE la suppression de l'ancien GIF s'il est en background */
-    background-image: none !important; 
-    
-    background-color: #1a1a1a !important; /* Fond sombre */
+    background-image: none !important; /* Toujours important pour tuer le GIF */
+    background-color: #1a1a1a;         /* Fond sombre (sans !important) */
     position: fixed;
     top: 0;
     left: 0;
@@ -27,28 +21,18 @@ body {
     bottom: 0;
     z-index: 999999;
     
-    /* Centre le contenu (notre flocon) */
-    display: flex !important;
+    /* On retire !important ici pour que le JS puisse le cacher */
+    display: flex; 
     align-items: center;
     justify-content: center;
+    
+    /* Transition douce pour la disparition */
+    transition: opacity 0.5s ease, visibility 0.5s;
 }
 
-/* 3. On stylise notre flocon SVG */
-.snow-loader {
-    width: 150px;
-    height: 150px;
-    stroke: white;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
-    animation: colorFill 3s infinite alternate ease-in-out, rotateSnow 10s linear infinite;
-}
-
-/* Animations */
-@keyframes colorFill {
-    0% { stroke: #ffffff; }
-    100% { stroke: #00d4ff; }
-}
-
-@keyframes rotateSnow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+/* Ajout d'une classe pour cacher proprement si besoin */
+#preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }

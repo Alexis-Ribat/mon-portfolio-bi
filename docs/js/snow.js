@@ -64,3 +64,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 10000); // Durée de vie plus longue pour accompagner la chute lente
     }
 });
+
+/* --- GESTION DU PRELOADER --- */
+window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        // On laisse le flocon tourner 500ms de plus pour être sûr que tout est chargé
+        setTimeout(() => {
+            // 1. On lance l'animation de disparition
+            preloader.style.opacity = '0';
+            
+            // 2. Une fois la transition finie (0.5s), on supprime l'élément pour libérer le clic
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                preloader.remove(); // Suppression radicale du DOM
+            }, 500);
+        }, 500);
+    }
+});
