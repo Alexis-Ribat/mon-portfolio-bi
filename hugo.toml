@@ -40,6 +40,10 @@ link = "https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybo
 [[params.plugins.js]]
 link = "plugins/lightbox/lightbox.js"
 
+# Dans la section JS Plugins
+[[params.plugins.js]]
+link = "js/snow.js"
+
 
 ############################## navigation ###############################
 
@@ -73,6 +77,14 @@ weight = 5
 name = "Contact" # Ajout du contact
 URL = "#contact"
 weight = 6
+
+
+# Ajoutez ceci après votre menu Contact
+[[menu.main]]
+    name = "Let it snow ❄️"
+    URL = "#!"
+    weight = 7
+    params = { id = "snow-trigger" } # On lui donne un ID pour le JS
 
 
 #################### default parameters ################################
