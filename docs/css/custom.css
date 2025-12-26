@@ -27,7 +27,7 @@ body {
     justify-content: center;
     
     /* Transition douce pour la disparition */
-    transition: opacity 0.5s ease, visibility 0.5s;
+    transition: opacity 0.5s ease-in-out;
 }
 
 /* Ajout d'une classe pour cacher proprement si besoin */

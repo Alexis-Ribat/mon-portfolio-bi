@@ -64,21 +64,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 10000); // Durée de vie plus longue pour accompagner la chute lente
     }
 });
-
 /* --- GESTION DU PRELOADER --- */
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
+    
     if (preloader) {
-        // On laisse le flocon tourner 500ms de plus pour être sûr que tout est chargé
+        // On FORCE un délai de 1.5 secondes (1500ms) même si la page est déjà chargée.
+        // Cela laisse le temps à l'animation "Blanc vers Bleu" de se faire.
         setTimeout(() => {
-            // 1. On lance l'animation de disparition
+            
+            // 1. On lance le fondu de disparition (transition définie dans le CSS)
             preloader.style.opacity = '0';
             
-            // 2. Une fois la transition finie (0.5s), on supprime l'élément pour libérer le clic
+            // 2. On attend la fin de la transition visuelle (0.5s) avant de détruire l'élément
             setTimeout(() => {
                 preloader.style.display = 'none';
-                preloader.remove(); // Suppression radicale du DOM
+                preloader.remove(); // On supprime l'élément du HTML pour libérer la mémoire
             }, 500);
-        }, 500);
+
+        }, 1500); // <--- C'EST ICI QUE VOUS RÉGLEZ LA DURÉE DU CHARGEMENT (1500 = 1.5 sec)
     }
 });
