@@ -3,7 +3,7 @@ body {
     padding-top: 100px;
 }
 /* =========================================
-   PRELOADER FIX (Z-Index & Positioning)
+   PRELOADER FINAL (Clip-Path GPU Method)
    ========================================= */
 
 #preloader img, .preloader img { display: none !important; }
@@ -27,9 +27,9 @@ body {
     justify-content: center;
 }
 
-/* Le conteneur principal */
+/* Conteneur principal */
 .snow-container {
-    position: relative;
+    position: relative; /* Indispensable pour superposer */
     width: 150px;
     height: 150px;
     margin-bottom: 15px;
@@ -40,42 +40,27 @@ body {
     width: 150px;
     height: 150px;
     display: block;
+    position: absolute; /* Superposition parfaite */
+    top: 0;
+    left: 0;
 }
 
 /* 1. Le flocon blanc (Fond) */
 .snow-base {
-    position: absolute;
-    top: 0; 
-    left: 0;
-    opacity: 0.2; /* Très discret pour le contraste */
-    z-index: 1;   /* Niveau 1 : Derrière */
+    opacity: 0.2;
+    z-index: 1; 
 }
 
-/* 2. Le MASQUE (Le rideau qui se lève) */
-#snow-mask {
-    position: absolute;
-    bottom: 0;    /* Ancré en bas */
-    left: 0;
-    width: 150px; /* Largeur fixe */
-    height: 0%;   /* Vide au départ, JS va changer ça */
-    overflow: hidden; /* COUPE le flocon bleu */
-    z-index: 2;   /* Niveau 2 : Devant */
-    /* On force le navigateur à préparer l'animation */
-    will-change: height; 
-}
-
-/* 3. Le flocon bleu (À l'intérieur du masque) */
-.snow-blue {
-    position: absolute;
-    bottom: 0;    /* Toujours collé au bas du masque */
-    left: 0;
-    /* IMPORTANT : On force la taille du flocon à rester 150px
-       même si le masque est tout petit */
-    width: 150px; 
-    height: 150px;
-    
-    /* Effets de lumière */
+/* 2. Le FLOCON BLEU (Celui qu'on coupe) */
+#blue-flake {
+    z-index: 2;
     filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.8));
+    
+    /* ÉTAT INITIAL : Coupé à 100% depuis le haut (donc invisible) */
+    /* Syntax: inset(top right bottom left) */
+    clip-path: inset(100% 0 0 0);
+    
+    /* SURTOUT PAS DE TRANSITION ICI ! C'est le JS qui gère. */
 }
 
 /* === Barre de progression === */
@@ -97,6 +82,7 @@ body {
     border-radius: 20px;
     background: linear-gradient(90deg, #00a8cc, #00d4ff, #80e5ff);
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.9);
+    /* Ici on garde une transition très courte pour la fluidité horizontale */
     transition: width 0.03s linear;
 }
 

@@ -65,12 +65,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-/* --- GESTION DU PRELOADER (Version 2s) --- */
+/* --- GESTION DU PRELOADER (Clip-Path) --- */
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
     const percentText = document.getElementById('loader-percent');
     const progressBar = document.getElementById('progress-bar-fill');
-    const snowMask = document.getElementById('snow-mask');
+    
+    // On cible le flocon bleu directement
+    const blueFlake = document.getElementById('blue-flake');
     
     if (preloader) {
         // Durée exacte de 2 secondes
@@ -84,10 +86,10 @@ window.addEventListener('load', function() {
         const counterInterval = setInterval(() => {
             currentProgress += stepSize;
             
-            // Sécurité pour ne pas dépasser 100%
+            // Sécurité
             if (currentProgress > 100) currentProgress = 100;
             
-            // Affichage entier pour le texte
+            // Affichage entier
             let displayCount = Math.floor(currentProgress);
             
             // 1. Texte
@@ -96,17 +98,19 @@ window.addEventListener('load', function() {
             // 2. Barre de progression
             if (progressBar) progressBar.style.width = currentProgress + "%";
 
-            // 3. HAUTEUR DU MASQUE (C'est la clé !)
-            if (snowMask) {
-                // On applique directement le pourcentage à la div masque
-                snowMask.style.height = currentProgress + "%";
+            // 3. REMPLISSAGE FLOCON (Technique Inset)
+            if (blueFlake) {
+                // Pour remplir, on diminue la valeur "inset top"
+                // 0% de chargement = 100% coupé en haut
+                // 100% de chargement = 0% coupé en haut
+                const insetTop = 100 - currentProgress;
+                blueFlake.style.clipPath = `inset(${insetTop}% 0 0 0)`;
             }
 
             // Fin du chargement
             if (currentProgress >= 100) {
                 clearInterval(counterInterval);
                 
-                // Petit délai avant de disparaître
                 setTimeout(() => {
                     preloader.style.opacity = '0';
                     setTimeout(() => {
