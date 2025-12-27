@@ -165,13 +165,392 @@
   </nav>
 </section>
 
-<div class="post-meta">
-  <span class="post-date">Posted on: 1/1/2024</span>
-  <img src="https://alexis-ribat.github.io/mon-portfolio-bi/" alt="Prompts Nano Banana"> </div>
-
-<div class="post-meta">
-  <span class="post-date">Posted on: 1/1/2024</span>
+  <div class="under-menu col-lg-8 col-md-10 col-12 mx-auto post-container">
+    <h1>Prompts Nano Banana</h1>
+    <span class="date">Posted on: 1/1/2024</span>
+    <img src="" alt="Prompts Nano Banana" />
+    <div class="body">
+      <h2 id="i---gravitational-focus">I - Gravitational Focus</h2>
+<h3 id="the-concept">The Concept</h3>
+<p><strong>The Result:</strong></p>
+<hr>
+<p>This project explores the idea of &ldquo;Personal Gravity&rdquo;. The subject stands calm and centered, while the chaotic elements of his daily life—coffee, work, memories—orbit around him in perfect balance.</p>
+<p><strong>Gravitational Focus:</strong>
+<a href="https://alexis-ribat.github.io/mon-portfolio-bi/images/Gravitational-Focus.png" data-fancybox="gallery" data-caption="Gravitational-Focus">
+<img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Gravitational-Focus.png" alt="Gravitational-Focus" width="20%" style="display: block; margin: 10px auto;">
+</a></p>
+<p>Below is the structured JSON prompt used to generate this image. It uses strict parameters for lighting, camera composition, and surreal elements.</p>
+<details>
+<summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold; margin-bottom: 10px;">
+    🔻 Click to view & copy the full JSON Prompt
+</summary>
+<div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
+    <button id="copyBtn" onclick="copyPrompt()" style="
+        position: absolute; 
+        top: 10px; 
+        right: 10px; 
+        background-color: #4CAF50; 
+        color: white; 
+        border: none; 
+        padding: 5px 12px; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-family: sans-serif;
+        font-size: 12px;
+        z-index: 10;">
+        📋 Copier
+    </button>
+<pre><code>&lt;pre style=&quot;margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;&quot;&gt;
+</code></pre>
+<p><code id="jsonPrompt" style="color: #f8f8f2; font-family: monospace;">{
+&ldquo;type&rdquo;: &ldquo;image_generation_prompt&rdquo;,
+&ldquo;style&rdquo;: &ldquo;hyper-realistic, cinematic, magical surrealism, studio editorial&rdquo;,
+&ldquo;composition&rdquo;: {
+&ldquo;aspect_ratio&rdquo;: &ldquo;4:5&rdquo;,
+&ldquo;framing&rdquo;: &ldquo;full-body to three-quarter portrait, centered&rdquo;,
+&ldquo;camera_position&rdquo;: &ldquo;eye-level, straight-on&rdquo;,
+&ldquo;resolution&rdquo;: &ldquo;ultra-HD&rdquo;
+},
+&ldquo;identity_preservation&rdquo;: {
+&ldquo;use_reference_image&rdquo;: true,
+&ldquo;alter_face&rdquo;: false,
+&ldquo;notes&rdquo;: &ldquo;Preserve the man&rsquo;s facial features&hellip;&rdquo;
+},
+&ldquo;subject&rdquo;: {
+&ldquo;gender&rdquo;: &ldquo;man&rdquo;,
+&ldquo;age_range&rdquo;: &ldquo;mid-twenties&rdquo;,
+&ldquo;pose&rdquo;: {
+&ldquo;stance&rdquo;: &ldquo;standing perfectly still at the center of the frame&rdquo;,
+&ldquo;arms&rdquo;: &ldquo;crossed confidently&rdquo;,
+&ldquo;expression&rdquo;: &ldquo;calm, confident, slightly amused&rdquo;
+},
+&ldquo;appearance&rdquo;: {
+&ldquo;facial_features&rdquo;: &ldquo;sharp, well-defined facial structure&rdquo;,
+&ldquo;hair&rdquo;: {
+&ldquo;color&rdquo;: &ldquo;dark brown&rdquo;,
+&ldquo;details&rdquo;: &ldquo;subtle golden highlights&rdquo;,
+&ldquo;style&rdquo;: &ldquo;tousled, natural movement&rdquo;
+},
+&ldquo;eyes&rdquo;: &ldquo;intense hazel eyes&rdquo;,
+&ldquo;skin_texture&rdquo;: &ldquo;natural, ultra-detailed realism&rdquo;
+}
+},
+&ldquo;surreal_elements&rdquo;: {
+&ldquo;concept&rdquo;: &ldquo;objects floating in perfect orbital patterns&rdquo;,
+&ldquo;objects&rdquo;: [
+&ldquo;vintage cameras&rdquo;,
+&ldquo;leather-bound books&rdquo;,
+&ldquo;steaming coffee cups&rdquo;,
+&ldquo;floating black ink droplets&rdquo;
+]
+},
+&ldquo;lighting&rdquo;: {
+&ldquo;key_light&rdquo;: &ldquo;high and left, deep sculptural shadows&rdquo;,
+&ldquo;shadow_effects&rdquo;: &ldquo;intricate overlapping shadows&rdquo;
+},
+&ldquo;quality&rdquo;: {
+&ldquo;realism&rdquo;: &ldquo;ultra-realistic&rdquo;,
+&ldquo;rendering&rdquo;: &ldquo;cinematic realism&rdquo;
+}
+}</code></pre></p>
 </div>
+<script>
+function copyPrompt() {
+    const text = document.getElementById("jsonPrompt").innerText;
+    navigator.clipboard.writeText(text).then(function() {
+        const btn = document.getElementById("copyBtn");
+        const originalText = btn.innerText;
+        btn.innerText = "✅ Copié !";
+        btn.style.backgroundColor = "#2e7d32";
+        setTimeout(function() {
+            btn.innerText = originalText;
+            btn.style.backgroundColor = "#4CAF50";
+        }, 2000);
+    }, function(err) {
+        console.error('Erreur lors de la copie : ', err);
+    });
+}
+</script>
+</details>
+---
+<h2 id="ii---mordor">II - Mordor</h2>
+<h3 id="the-concept-1">The Concept</h3>
+<p><strong>The Result:</strong></p>
+<hr>
+<p><strong>Gravitational Focus:</strong>
+<a href="https://alexis-ribat.github.io/mon-portfolio-bi/images/Mordor.png" data-fancybox="gallery" data-caption="Mordor">
+<img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Mordor.png" alt="Mordor" width="20%" style="display: block; margin: 10px auto;">
+</a></p>
+<p>Below is the structured JSON prompt used to generate this image. It uses strict parameters for lighting, camera composition, and surreal elements.</p>
+<details>
+<summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold; margin-bottom: 10px;">
+    🔻 Click to view & copy the full JSON Prompt
+</summary>
+<div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
+    <button id="copyBtn2" onclick="copyPrompt()" style="
+        position: absolute; 
+        top: 10px; 
+        right: 10px; 
+        background-color: #4CAF50; 
+        color: white; 
+        border: none; 
+        padding: 5px 12px; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-family: sans-serif;
+        font-size: 12px;
+        z-index: 10;">
+        📋 Copier
+    </button>
+<pre><code>&lt;pre style=&quot;margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;&quot;&gt;
+</code></pre>
+<p><code id="jsonPrompt2" style="color: #f8f8f2; font-family: monospace;">{Create image of Magazine feature article [travel] guide page, cute, information dense photo book style magazine feature article page. Add all necessary sections, tips, recommendations, information. add photos for any sections and recommendations if you like. Place the attached person at the precise location of [Plateau of Gorgoroth in Mordor]. Seamlessly blend the attached person as if they are sightseeing. Approach this task with the understanding that this is a critical, information rich page that will significantly influence visitor numbers, text accuracy is important. Fully use the entire [9:16] page. NEGATIVE PROMPT: coordinate texts
+}</code></pre></p>
+</div>
+<script>
+function copyPrompt() {
+    const text = document.getElementById("jsonPrompt2").innerText;
+    navigator.clipboard.writeText(text).then(function() {
+        const btn = document.getElementById("copyBtn2");
+        const originalText = btn.innerText;
+        btn.innerText = "✅ Copié !";
+        btn.style.backgroundColor = "#2e7d32";
+        setTimeout(function() {
+            btn.innerText = originalText;
+            btn.style.backgroundColor = "#4CAF50";
+        }, 2000);
+    }, function(err) {
+        console.error('Erreur lors de la copie : ', err);
+    });
+}
+</script>
+</details>
+---
+<h2 id="iii---pop-culture-planetary-projects">III - Pop Culture Planetary Projects</h2>
+<h3 id="the-concept-2">The Concept</h3>
+<p><strong>The Result:</strong></p>
+<hr>
+<p><strong>Pop Culture Planetary Projects:</strong>
+<a href="https://alexis-ribat.github.io/mon-portfolio-bi/images/Pop-Culture.png" data-fancybox="gallery" data-caption="Pop-Culture">
+<img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Pop-Culture.png" alt="Pop-Culture" width="20%" style="display: block; margin: 10px auto;">
+</a></p>
+<p>Below is the structured JSON prompt used to generate this image. It uses strict parameters for lighting, camera composition, and surreal elements.</p>
+<details>
+<summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold; margin-bottom: 10px;">
+    🔻 Click to view & copy the full JSON Prompt
+</summary>
+<div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
+    <button id="copyBtn3" onclick="copyPrompt()" style="
+        position: absolute; 
+        top: 10px; 
+        right: 10px; 
+        background-color: #4CAF50; 
+        color: white; 
+        border: none; 
+        padding: 5px 12px; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-family: sans-serif;
+        font-size: 12px;
+        z-index: 10;">
+        📋 Copier
+    </button>
+<pre><code>&lt;pre style=&quot;margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;&quot;&gt;
+</code></pre>
+<p><code id="jsonPrompt3" style="color: #f8f8f2; font-family: monospace;">{
+{
+&ldquo;batch_generation_requests&rdquo;: [
+{
+&ldquo;brand_theme&rdquo;: &ldquo;Starbucks&rdquo;,
+&ldquo;concept&rdquo;: &ldquo;Frappuccino Terraforming Tower&rdquo;,
+&ldquo;subject&rdquo;: {
+&ldquo;main_element&rdquo;: &ldquo;Giant Starbucks Frappuccino cup standing vertically&rdquo;,
+&ldquo;modifications&rdquo;: &ldquo;Green straw converting into a space elevator/antenna; whipped cream resembling snowy mountain peaks&rdquo;,
+&ldquo;props&rdquo;: &ldquo;Floating holographic Starbucks siren logo in green neon&rdquo;,
+&ldquo;details&rdquo;: &ldquo;Condensation on the cup, rich texture of caramel drizzle&rdquo;
+},
+&ldquo;figures&rdquo;: {
+&ldquo;type&rdquo;: &ldquo;Miniature scientists&rdquo;,
+&ldquo;attire&rdquo;: &ldquo;Green and white hazmat suits&rdquo;,
+&ldquo;action&rdquo;: &ldquo;Taking samples from the whipped cream &lsquo;mountains&rsquo; and checking pipes connected to the straw&rdquo;
+},
+&ldquo;environment&rdquo;: {
+&ldquo;floor&rdquo;: &ldquo;Coffee bean rocky terrain&rdquo;,
+&ldquo;background&rdquo;: &ldquo;Green nebula and Milky Way&rdquo;,
+&ldquo;atmosphere&rdquo;: &ldquo;Misty and aromatic&rdquo;
+},
+&ldquo;aesthetics&rdquo;: {
+&ldquo;color_grading&rdquo;: &ldquo;Emerald green, white, and coffee brown&rdquo;,
+&ldquo;lens_effect&rdquo;: &ldquo;Macro lens with soft bokeh&rdquo;,
+&ldquo;lighting&rdquo;: &quot; glowing green ambient light&quot;
+},
+&ldquo;meta&rdquo;: {
+&ldquo;aspect_ratio&rdquo;: &ldquo;9:16&rdquo;,
+&ldquo;reference_directive&rdquo;: &ldquo;Make it like the same picture as the reference uploaded.&rdquo;
+}
+},
+{
+&ldquo;brand_theme&rdquo;: &ldquo;Nike&rdquo;,
+&ldquo;concept&rdquo;: &ldquo;Air Jordan Hover-Ship Maintenance&rdquo;,
+&ldquo;subject&rdquo;: {
+&ldquo;main_element&rdquo;: &ldquo;Iconic Air Jordan 1 sneaker floating&rdquo;,
+&ldquo;modifications&rdquo;: &ldquo;Sole converted into glowing anti-gravity thrusters; laces acting as heavy cables&rdquo;,
+&ldquo;props&rdquo;: &ldquo;Neon Nike Swoosh sign suspended by cranes&rdquo;,
+&ldquo;details&rdquo;: &ldquo;Leather texture detailed with space dust, metallic eyelets&rdquo;
+},
+&ldquo;figures&rdquo;: {
+&ldquo;type&rdquo;: &ldquo;Miniature mechanics&rdquo;,
+&ldquo;attire&rdquo;: &ldquo;Orange flight suits&rdquo;,
+&ldquo;action&rdquo;: &ldquo;Welding the rubber sole and fueling the &lsquo;Air&rsquo; unit&rdquo;
+},
+&ldquo;environment&rdquo;: {
+&ldquo;terrain&rdquo;: &ldquo;Futuristic metallic landing pad&rdquo;,
+&ldquo;background&rdquo;: &ldquo;Deep space with a view of Earth&rdquo;,
+&ldquo;atmosphere&rdquo;: &ldquo;High-tech hangar vibe&rdquo;
+},
+&ldquo;aesthetics&rdquo;: {
+&ldquo;style&rdquo;: &ldquo;Cyberpunk meets sportswear&rdquo;,
+&ldquo;lighting&rdquo;: &ldquo;Neon blue and red highlights&rdquo;,
+&ldquo;depth&rdquo;: &ldquo;High depth of field&rdquo;
+},
+&ldquo;meta&rdquo;: {
+&ldquo;aspect_ratio&rdquo;: &ldquo;9:16&rdquo;,
+&ldquo;reference_directive&rdquo;: &ldquo;Make it like the same picture as the reference uploaded&rdquo;
+}
+},
+{
+&ldquo;brand_theme&rdquo;: &ldquo;Red Bull&rdquo;,
+&ldquo;concept&rdquo;: &ldquo;Energy Reactor Core Installation&rdquo;,
+&ldquo;subject&rdquo;: {
+&ldquo;main_element&rdquo;: &ldquo;Silver and Blue Red Bull Can&rdquo;,
+&ldquo;modifications&rdquo;: &ldquo;Can act as a massive fusion reactor; mechanical wings are attached to the sides&rdquo;,
+&ldquo;props&rdquo;: &ldquo;Sparks flying, &lsquo;Gives You Wings&rsquo; slogan projected in hologram&rdquo;,
+&ldquo;details&rdquo;: &ldquo;Metallic condensation, polished aluminum texture&rdquo;
+},
+&ldquo;figures&rdquo;: {
+&ldquo;type&rdquo;: &ldquo;Miniature engineers&rdquo;,
+&ldquo;attire&rdquo;: &ldquo;Silver protective gear&rdquo;,
+&ldquo;action&rdquo;: &ldquo;Connecting thick yellow power cables to the can tab.&rdquo;
+},
+&ldquo;environment&rdquo;: {
+&ldquo;terrain&rdquo;: &ldquo;Dark jagged asteroid surface&rdquo;,
+&ldquo;background&rdquo;: &ldquo;Electric blue lightning storm in space&rdquo;
+},
+&ldquo;aesthetics&rdquo;: {
+&ldquo;lighting&rdquo;: &ldquo;Dramatic, high contrast electric blue and silver&rdquo;,
+&ldquo;style&rdquo;: &ldquo;Industrial sci-fi macro&rdquo;
+},
+&ldquo;meta&rdquo;: {
+&ldquo;aspect_ratio&rdquo;: &ldquo;9:16&rdquo;,
+&ldquo;reference_directive&rdquo;: &ldquo;Picture should be the same as the reference uploaded.&rdquo;
+}
+},
+{
+&ldquo;brand_theme&rdquo;: &ldquo;Pringles&rdquo;,
+&ldquo;concept&rdquo;: &ldquo;Solar Array Deployment&rdquo;,
+&ldquo;subject&rdquo;: {
+&ldquo;main_element&rdquo;: &ldquo;Pringles Can as a Habitat Silo&rdquo;,
+&ldquo;modifications&rdquo;: &ldquo;Pringles chips (crisps) arranged as curved solar panels orbiting the can&rdquo;,
+&ldquo;props&rdquo;: &ldquo;Pringles mascot (Julius Pringles) painted on the silo hull&rdquo;,
+&ldquo;details&rdquo;: &ldquo;Texture of the potato chips contrasting with the metallic can&rdquo;
+},
+&ldquo;figures&rdquo;: {
+&ldquo;type&rdquo;: &ldquo;Tiny astronauts&rdquo;,
+&ldquo;attire&rdquo;: &ldquo;Red space suits&rdquo;,
+&ldquo;action&rdquo;: &ldquo;Polishing the surface of a giant Pringles chip&rdquo;
+},
+&ldquo;environment&rdquo;: {
+&ldquo;terrain&rdquo;: &ldquo;Red sandy surface (Mars-like)&rdquo;,
+&ldquo;background&rdquo;: &ldquo;Starry cosmos with a distant sun flare&rdquo;
+},
+&ldquo;aesthetics&rdquo;: {
+&ldquo;lighting&rdquo;: &ldquo;Warm sunlight hitting the chips (golden hour in space)&rdquo;,
+&ldquo;style&rdquo;: &ldquo;Cinematic macro&rdquo;
+},
+&ldquo;meta&rdquo;: {
+&ldquo;aspect_ratio&rdquo;: &ldquo;9:16&rdquo;,
+&ldquo;reference_directive&rdquo;: &ldquo;Picture should be the same as the reference uploaded.&rdquo;
+}
+}
+]
+}</p>
+<p>}</code></pre></p>
+</div>
+<script>
+function copyPrompt() {
+    const text = document.getElementById("jsonPrompt3").innerText;
+    navigator.clipboard.writeText(text).then(function() {
+        const btn = document.getElementById("copyBtn3");
+        const originalText = btn.innerText;
+        btn.innerText = "✅ Copié !";
+        btn.style.backgroundColor = "#2e7d32";
+        setTimeout(function() {
+            btn.innerText = originalText;
+            btn.style.backgroundColor = "#4CAF50";
+        }, 2000);
+    }, function(err) {
+        console.error('Erreur lors de la copie : ', err);
+    });
+}
+</script>
+</details>
+---
+<h2 id="iv---found-shape">IV - Found Shape</h2>
+<h3 id="the-concept-3">The Concept</h3>
+<p><strong>The Result:</strong></p>
+<hr>
+<p><strong>Pop Culture Planetary Projects:</strong>
+<a href="https://alexis-ribat.github.io/mon-portfolio-bi/images/Found-Shape.png" data-fancybox="gallery" data-caption="Found-Shape">
+<img src="https://alexis-ribat.github.io/mon-portfolio-bi/images/Found-Shape.png" alt="Found-Shape" width="20%" style="display: block; margin: 10px auto;">
+</a></p>
+<p>Below is the structured JSON prompt used to generate this image. It uses strict parameters for lighting, camera composition, and surreal elements.</p>
+<details>
+<summary style="cursor: pointer; padding: 10px; background-color: #f1f1f1; border-radius: 5px; font-weight: bold; margin-bottom: 10px;">
+    🔻 Click to view & copy the full JSON Prompt
+</summary>
+<div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
+    <button id="copyBtn4" onclick="copyPrompt()" style="
+        position: absolute; 
+        top: 10px; 
+        right: 10px; 
+        background-color: #4CAF50; 
+        color: white; 
+        border: none; 
+        padding: 5px 12px; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        font-family: sans-serif;
+        font-size: 12px;
+        z-index: 10;">
+        📋 Copier
+    </button>
+<pre><code>&lt;pre style=&quot;margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;&quot;&gt;
+</code></pre>
+<p><code id="jsonPrompt4" style="color: #f8f8f2; font-family: monospace;">{A dramatic sky photo where swirling storm clouds naturally form the unmistakable shape of a [SUBJECT]. The illusion should be “found shape”: at first it’s just clouds;
+then the creature silhouette pops out. Realistic lighting: sun rays breaking through, volumetric beams, deep contrast.
+No fantasy glow, pure cloud structure forming the subject. High resolution, cinematic, awe-inspiring.}</code></pre></p>
+</div>
+<script>
+function copyPrompt() {
+    const text = document.getElementById("jsonPrompt4").innerText;
+    navigator.clipboard.writeText(text).then(function() {
+        const btn = document.getElementById("copyBtn4");
+        const originalText = btn.innerText;
+        btn.innerText = "✅ Copié !";
+        btn.style.backgroundColor = "#2e7d32";
+        setTimeout(function() {
+            btn.innerText = originalText;
+            btn.style.backgroundColor = "#4CAF50";
+        }, 2000);
+    }, function(err) {
+        console.error('Erreur lors de la copie : ', err);
+    });
+}
+</script>
+</details>
+---
+    </div>
+  </div>
 
   <div class="footer container text-center" id="contact">
   <ul class="footer-icons list-inline">
