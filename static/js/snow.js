@@ -68,20 +68,37 @@ document.addEventListener('DOMContentLoaded', function() {
 /* --- GESTION DU PRELOADER --- */
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
+    const percentText = document.getElementById('loader-percent');
     
     if (preloader) {
-        // On attend 3000ms (3 secondes) pile pour laisser l'animation CSS se finir
-        setTimeout(() => {
+        // --- 1. Gestion du Compteur (0% à 100%) ---
+        let count = 0;
+        // On veut faire 100 étapes en 3000ms => une étape toutes les 30ms
+        const counterInterval = setInterval(() => {
+            count++;
+            if (count > 100) count = 100; // Sécurité
             
-            // 1. Disparition en fondu
+            if (percentText) {
+                percentText.innerText = count + "%";
+            }
+
+            if (count === 100) {
+                clearInterval(counterInterval);
+            }
+        }, 30); // 30ms * 100 = 3000ms (3 secondes)
+
+        // --- 2. Gestion de la disparition ---
+        // On attend les 3 secondes + un petit bonus (200ms) pour voir le 100%
+        setTimeout(() => {
+            // Fondu de sortie
             preloader.style.opacity = '0';
             
-            // 2. Suppression totale après le fondu
+            // Suppression réelle
             setTimeout(() => {
                 preloader.style.display = 'none';
                 preloader.remove();
             }, 500);
 
-        }, 3000); // 3 secondes d'attente forcée
+        }, 3200); 
     }
 });

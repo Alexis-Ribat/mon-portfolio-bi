@@ -3,13 +3,12 @@ body {
     padding-top: 100px;
 }
 /* =========================================
-   GESTION DU PRELOADER (Remplissage Vertical)
+   PRELOADER : Remplissage et Pourcentage
    ========================================= */
 
-/* Nettoyage des parasites */
-#preloader img, .preloader img, .preloader-inner img { display: none !important; }
+/* Nettoyage radical */
+#preloader img, .preloader img { display: none !important; }
 
-/* Conteneur principal (Ecran noir) */
 #preloader {
     background-image: none !important;
     background-color: #1a1a1a;
@@ -19,57 +18,73 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+    transition: opacity 0.5s ease;
 }
 
-/* La boite qui contient les deux flocons superposés */
+/* Wrapper pour aligner Flocon + Texte verticalement */
+.loader-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Conteneur de taille fixe pour le flocon */
 .snow-container {
     position: relative;
     width: 150px;
     height: 150px;
+    margin-bottom: 20px; /* Espace entre flocon et texte */
 }
 
-/* Style commun aux deux flocons (Blanc et Bleu) */
+/* Style commun pour superposer les SVGs */
 .snow-svg {
     width: 150px;
     height: 150px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
 }
 
-/* Flocon Blanc (Arrière-plan fixe) */
+/* Flocon du fond (Gris foncé) - Il sert de "rail" */
 .snow-base path {
-    stroke: #333; /* Gris foncé ou Blanc cassé pour montrer qu'il est "vide" */
-    stroke-opacity: 0.3;
+    stroke: #444; /* Assez sombre pour se fondre un peu, mais visible */
+    stroke-opacity: 0.5;
 }
 
-/* Le Masque : C'est la boîte qui grandit du bas vers le haut */
+/* LE MASQUE : La boîte qui grandit */
 .snow-fill-mask {
     position: absolute;
-    bottom: 0; /* Ancré en bas */
+    bottom: 0;      /* Ancré en bas */
     left: 0;
-    width: 100%;
-    height: 0%; /* Commence vide */
-    overflow: hidden; /* Coupe ce qui dépasse */
-    animation: fillUp 3s linear forwards; /* Durée de 3s pile */
+    width: 100%;    /* Largeur totale */
+    height: 0%;     /* Au début : vide */
+    overflow: hidden; /* C'est ça qui coupe le flocon bleu proprement */
+    animation: fillLevel 3s linear forwards; /* 3 secondes pile */
 }
 
 /* Flocon Bleu (À l'intérieur du masque) */
 .snow-blue {
-    /* Important : le flocon bleu doit rester calé en bas du masque */
     position: absolute;
-    bottom: 0; 
-    top: auto; /* On annule le top:0 du style commun */
+    bottom: 0; /* IMPORTANT : Reste calé en bas pour ne pas bouger */
 }
 
 .snow-blue path {
-    stroke: #00d4ff; /* Le Bleu final */
+    stroke: #00d4ff; /* Le bleu néon */
+    stroke-width: 2;
     filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.8));
 }
 
-/* L'animation pure de la hauteur */
-@keyframes fillUp {
+/* Le Texte du pourcentage */
+#loader-percent {
+    color: #00d4ff;
+    font-family: 'Rubik', sans-serif; /* Votre police */
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Animation de la hauteur (Remplissage) */
+@keyframes fillLevel {
     0% { height: 0%; }
     100% { height: 100%; }
 }
