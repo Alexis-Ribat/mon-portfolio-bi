@@ -2,74 +2,79 @@
 body {
     padding-top: 100px;
 }
-
 /* =========================================
-   1. GESTION DU PRELOADER (Le Flocon)
+   GESTION DU PRELOADER (Remplissage Vertical)
    ========================================= */
 
-/* Cache l'image résiduelle et le carré blanc du thème original */
-#preloader img, .preloader img, .preloader-inner img {
-    display: none !important;
-}
+/* Nettoyage des parasites */
+#preloader img, .preloader img, .preloader-inner img { display: none !important; }
 
-/* Configuration du conteneur (fond sombre) */
+/* Conteneur principal (Ecran noir) */
 #preloader {
-    background-image: none !important; 
-    background-color: #1a1a1a; 
+    background-image: none !important;
+    background-color: #1a1a1a;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     z-index: 999999;
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: center;
     transition: opacity 0.5s ease-in-out, visibility 0.5s;
-    opacity: 1; 
 }
 
-/* 1. Le conteneur SVG : On le fait juste tourner */
-.snow-loader {
+/* La boite qui contient les deux flocons superposés */
+.snow-container {
+    position: relative;
     width: 150px;
     height: 150px;
-    /* On enlève l'animation de couleur ici, on garde la rotation */
-    animation: rotateSnow 10s linear infinite;
 }
 
-/* 2. Le tracé INTÉRIEUR (Le dessin du flocon) : C'est LUI qui change de couleur */
-.snow-loader path {
-    stroke: white; /* Couleur de base forcée */
-    stroke-width: 2;
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
-    /* L'animation de couleur est appliquée directement sur le trait */
-    animation: colorFill 3s infinite alternate ease-in-out;
+/* Style commun aux deux flocons (Blanc et Bleu) */
+.snow-svg {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-/* Définition de l'animation de couleur */
-@keyframes colorFill {
-    0% { 
-        stroke: #ffffff; 
-        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
-    }
-    100% { 
-        stroke: #00d4ff; /* Bleu cyan intense */
-        filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.8)); /* Lueur bleue */
-    }
+/* Flocon Blanc (Arrière-plan fixe) */
+.snow-base path {
+    stroke: #333; /* Gris foncé ou Blanc cassé pour montrer qu'il est "vide" */
+    stroke-opacity: 0.3;
 }
 
-/* Définition de la rotation */
-@keyframes rotateSnow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+/* Le Masque : C'est la boîte qui grandit du bas vers le haut */
+.snow-fill-mask {
+    position: absolute;
+    bottom: 0; /* Ancré en bas */
+    left: 0;
+    width: 100%;
+    height: 0%; /* Commence vide */
+    overflow: hidden; /* Coupe ce qui dépasse */
+    animation: fillUp 3s linear forwards; /* Durée de 3s pile */
 }
 
-/* Classe utilitaire pour cacher le loader via JS */
-#preloader.loaded {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+/* Flocon Bleu (À l'intérieur du masque) */
+.snow-blue {
+    /* Important : le flocon bleu doit rester calé en bas du masque */
+    position: absolute;
+    bottom: 0; 
+    top: auto; /* On annule le top:0 du style commun */
 }
+
+.snow-blue path {
+    stroke: #00d4ff; /* Le Bleu final */
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.8));
+}
+
+/* L'animation pure de la hauteur */
+@keyframes fillUp {
+    0% { height: 0%; }
+    100% { height: 100%; }
+}
+
+/* Pas de rotation demandée, donc pas de @keyframes rotateSnow */
 
 /* =========================================
    2. GESTION DE LA NEIGE (Le bouton "Let it snow")
