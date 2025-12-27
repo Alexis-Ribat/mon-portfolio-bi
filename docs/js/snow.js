@@ -69,36 +69,40 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
     const percentText = document.getElementById('loader-percent');
+    const progressBar = document.getElementById('progress-bar-fill');
     
     if (preloader) {
-        // --- 1. Gestion du Compteur (0% à 100%) ---
         let count = 0;
-        // On veut faire 100 étapes en 3000ms => une étape toutes les 30ms
+        const duration = 3000; // 3 secondes
+        const interval = 30; // ms
+        const steps = duration / interval;
+        
         const counterInterval = setInterval(() => {
             count++;
-            if (count > 100) count = 100; // Sécurité
+            if (count > 100) count = 100;
             
+            // Mise à jour du texte
             if (percentText) {
                 percentText.innerText = count + "%";
+            }
+            
+            // Mise à jour de la barre de progression
+            if (progressBar) {
+                progressBar.style.width = count + "%";
             }
 
             if (count === 100) {
                 clearInterval(counterInterval);
             }
-        }, 30); // 30ms * 100 = 3000ms (3 secondes)
+        }, interval);
 
-        // --- 2. Gestion de la disparition ---
-        // On attend les 3 secondes + un petit bonus (200ms) pour voir le 100%
+        // Disparition après la fin du chargement
         setTimeout(() => {
-            // Fondu de sortie
             preloader.style.opacity = '0';
-            
-            // Suppression réelle
             setTimeout(() => {
                 preloader.style.display = 'none';
                 preloader.remove();
             }, 500);
-
-        }, 3200); 
+        }, duration + 500); 
     }
 });
