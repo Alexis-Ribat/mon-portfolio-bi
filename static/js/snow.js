@@ -83,3 +83,23 @@ window.addEventListener('load', function() {
         }, 1000); // <-- Changez cette valeur pour modifier la durée du chargement
     }
 });
+
+/* --- CORRECTIF ANTI-IMAGE CASSÉE --- */
+window.addEventListener('load', function() {
+    // 1. On cherche tous les blocs qui pourraient contenir la date
+    const metaDivs = document.querySelectorAll('div, span, p');
+
+    metaDivs.forEach(el => {
+        // 2. Si on trouve le texte "Posted on:", on regarde ce qu'il y a dedans
+        if (el.innerText && el.innerText.includes('Posted on:')) {
+            // 3. On cherche une image à l'intérieur de ce même bloc
+            const brokenImg = el.querySelector('img');
+            
+            // 4. Si on la trouve, on la supprime radicalement
+            if (brokenImg) {
+                brokenImg.style.display = 'none'; // On la cache
+                brokenImg.remove(); // On la supprime du code HTML
+            }
+        }
+    });
+});
