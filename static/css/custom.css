@@ -3,12 +3,13 @@ body {
     padding-top: 100px;
 }
 /* =========================================
-   PRELOADER : Remplissage et Pourcentage
+   PRELOADER FINAL (SVG Gradient + Barre)
    ========================================= */
 
-/* Nettoyage radical */
+/* Nettoyage */
 #preloader img, .preloader img { display: none !important; }
 
+/* Fond de l'écran */
 #preloader {
     background-image: none !important;
     background-color: #1a1a1a;
@@ -21,7 +22,6 @@ body {
     transition: opacity 0.5s ease;
 }
 
-/* Wrapper pour aligner Flocon + Texte verticalement */
 .loader-wrapper {
     display: flex;
     flex-direction: column;
@@ -29,99 +29,59 @@ body {
     justify-content: center;
 }
 
-/* Conteneur de taille fixe pour le flocon */
+/* Conteneur du flocon */
 .snow-container {
-    position: relative;
     width: 150px;
     height: 150px;
-    margin-bottom: 20px; /* Espace entre flocon et texte */
+    margin-bottom: 10px;
+    /* Une petite ombre portée globale pour le relief */
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
 }
 
-/* Style commun pour superposer les SVGs */
 .snow-svg {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-/* Flocon du fond (Gris foncé) - Il sert de "rail" */
-.snow-base path {
-    stroke: #444; /* Assez sombre pour se fondre un peu, mais visible */
-    stroke-opacity: 0.5;
-}
-
-/* LE MASQUE : La boîte qui grandit */
-.snow-fill-mask {
-    position: absolute;
-    bottom: 0;      /* Ancré en bas */
-    left: 0;
-    width: 100%;    /* Largeur totale */
-    height: 0%;     /* Au début : vide */
-    overflow: hidden; /* C'est ça qui coupe le flocon bleu proprement */
-    animation: fillLevel 3s linear forwards; /* 3 secondes pile */
-}
-
-/* Flocon Bleu (À l'intérieur du masque) */
-.snow-blue {
-    position: absolute;
-    bottom: 0; /* IMPORTANT : Reste calé en bas pour ne pas bouger */
-}
-
-.snow-blue path {
-    stroke: #00d4ff; /* Le bleu néon */
-    stroke-width: 2;
-    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.8));
-}
-
-/* Le Texte du pourcentage */
-#loader-percent {
-    color: #00d4ff;
-    font-family: 'Rubik', sans-serif; /* Votre police */
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-/* Animation de la hauteur (Remplissage) */
-@keyframes fillLevel {
-    0% { height: 0%; }
-    100% { height: 100%; }
-}
-
-/* Barre de chargement externe */
+/* === STYLE DE LA BARRE (V2 Premium) === */
 .progress-bar-container {
-    width: 200px;
-    height: 4px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    margin-top: 15px;
+    width: 250px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    margin-top: 25px;
     overflow: hidden;
     position: relative;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: inset 0 1px 5px rgba(0,0,0,0.5);
 }
 
-/* Remplissage de la barre */
 #progress-bar-fill {
-    width: 0%; /* Piloté par JS */
+    width: 0%; /* Géré par JS */
     height: 100%;
-    background-color: #00d4ff;
-    box-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
+    border-radius: 20px;
+    background: linear-gradient(90deg, #00a8cc, #00d4ff, #80e5ff);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.9);
     transition: width 0.03s linear;
 }
 
-/* Petit texte en dessous */
-.loader-status {
-    color: #888;
-    font-size: 14px;
-    margin-top: 10px;
+/* Typographie */
+#loader-percent {
+    margin-top: 5px;
+    color: #00d4ff;
     font-family: 'Rubik', sans-serif;
-    letter-spacing: 0.5px;
+    font-size: 32px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
 }
 
-#loader-percent {
-    margin-top: 10px;
-    font-size: 28px;
-    /* On utilise une police d'aspect plus "tech" si disponible */
+.loader-status {
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 15px;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Pas de rotation demandée, donc pas de @keyframes rotateSnow */

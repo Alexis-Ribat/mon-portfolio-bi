@@ -71,32 +71,38 @@ window.addEventListener('load', function() {
     const percentText = document.getElementById('loader-percent');
     const progressBar = document.getElementById('progress-bar-fill');
     
+    // On récupère les deux "arrêts" de couleur dans le SVG
+    const stopBlue = document.getElementById('grad-stop-blue');
+    const stopWhite = document.getElementById('grad-stop-white');
+    
     if (preloader) {
         let count = 0;
-        const duration = 3000; // 3 secondes
-        const interval = 30; // ms
-        const steps = duration / interval;
+        const duration = 3000; // Durée totale du chargement (3s)
+        const interval = 30;   // Mise à jour toutes les 30ms
         
         const counterInterval = setInterval(() => {
             count++;
             if (count > 100) count = 100;
             
-            // Mise à jour du texte
-            if (percentText) {
-                percentText.innerText = count + "%";
-            }
+            // 1. Mise à jour du texte
+            if (percentText) percentText.innerText = count + "%";
             
-            // Mise à jour de la barre de progression
-            if (progressBar) {
-                progressBar.style.width = count + "%";
+            // 2. Mise à jour de la barre
+            if (progressBar) progressBar.style.width = count + "%";
+
+            // 3. Mise à jour du FLOCON (Le niveau de liquide bleu)
+            if (stopBlue && stopWhite) {
+                stopBlue.setAttribute('offset', count + "%");
+                stopWhite.setAttribute('offset', count + "%");
             }
 
+            // Fin du chargement
             if (count === 100) {
                 clearInterval(counterInterval);
             }
         }, interval);
 
-        // Disparition après la fin du chargement
+        // Disparition de l'écran après la fin du chargement
         setTimeout(() => {
             preloader.style.opacity = '0';
             setTimeout(() => {
