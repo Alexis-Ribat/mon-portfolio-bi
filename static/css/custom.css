@@ -80,3 +80,17 @@ body {
     overflow: hidden;
 }
 
+/* --- STYLE DU LOGO TEXTE --- */
+.logo-text {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700; /* Gras */
+    font-size: 24px;  /* Taille adaptée */
+    color: #333 !important; /* Noir/Gris foncé (force la couleur) */
+    text-decoration: none !important; /* Pas de soulignement */
+    text-transform: uppercase; /* Optionnel : en majuscules */
+    letter-spacing: 1px;
+}
+
+.logo-text:hover {
+    color: #00d4ff !important; /* Petit effet bleu au survol */
+}
