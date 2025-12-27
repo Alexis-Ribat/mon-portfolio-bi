@@ -84,14 +84,14 @@ body {
 .logo-text {
     font-family: 'Rubik', sans-serif;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 12px;
     color: #333 !important;
     text-decoration: none !important;
     text-transform: uppercase;
     letter-spacing: 1px;
     
     /* AJOUT : Décale le texte du bord gauche */
-    margin-left: 25px; /* Vous pouvez ajuster ce chiffre (ex: 20px, 30px) */
+    margin-left: 10px; /* Vous pouvez ajuster ce chiffre (ex: 20px, 30px) */
     display: inline-block; /* Assure que la marge est bien prise en compte */
 }
 
