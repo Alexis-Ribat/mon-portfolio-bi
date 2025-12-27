@@ -145,3 +145,9 @@ body {
         transform: rotate(360deg);
     }
 }
+
+/* --- CORRECTIF IMAGE CASSÉE --- */
+/* Cache l'image (et l'icône brisée) qui s'affiche à côté de la date */
+.post-meta img {
+    display: none !important;
+}
