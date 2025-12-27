@@ -65,47 +65,48 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-/* --- GESTION DU PRELOADER --- */
+/* --- GESTION DU PRELOADER (Version 2s) --- */
 window.addEventListener('load', function() {
     const preloader = document.getElementById('preloader');
     const percentText = document.getElementById('loader-percent');
     const progressBar = document.getElementById('progress-bar-fill');
-    
-    // On cible la DIV masque au lieu d'un élément SVG
     const snowMask = document.getElementById('snow-mask');
     
     if (preloader) {
-        let count = 0;
-        
-        // --- CONFIGURATION DE LA DURÉE ---
-        const duration = 2000; // 2 secondes (comme demandé)
-        const interval = 20;   // Mise à jour très rapide pour la fluidité
-        const step = 100 / (duration / interval); // Calcul automatique du pas
+        // Durée exacte de 2 secondes
+        const duration = 2000; 
+        const interval = 20; 
+        const totalSteps = duration / interval; 
+        const stepSize = 100 / totalSteps;
         
         let currentProgress = 0;
 
         const counterInterval = setInterval(() => {
-            currentProgress += step;
+            currentProgress += stepSize;
+            
+            // Sécurité pour ne pas dépasser 100%
             if (currentProgress > 100) currentProgress = 100;
             
-            // On arrondit pour l'affichage texte
-            count = Math.floor(currentProgress);
+            // Affichage entier pour le texte
+            let displayCount = Math.floor(currentProgress);
             
             // 1. Texte
-            if (percentText) percentText.innerText = count + "%";
+            if (percentText) percentText.innerText = displayCount + "%";
             
             // 2. Barre de progression
             if (progressBar) progressBar.style.width = currentProgress + "%";
 
-            // 3. REMPLISSAGE FLOCON (Hauteur de la Div Masque)
+            // 3. HAUTEUR DU MASQUE (C'est la clé !)
             if (snowMask) {
+                // On applique directement le pourcentage à la div masque
                 snowMask.style.height = currentProgress + "%";
             }
 
+            // Fin du chargement
             if (currentProgress >= 100) {
                 clearInterval(counterInterval);
                 
-                // Petit délai une fois à 100% avant de disparaître
+                // Petit délai avant de disparaître
                 setTimeout(() => {
                     preloader.style.opacity = '0';
                     setTimeout(() => {
