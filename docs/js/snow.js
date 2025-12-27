@@ -71,52 +71,49 @@ window.addEventListener('load', function() {
     const percentText = document.getElementById('loader-percent');
     const progressBar = document.getElementById('progress-bar-fill');
     
-    // On cible le rectangle qui sert de masque
-    const clipRect = document.getElementById('clip-rect');
+    // On cible la DIV masque au lieu d'un élément SVG
+    const snowMask = document.getElementById('snow-mask');
     
     if (preloader) {
         let count = 0;
-        const duration = 3000; // 3 secondes
-        const interval = 30;   // fluidité
         
+        // --- CONFIGURATION DE LA DURÉE ---
+        const duration = 2000; // 2 secondes (comme demandé)
+        const interval = 20;   // Mise à jour très rapide pour la fluidité
+        const step = 100 / (duration / interval); // Calcul automatique du pas
+        
+        let currentProgress = 0;
+
         const counterInterval = setInterval(() => {
-            count++;
-            if (count > 100) count = 100;
+            currentProgress += step;
+            if (currentProgress > 100) currentProgress = 100;
+            
+            // On arrondit pour l'affichage texte
+            count = Math.floor(currentProgress);
             
             // 1. Texte
             if (percentText) percentText.innerText = count + "%";
             
             // 2. Barre de progression
-            if (progressBar) progressBar.style.width = count + "%";
+            if (progressBar) progressBar.style.width = currentProgress + "%";
 
-            // 3. REMPLISSAGE FLOCON (Technique Clip-Path)
-            if (clipRect) {
-                // Le SVG fait 24 unités de haut.
-                // On calcule la proportion (de 0 à 1)
-                const ratio = count / 100;
-                
-                // On fait monter le rectangle : y passe de 24 à 0
-                const newY = 24 - (24 * ratio);
-                
-                // On augmente sa taille : height passe de 0 à 24
-                const newHeight = 24 * ratio;
-                
-                clipRect.setAttribute('y', newY);
-                clipRect.setAttribute('height', newHeight);
+            // 3. REMPLISSAGE FLOCON (Hauteur de la Div Masque)
+            if (snowMask) {
+                snowMask.style.height = currentProgress + "%";
             }
 
-            if (count === 100) {
+            if (currentProgress >= 100) {
                 clearInterval(counterInterval);
+                
+                // Petit délai une fois à 100% avant de disparaître
+                setTimeout(() => {
+                    preloader.style.opacity = '0';
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                        preloader.remove();
+                    }, 500);
+                }, 200);
             }
         }, interval);
-
-        // Disparition
-        setTimeout(() => {
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-                preloader.remove();
-            }, 500);
-        }, duration + 500); 
     }
 });

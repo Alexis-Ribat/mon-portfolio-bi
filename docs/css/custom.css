@@ -3,10 +3,9 @@ body {
     padding-top: 100px;
 }
 /* =========================================
-   PRELOADER FINAL (Clip-Path Technique)
+   PRELOADER FINAL (Div Mask Technique)
    ========================================= */
 
-/* Nettoyage */
 #preloader img, .preloader img { display: none !important; }
 
 #preloader {
@@ -28,18 +27,48 @@ body {
     justify-content: center;
 }
 
+/* Conteneur principal de taille fixe */
 .snow-container {
+    position: relative;
     width: 150px;
     height: 150px;
-    margin-bottom: 10px;
-    /* Lueur bleue globale */
-    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.2));
+    margin-bottom: 15px;
 }
 
+/* Style de base des SVGs */
 .snow-svg {
+    width: 150px;
+    height: 150px;
+    display: block;
+}
+
+/* Le flocon blanc est en position absolue au fond */
+.snow-base {
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0.3; /* Un peu transparent pour bien voir le bleu par dessus */
+}
+
+/* LE MASQUE : C'est lui qu'on va animer via JS */
+#snow-mask {
+    position: absolute;
+    bottom: 0;      /* Collé en bas */
+    left: 0;
     width: 100%;
-    height: 100%;
-    overflow: visible; /* Important pour que les bords arrondis ne soient pas coupés */
+    height: 0%;     /* Commence vide */
+    overflow: hidden; /* C'est ça qui coupe proprement sans carré visible */
+    transition: height 0.05s linear; /* Fluidité JS */
+}
+
+/* Le flocon bleu À L'INTÉRIEUR du masque */
+.snow-blue {
+    position: absolute;
+    bottom: 0;      /* IMPORTANT : Reste collé au bas du masque */
+    left: 0;
+    width: 150px;   /* Taille fixe égale au conteneur */
+    height: 150px;
+    /* Effet néon */
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.8));
 }
 
 /* === BARRE DE PROGRESSION === */
@@ -70,7 +99,6 @@ body {
     font-family: 'Rubik', sans-serif;
     font-size: 32px;
     font-weight: 700;
-    text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
 }
 
 .loader-status {

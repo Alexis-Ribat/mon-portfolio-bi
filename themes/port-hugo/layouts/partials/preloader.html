@@ -2,23 +2,17 @@
   <div class="loader-wrapper">
     
     <div class="snow-container">
-      <svg class="snow-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        
-        <defs>
-          <clipPath id="snow-clip">
-            <rect id="clip-rect" x="0" y="24" width="24" height="0" />
-          </clipPath>
-        </defs>
-
+      <svg class="snow-svg snow-base" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2V22M2 12H22M19 19L5 5M19 5L5 19M12 7L14 5M12 7L10 5M12 17L14 19M12 17L10 19M17 12L19 14M17 12L19 10M7 12L5 14M7 12L5 10" 
               stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
 
-        <g clip-path="url(#snow-clip)">
+      <div id="snow-mask">
+        <svg class="snow-svg snow-blue" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 2V22M2 12H22M19 19L5 5M19 5L5 19M12 7L14 5M12 7L10 5M12 17L14 19M12 17L10 19M17 12L19 14M17 12L19 10M7 12L5 14M7 12L5 10" 
                 stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
-        </g>
-        
-      </svg>
+        </svg>
+      </div>
     </div>
 
     <div id="loader-percent">0%</div>
