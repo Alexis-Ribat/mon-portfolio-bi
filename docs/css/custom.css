@@ -83,14 +83,18 @@ body {
 /* --- STYLE DU LOGO TEXTE --- */
 .logo-text {
     font-family: 'Rubik', sans-serif;
-    font-weight: 700; /* Gras */
-    font-size: 24px;  /* Taille adaptée */
-    color: #333 !important; /* Noir/Gris foncé (force la couleur) */
-    text-decoration: none !important; /* Pas de soulignement */
-    text-transform: uppercase; /* Optionnel : en majuscules */
+    font-weight: 700;
+    font-size: 24px;
+    color: #333 !important;
+    text-decoration: none !important;
+    text-transform: uppercase;
     letter-spacing: 1px;
+    
+    /* AJOUT : Décale le texte du bord gauche */
+    margin-left: 25px; /* Vous pouvez ajuster ce chiffre (ex: 20px, 30px) */
+    display: inline-block; /* Assure que la marge est bien prise en compte */
 }
 
 .logo-text:hover {
-    color: #00d4ff !important; /* Petit effet bleu au survol */
+    color: #00d4ff !important;
 }
