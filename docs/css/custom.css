@@ -4,7 +4,7 @@ body {
 }
 
 /* =========================================
-   1. GESTION DU PRELOADER (Le Flocon de chargement)
+   1. GESTION DU PRELOADER (Le Flocon)
    ========================================= */
 
 /* Cache l'image résiduelle et le carré blanc du thème original */
@@ -12,45 +12,53 @@ body {
     display: none !important;
 }
 
-/* Configuration du conteneur (l'écran de chargement) */
+/* Configuration du conteneur (fond sombre) */
 #preloader {
     background-image: none !important; 
-    background-color: #1a1a1a; /* Fond sombre */
+    background-color: #1a1a1a; 
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 999999;
-    
-    /* Centre le flocon au milieu de l'écran */
     display: flex; 
     align-items: center;
     justify-content: center;
-    
-    /* Transition douce pour la disparition */
     transition: opacity 0.5s ease-in-out, visibility 0.5s;
-    opacity: 1; /* On force la visibilité au départ */
+    opacity: 1; 
 }
 
-/* Le dessin du flocon (C'est ce qui manquait !) */
+/* 1. Le conteneur SVG : On le fait juste tourner */
 .snow-loader {
     width: 150px;
     height: 150px;
-    stroke: white;
+    /* On enlève l'animation de couleur ici, on garde la rotation */
+    animation: rotateSnow 10s linear infinite;
+}
+
+/* 2. Le tracé INTÉRIEUR (Le dessin du flocon) : C'est LUI qui change de couleur */
+.snow-loader path {
+    stroke: white; /* Couleur de base forcée */
     stroke-width: 2;
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8));
-    /* Double animation : changement de couleur et rotation */
-    animation: colorFill 3s infinite alternate ease-in-out, rotateSnow 10s linear infinite;
+    /* L'animation de couleur est appliquée directement sur le trait */
+    animation: colorFill 3s infinite alternate ease-in-out;
 }
 
-/* Animation 1 : Blanc vers Bleu */
+/* Définition de l'animation de couleur */
 @keyframes colorFill {
-    0% { stroke: #ffffff; }
-    100% { stroke: #00d4ff; }
+    0% { 
+        stroke: #ffffff; 
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+    }
+    100% { 
+        stroke: #00d4ff; /* Bleu cyan intense */
+        filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.8)); /* Lueur bleue */
+    }
 }
 
-/* Animation 2 : Rotation */
+/* Définition de la rotation */
 @keyframes rotateSnow {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
