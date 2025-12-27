@@ -44,33 +44,171 @@
   
   
 </head>
-<body><h1>TEST VISIBLE ???</h1>
-<div id="preloader">
-  <div class="loader-wrapper">
+<body><div id="preloader-overlay">
+  <div class="loader-content">
     
-    <div class="snow-container">
-      <svg class="snow-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="snow-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
-            <stop id="grad-stop-blue" offset="0%" stop-color="#00d4ff" />
-            <stop id="grad-stop-white" offset="0%" stop-color="white" />
-          </linearGradient>
-        </defs>
-        
-        <path d="M12 2V22M2 12H22M19 19L5 5M19 5L5 19M12 7L14 5M12 7L10 5M12 17L14 19M12 17L10 19M17 12L19 14M17 12L19 10M7 12L5 14M7 12L5 10" 
-              stroke="url(#snow-gradient)" stroke-width="2" stroke-linecap="round"/>
+    <div class="flake-wrapper">
+      <svg class="flake-svg flake-base" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2v20M2 12h20M19.07 4.93L4.93 19.07M19.07 19.07L4.93 4.93M12 7l2-2M12 7l-2-2M12 17l2 2M12 17l-2 2M17 12l2 2M17 12l2-2M7 12l-2 2M7 12l-2-2"></path>
       </svg>
+
+      <div id="flake-mask">
+        <svg class="flake-svg flake-blue" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v20M2 12h20M19.07 4.93L4.93 19.07M19.07 19.07L4.93 4.93M12 7l2-2M12 7l-2-2M12 17l2 2M12 17l-2 2M17 12l2 2M17 12l2-2M7 12l-2 2M7 12l-2-2"></path>
+        </svg>
+      </div>
     </div>
 
     <div id="loader-percent">0%</div>
 
-    <div class="progress-bar-container">
-      <div id="progress-bar-fill"></div>
+    <div class="progress-track">
+      <div id="progress-fill"></div>
     </div>
-    
-    <div class="loader-status">Loading your experience.</div>
+
+    <div class="loading-msg">LOADING YOUR EXPERIENCE</div>
   </div>
 </div>
+
+<style>
+   
+  body { overflow: hidden; } 
+  
+  #preloader-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #1a1a1a;
+    z-index: 9999999;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+  }
+
+  .loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+   
+  .flake-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+  }
+
+  .flake-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 150px;
+    height: 150px;
+  }
+
+  .flake-base {
+    opacity: 0.2;  
+    z-index: 1;
+  }
+
+   
+  #flake-mask {
+    position: absolute;
+    bottom: 0;       
+    left: 0;
+    width: 100%;
+    height: 0%;      
+    overflow: hidden;  
+    z-index: 2;
+     
+  }
+
+  .flake-blue {
+    position: absolute;
+    bottom: 0;       
+    left: 0;
+    width: 150px;    
+    height: 150px;   
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.8));  
+  }
+
+   
+  #loader-percent {
+    font-family: 'Rubik', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #00d4ff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  }
+
+  .progress-track {
+    width: 250px;
+    height: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+  }
+
+  #progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #00a8cc, #00d4ff);
+    box-shadow: 0 0 15px #00d4ff;
+  }
+
+  .loading-msg {
+    margin-top: 15px;
+    color: #888;
+    font-family: sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+</style>
+
+<script>
+  (function() {
+    
+    var duration = 2000; 
+    var intervalTime = 20; 
+    var steps = duration / intervalTime;
+    var currentStep = 0;
+
+    var percentDiv = document.getElementById('loader-percent');
+    var barDiv = document.getElementById('progress-fill');
+    var maskDiv = document.getElementById('flake-mask');
+    var overlay = document.getElementById('preloader-overlay');
+
+    var interval = setInterval(function() {
+      currentStep++;
+      var progress = (currentStep / steps) * 100;
+
+      
+      if (progress > 100) progress = 100;
+
+      
+      if (percentDiv) percentDiv.innerText = Math.floor(progress) + "%";
+      if (barDiv) barDiv.style.width = progress + "%";
+      if (maskDiv) maskDiv.style.height = progress + "%";
+
+      
+      if (currentStep >= steps) {
+        clearInterval(interval);
+        
+        
+        setTimeout(function() {
+          if (overlay) {
+            overlay.style.opacity = '0';
+            setTimeout(function() {
+              overlay.style.display = 'none';
+              document.body.style.overflow = 'auto'; 
+            }, 500);
+          }
+        }, 200);
+      }
+    }, intervalTime);
+  })();
+</script>
   <section class="menu menu-fix" id="menu">
   <nav>
     

@@ -2,66 +2,6 @@
 body {
     padding-top: 100px;
 }
-/* =========================================
-   PRELOADER FINAL (Clip-Path GPU Method)
-   ========================================= */
-
-#preloader img, .preloader img { display: none !important; }
-
-#preloader {
-    background-image: none !important;
-    background-color: #1a1a1a;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 999999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.5s ease;
-}
-
-.loader-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Conteneur principal */
-.snow-container {
-    position: relative; /* Indispensable pour superposer */
-    width: 150px;
-    height: 150px;
-    margin-bottom: 15px;
-}
-
-/* Style SVG générique */
-.snow-svg {
-    width: 150px;
-    height: 150px;
-    display: block;
-    position: absolute; /* Superposition parfaite */
-    top: 0;
-    left: 0;
-}
-
-/* 1. Le flocon blanc (Fond) */
-.snow-base {
-    opacity: 0.2;
-    z-index: 1; 
-}
-
-/* 2. Le FLOCON BLEU (Celui qu'on coupe) */
-#blue-flake {
-    z-index: 2;
-    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.8));
-    
-    /* ÉTAT INITIAL : Coupé à 100% depuis le haut (donc invisible) */
-    /* Syntax: inset(top right bottom left) */
-    clip-path: inset(100% 0 0 0);
-    
-    /* SURTOUT PAS DE TRANSITION ICI ! C'est le JS qui gère. */
-}
 
 /* === Barre de progression === */
 .progress-bar-container {
@@ -140,5 +80,3 @@ body {
     overflow: hidden;
 }
 
-
-body { border: 10px solid red !important; }
