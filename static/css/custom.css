@@ -98,3 +98,50 @@ body {
 .logo-text:hover {
     color: #00d4ff !important;
 }
+
+
+/* =========================================
+   PRELOADER SIMPLE (Flocon qui tourne)
+   ========================================= */
+
+/* Le fond plein écran */
+#simple-preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1a1a1a; /* Fond sombre */
+    z-index: 999999; /* Toujours au-dessus */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Transition douce pour la disparition */
+    transition: opacity 0.5s ease, visibility 0.5s;
+    opacity: 1;
+}
+
+/* Classe utilitaire pour cacher le preloader */
+#simple-preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Le flocon lui-même */
+.spinning-snowflake {
+    width: 100px;  /* Taille du flocon */
+    height: 100px;
+    /* L'animation de rotation infinie : 4 secondes pour un tour complet */
+    animation: spinSnow 4s linear infinite;
+}
+
+/* Définition de l'animation de rotation */
+@keyframes spinSnow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

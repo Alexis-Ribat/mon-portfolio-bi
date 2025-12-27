@@ -65,60 +65,21 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-/* --- GESTION DU PRELOADER (Clip-Path) --- */
+/* --- GESTION DU PRELOADER SIMPLE --- */
 window.addEventListener('load', function() {
-    const preloader = document.getElementById('preloader');
-    const percentText = document.getElementById('loader-percent');
-    const progressBar = document.getElementById('progress-bar-fill');
-    
-    // On cible le flocon bleu directement
-    const blueFlake = document.getElementById('blue-flake');
-    
+    const preloader = document.getElementById('simple-preloader');
+
     if (preloader) {
-        // Durée exacte de 2 secondes
-        const duration = 2000; 
-        const interval = 20; 
-        const totalSteps = duration / interval; 
-        const stepSize = 100 / totalSteps;
-        
-        let currentProgress = 0;
+        // On force une attente de 2 secondes (2000ms) pour voir l'animation
+        setTimeout(() => {
+            // On ajoute la classe CSS qui gère le fondu de disparition
+            preloader.classList.add('hidden');
 
-        const counterInterval = setInterval(() => {
-            currentProgress += stepSize;
-            
-            // Sécurité
-            if (currentProgress > 100) currentProgress = 100;
-            
-            // Affichage entier
-            let displayCount = Math.floor(currentProgress);
-            
-            // 1. Texte
-            if (percentText) percentText.innerText = displayCount + "%";
-            
-            // 2. Barre de progression
-            if (progressBar) progressBar.style.width = currentProgress + "%";
+            // Une fois la transition CSS terminée (0.5s), on supprime l'élément du DOM
+            setTimeout(() => {
+                 preloader.remove();
+            }, 500);
 
-            // 3. REMPLISSAGE FLOCON (Technique Inset)
-            if (blueFlake) {
-                // Pour remplir, on diminue la valeur "inset top"
-                // 0% de chargement = 100% coupé en haut
-                // 100% de chargement = 0% coupé en haut
-                const insetTop = 100 - currentProgress;
-                blueFlake.style.clipPath = `inset(${insetTop}% 0 0 0)`;
-            }
-
-            // Fin du chargement
-            if (currentProgress >= 100) {
-                clearInterval(counterInterval);
-                
-                setTimeout(() => {
-                    preloader.style.opacity = '0';
-                    setTimeout(() => {
-                        preloader.style.display = 'none';
-                        preloader.remove();
-                    }, 500);
-                }, 200);
-            }
-        }, interval);
+        }, 2000); // <-- Changez cette valeur pour modifier la durée du chargement
     }
 });
