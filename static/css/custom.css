@@ -3,13 +3,12 @@ body {
     padding-top: 100px;
 }
 /* =========================================
-   PRELOADER FINAL (SVG Gradient + Barre)
+   PRELOADER FINAL (Clip-Path Technique)
    ========================================= */
 
 /* Nettoyage */
 #preloader img, .preloader img { display: none !important; }
 
-/* Fond de l'écran */
 #preloader {
     background-image: none !important;
     background-color: #1a1a1a;
@@ -29,35 +28,35 @@ body {
     justify-content: center;
 }
 
-/* Conteneur du flocon */
 .snow-container {
     width: 150px;
     height: 150px;
     margin-bottom: 10px;
-    /* Une petite ombre portée globale pour le relief */
-    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
+    /* Lueur bleue globale */
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.2));
 }
 
 .snow-svg {
     width: 100%;
     height: 100%;
+    overflow: visible; /* Important pour que les bords arrondis ne soient pas coupés */
 }
 
-/* === STYLE DE LA BARRE (V2 Premium) === */
+/* === BARRE DE PROGRESSION === */
 .progress-bar-container {
     width: 250px;
     height: 12px;
     background-color: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
     margin-top: 25px;
-    overflow: hidden;
     position: relative;
     border: 1px solid rgba(0, 212, 255, 0.2);
     box-shadow: inset 0 1px 5px rgba(0,0,0,0.5);
+    overflow: hidden;
 }
 
 #progress-bar-fill {
-    width: 0%; /* Géré par JS */
+    width: 0%;
     height: 100%;
     border-radius: 20px;
     background: linear-gradient(90deg, #00a8cc, #00d4ff, #80e5ff);
@@ -65,7 +64,6 @@ body {
     transition: width 0.03s linear;
 }
 
-/* Typographie */
 #loader-percent {
     margin-top: 5px;
     color: #00d4ff;

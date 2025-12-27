@@ -71,38 +71,46 @@ window.addEventListener('load', function() {
     const percentText = document.getElementById('loader-percent');
     const progressBar = document.getElementById('progress-bar-fill');
     
-    // On récupère les deux "arrêts" de couleur dans le SVG
-    const stopBlue = document.getElementById('grad-stop-blue');
-    const stopWhite = document.getElementById('grad-stop-white');
+    // On cible le rectangle qui sert de masque
+    const clipRect = document.getElementById('clip-rect');
     
     if (preloader) {
         let count = 0;
-        const duration = 3000; // Durée totale du chargement (3s)
-        const interval = 30;   // Mise à jour toutes les 30ms
+        const duration = 3000; // 3 secondes
+        const interval = 30;   // fluidité
         
         const counterInterval = setInterval(() => {
             count++;
             if (count > 100) count = 100;
             
-            // 1. Mise à jour du texte
+            // 1. Texte
             if (percentText) percentText.innerText = count + "%";
             
-            // 2. Mise à jour de la barre
+            // 2. Barre de progression
             if (progressBar) progressBar.style.width = count + "%";
 
-            // 3. Mise à jour du FLOCON (Le niveau de liquide bleu)
-            if (stopBlue && stopWhite) {
-                stopBlue.setAttribute('offset', count + "%");
-                stopWhite.setAttribute('offset', count + "%");
+            // 3. REMPLISSAGE FLOCON (Technique Clip-Path)
+            if (clipRect) {
+                // Le SVG fait 24 unités de haut.
+                // On calcule la proportion (de 0 à 1)
+                const ratio = count / 100;
+                
+                // On fait monter le rectangle : y passe de 24 à 0
+                const newY = 24 - (24 * ratio);
+                
+                // On augmente sa taille : height passe de 0 à 24
+                const newHeight = 24 * ratio;
+                
+                clipRect.setAttribute('y', newY);
+                clipRect.setAttribute('height', newHeight);
             }
 
-            // Fin du chargement
             if (count === 100) {
                 clearInterval(counterInterval);
             }
         }, interval);
 
-        // Disparition de l'écran après la fin du chargement
+        // Disparition
         setTimeout(() => {
             preloader.style.opacity = '0';
             setTimeout(() => {
