@@ -24,14 +24,14 @@
 </div>
 
 <style>
-  /* On s'assure que rien ne dépasse */
-  body { overflow: hidden; } 
+  /* Empêche le scroll pendant le chargement */
+  body.loading { overflow: hidden; } 
   
   #preloader-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
     background-color: #1a1a1a;
-    z-index: 9999999; /* Toujours au-dessus */
+    z-index: 9999999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,7 +44,7 @@
     align-items: center;
   }
 
-  /* --- FLOCONS --- */
+  /* --- STRUCTURE FLOCONS --- */
   .flake-wrapper {
     position: relative;
     width: 150px;
@@ -52,36 +52,38 @@
     margin-bottom: 20px;
   }
 
+  /* Classe commune pour positionner les SVG */
   .flake-svg {
-    position: absolute;
-    top: 0; left: 0;
     width: 150px;
     height: 150px;
+    position: absolute;
+    left: 0;
   }
 
+  /* 1. FLOCON BLANC (Dessous) */
   .flake-base {
-    opacity: 0.2; /* Le fond grisâtre */
+    top: 0;
+    opacity: 1; /* CORRECTION : 100% visible (Blanc pur) */
     z-index: 1;
+    /* Petite ombre blanche pour le faire briller aussi */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
   }
 
-  /* LE MASQUE MAGIQUE */
+  /* 2. LE MASQUE (Le rideau invisible) */
   #flake-mask {
     position: absolute;
-    bottom: 0;      /* Collé en bas */
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 0%;     /* Commence à 0% */
-    overflow: hidden; /* Coupe ce qui dépasse */
+    height: 0%; /* Animé par JS */
+    overflow: hidden; /* Coupe le flocon bleu */
     z-index: 2;
-    /* Pas de transition CSS ici, le JS s'en occupe pour être fluide */
   }
 
+  /* 3. FLOCON BLEU (Dessus) */
   .flake-blue {
-    position: absolute;
-    bottom: 0;      /* Collé au bas du masque */
-    left: 0;
-    width: 150px;   /* TAILLE FIXE IMPORTANTE */
-    height: 150px;  /* TAILLE FIXE IMPORTANTE */
+    top: auto;    /* Annule le top:0 de la classe commune */
+    bottom: 0;    /* Reste collé au bas du masque */
     filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.8)); /* Effet Néon */
   }
 
@@ -122,9 +124,11 @@
 
 <script>
   (function() {
-    // On encapsule pour ne pas polluer le reste du site
+    // Bloque le scroll
+    document.body.classList.add('loading');
+
     var duration = 2000; // 2 secondes
-    var intervalTime = 20; // mise à jour toutes les 20ms
+    var intervalTime = 20; 
     var steps = duration / intervalTime;
     var currentStep = 0;
 
@@ -137,25 +141,23 @@
       currentStep++;
       var progress = (currentStep / steps) * 100;
 
-      // Sécurité 100%
       if (progress > 100) progress = 100;
 
-      // Mise à jour visuelle
+      // Mise à jour
       if (percentDiv) percentDiv.innerText = Math.floor(progress) + "%";
       if (barDiv) barDiv.style.width = progress + "%";
       if (maskDiv) maskDiv.style.height = progress + "%";
 
-      // Fin du chargement
+      // Fin
       if (currentStep >= steps) {
         clearInterval(interval);
         
-        // On attend un tout petit peu (200ms) pour voir le 100%
         setTimeout(function() {
           if (overlay) {
             overlay.style.opacity = '0';
             setTimeout(function() {
               overlay.style.display = 'none';
-              document.body.style.overflow = 'auto'; // Réactive le scroll
+              document.body.classList.remove('loading'); // Réactive le scroll
             }, 500);
           }
         }, 200);
