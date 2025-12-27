@@ -80,6 +80,6 @@ window.addEventListener('load', function() {
                  preloader.remove();
             }, 500);
 
-        }, 2000); // <-- Changez cette valeur pour modifier la durée du chargement
+        }, 1000); // <-- Changez cette valeur pour modifier la durée du chargement
     }
 });
