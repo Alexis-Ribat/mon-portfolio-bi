@@ -32,7 +32,7 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
 </summary>
 
 <div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
-    <button id="copyBtn" onclick="copyPrompt()" style="
+    <button id="copyBtn" onclick="copyPrompt1()" style="
         position: absolute; 
         top: 10px; 
         right: 10px; 
@@ -49,7 +49,7 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
     </button>
 
     <pre style="margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;">
-<code id="jsonPrompt" style="color: #f8f8f2; font-family: monospace;">{
+<code id="jsonPrompt1" style="color: #f8f8f2; font-family: monospace;">{
   "type": "image_generation_prompt",
   "style": "hyper-realistic, cinematic, magical surrealism, studio editorial",
   "composition": {
@@ -103,20 +103,50 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
 </div>
 
 <script>
-function copyPrompt() {
-    const text = document.getElementById("jsonPrompt").innerText;
-    navigator.clipboard.writeText(text).then(function() {
-        const btn = document.getElementById("copyBtn");
-        const originalText = btn.innerText;
-        btn.innerText = "✅ Copié !";
-        btn.style.backgroundColor = "#2e7d32";
-        setTimeout(function() {
-            btn.innerText = originalText;
-            btn.style.backgroundColor = "#4CAF50";
-        }, 2000);
-    }, function(err) {
+function copyPrompt1() {
+    const text = document.getElementById("jsonPrompt1").innerText;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+            const btn = document.getElementById("copyBtn");
+            const originalText = btn.innerText;
+            btn.innerText = "✅ Copié !";
+            btn.style.backgroundColor = "#2e7d32";
+            setTimeout(function() {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "#4CAF50";
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Erreur lors de la copie : ', err);
+            fallbackCopyTextToClipboard(text, btn);
+        });
+    } else {
+        fallbackCopyTextToClipboard(text, document.getElementById("copyBtn"));
+    }
+}
+function fallbackCopyTextToClipboard(text, btn) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            const originalText = btn.innerText;
+            btn.innerText = "✅ Copié !";
+            btn.style.backgroundColor = "#2e7d32";
+            setTimeout(function() {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "#4CAF50";
+            }, 2000);
+        }
+    } catch (err) {
         console.error('Erreur lors de la copie : ', err);
-    });
+    }
+    document.body.removeChild(textArea);
 }
 </script>
 
@@ -146,7 +176,7 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
 </summary>
 
 <div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
-    <button id="copyBtn2" onclick="copyPrompt()" style="
+    <button id="copyBtn2" onclick="copyPrompt2()" style="
         position: absolute; 
         top: 10px; 
         right: 10px; 
@@ -168,20 +198,50 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
 </div>
 
 <script>
-function copyPrompt() {
+function copyPrompt2() {
     const text = document.getElementById("jsonPrompt2").innerText;
-    navigator.clipboard.writeText(text).then(function() {
-        const btn = document.getElementById("copyBtn2");
-        const originalText = btn.innerText;
-        btn.innerText = "✅ Copié !";
-        btn.style.backgroundColor = "#2e7d32";
-        setTimeout(function() {
-            btn.innerText = originalText;
-            btn.style.backgroundColor = "#4CAF50";
-        }, 2000);
-    }, function(err) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+            const btn = document.getElementById("copyBtn2");
+            const originalText = btn.innerText;
+            btn.innerText = "✅ Copié !";
+            btn.style.backgroundColor = "#2e7d32";
+            setTimeout(function() {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "#4CAF50";
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Erreur lors de la copie : ', err);
+            fallbackCopyTextToClipboard(text, document.getElementById("copyBtn2"));
+        });
+    } else {
+        fallbackCopyTextToClipboard(text, document.getElementById("copyBtn2"));
+    }
+}
+function fallbackCopyTextToClipboard(text, btn) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            const originalText = btn.innerText;
+            btn.innerText = "✅ Copié !";
+            btn.style.backgroundColor = "#2e7d32";
+            setTimeout(function() {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "#4CAF50";
+            }, 2000);
+        }
+    } catch (err) {
         console.error('Erreur lors de la copie : ', err);
-    });
+    }
+    document.body.removeChild(textArea);
 }
 </script>
 
@@ -211,7 +271,7 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
 </summary>
 
 <div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
-    <button id="copyBtn3" onclick="copyPrompt()" style="
+    <button id="copyBtn3" onclick="copyPrompt3()" style="
         position: absolute; 
         top: 10px; 
         right: 10px; 
@@ -350,20 +410,50 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
 </div>
 
 <script>
-function copyPrompt() {
+function copyPrompt3() {
     const text = document.getElementById("jsonPrompt3").innerText;
-    navigator.clipboard.writeText(text).then(function() {
-        const btn = document.getElementById("copyBtn3");
-        const originalText = btn.innerText;
-        btn.innerText = "✅ Copié !";
-        btn.style.backgroundColor = "#2e7d32";
-        setTimeout(function() {
-            btn.innerText = originalText;
-            btn.style.backgroundColor = "#4CAF50";
-        }, 2000);
-    }, function(err) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+            const btn = document.getElementById("copyBtn3");
+            const originalText = btn.innerText;
+            btn.innerText = "✅ Copié !";
+            btn.style.backgroundColor = "#2e7d32";
+            setTimeout(function() {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "#4CAF50";
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Erreur lors de la copie : ', err);
+            fallbackCopyTextToClipboard(text, document.getElementById("copyBtn3"));
+        });
+    } else {
+        fallbackCopyTextToClipboard(text, document.getElementById("copyBtn3"));
+    }
+}
+function fallbackCopyTextToClipboard(text, btn) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            const originalText = btn.innerText;
+            btn.innerText = "✅ Copié !";
+            btn.style.backgroundColor = "#2e7d32";
+            setTimeout(function() {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "#4CAF50";
+            }, 2000);
+        }
+    } catch (err) {
         console.error('Erreur lors de la copie : ', err);
-    });
+    }
+    document.body.removeChild(textArea);
 }
 </script>
 
@@ -393,7 +483,7 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
 </summary>
 
 <div style="position: relative; background: #272822; border-radius: 5px; padding: 10px;">
-    <button id="copyBtn4" onclick="copyPrompt()" style="
+    <button id="copyBtn4" onclick="copyPrompt4()" style="
         position: absolute; 
         top: 10px; 
         right: 10px; 
@@ -410,26 +500,56 @@ Below is the structured JSON prompt used to generate this image. It uses strict 
     </button>
 
     <pre style="margin: 0; padding-top: 35px; overflow-x: auto; max-height: 500px;">
-<code id="jsonPrompt4" style="color: #f8f8f2; font-family: monospace;">{A dramatic sky photo where swirling storm clouds naturally form the unmistakable shape of a [SUBJECT]. The illusion should be “found shape”: at first it’s just clouds; 
+<code id="jsonPrompt4" style="color: #f8f8f2; font-family: monospace;">{A dramatic sky photo where swirling storm clouds naturally form the unmistakable shape of a [SUBJECT]. The illusion should be "found shape": at first it's just clouds; 
 then the creature silhouette pops out. Realistic lighting: sun rays breaking through, volumetric beams, deep contrast. 
 No fantasy glow, pure cloud structure forming the subject. High resolution, cinematic, awe-inspiring.}</code></pre>
 </div>
 
 <script>
-function copyPrompt() {
+function copyPrompt4() {
     const text = document.getElementById("jsonPrompt4").innerText;
-    navigator.clipboard.writeText(text).then(function() {
-        const btn = document.getElementById("copyBtn4");
-        const originalText = btn.innerText;
-        btn.innerText = "✅ Copié !";
-        btn.style.backgroundColor = "#2e7d32";
-        setTimeout(function() {
-            btn.innerText = originalText;
-            btn.style.backgroundColor = "#4CAF50";
-        }, 2000);
-    }, function(err) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+            const btn = document.getElementById("copyBtn4");
+            const originalText = btn.innerText;
+            btn.innerText = "✅ Copié !";
+            btn.style.backgroundColor = "#2e7d32";
+            setTimeout(function() {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "#4CAF50";
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Erreur lors de la copie : ', err);
+            fallbackCopyTextToClipboard(text, document.getElementById("copyBtn4"));
+        });
+    } else {
+        fallbackCopyTextToClipboard(text, document.getElementById("copyBtn4"));
+    }
+}
+function fallbackCopyTextToClipboard(text, btn) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        const successful = document.execCommand('copy');
+        if (successful) {
+            const originalText = btn.innerText;
+            btn.innerText = "✅ Copié !";
+            btn.style.backgroundColor = "#2e7d32";
+            setTimeout(function() {
+                btn.innerText = originalText;
+                btn.style.backgroundColor = "#4CAF50";
+            }, 2000);
+        }
+    } catch (err) {
         console.error('Erreur lors de la copie : ', err);
-    });
+    }
+    document.body.removeChild(textArea);
 }
 </script>
 
